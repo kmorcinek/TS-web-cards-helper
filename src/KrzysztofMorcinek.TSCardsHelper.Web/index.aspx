@@ -13,6 +13,7 @@
             <ul data-bind="foreach: cards">
 
                 <li>
+                    <button data-bind="text: Name"></button>
                     <label>
                         <input type="checkbox" name="flavorGroup" />
                         <span data-bind="text: Name"></span>
@@ -20,6 +21,7 @@
                 </li>
 
             </ul>
+           
         </div>
     </form>
 
