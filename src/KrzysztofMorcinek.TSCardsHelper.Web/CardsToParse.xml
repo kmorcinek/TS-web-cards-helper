@@ -1,0 +1,298 @@
+﻿<tbody>
+  <tr style="background-color:#d9d9d9;">
+    <td>1</td>
+    <td>
+      <a title="Regions: ;Asia" href="http://twilightstrategy.com/2011/12/14/regions-asia/">Asia Scoring</a>
+    </td>
+    <td>0</td>
+    <td>Presence: 3; Domination: 7; Control: 9; +1 VP per controlled Battleground country in Region; +1 VP per country controlled that is adjacent to enemy superpower; MAY NOT BE HELD!</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>2</td>
+    <td>
+      <a title="Regions: ;Europe" href="http://twilightstrategy.com/2011/12/12/regions-europe/">Europe Scoring</a>
+    </td>
+    <td>0</td>
+    <td>Presence: 3; Domination: 7; Control: Automatic Victory; +1 VP per controlled Battleground country in Region; +1 VP per country controlled that is adjacent to enemy superpower; MAY NOT BE HELD!</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>3</td>
+    <td>
+      <a title="Regions: Middle ;East" href="http://twilightstrategy.com/2012/02/13/regions-middle-east/">Middle East Scoring</a>
+    </td>
+    <td>0</td>
+    <td>Presence: 3; Domination: 5; Control: 7; +1 VP per controlled Battleground country in Region; MAY NOT BE HELD!</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>4</td>
+    <td>
+      <a title="Duck and ;Cover" href="http://twilightstrategy.com/2011/12/12/duck-and-cover/">Duck and Cover</a>
+    </td>
+    <td>3</td>
+    <td>Degrade the DEFCON level by 1. The US receives VP equal to 5 minus the current DEFCON level.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>5</td>
+    <td>
+      <a title="Five Year ;Plan" href="http://twilightstrategy.com/2011/12/12/five-year-plan/">Five Year Plan</a>
+    </td>
+    <td>3</td>
+    <td>The USSR must randomly discard a card. If the card has a US associated Event, the Event occurs immediately. If the card has a USSR associated Event or an Event applicable to both players, then the card must be discarded without triggering the Event.</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>6</td>
+    <td>
+      <a title="The China ;Card" href="http://twilightstrategy.com/2012/10/31/the-china-card/">The China Card</a>
+    </td>
+    <td>4</td>
+    <td>This card begins the game with the USSR. When played, the player receives +1 Operations to the Operations value of this card if it uses all its Operations in Asia. It is passed to the opponent once played. A player receives 1 VP for holding this card at the end of Turn 10.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>7</td>
+    <td>
+      <a title="Socialist ;Governments" href="http://twilightstrategy.com/2011/12/13/socialist-governments/">Socialist Governments</a>
+    </td>
+    <td>3</td>
+    <td>Remove a total of 3 US Influence from any countries in Western Europe (removing no more than 2 Influence per country). This Event cannot be used after the “#83 – The Iron Lady” Event has been played.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>8</td>
+    <td>
+      <a title="Fidel" href="http://twilightstrategy.com/2011/12/14/fidel/">Fidel*</a>
+    </td>
+    <td>2</td>
+    <td>Remove all US Influence from Cuba. USSR adds sufficient Influence in Cuba for Control.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>9</td>
+    <td>
+      <a title="Vietnam ;Revolts" href="http://twilightstrategy.com/2011/12/16/vietnam-revolts/">Vietnam Revolts*</a>
+    </td>
+    <td>2</td>
+    <td>Add 2 USSR Influence to Vietnam. For the remainder of the turn, the USSR receives +1 Operations to the Operations value of a card that uses all its Operations in Southeast Asia.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>10</td>
+    <td>
+      <a title="Blockade" href="http://twilightstrategy.com/2011/12/19/blockade/">Blockade*</a>
+    </td>
+    <td>1</td>
+    <td>Unless the US immediately discards a card with an Operations value of 3 or more, remove all US Influence from West Germany.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>11</td>
+    <td>
+      <a title="Korean ;War" href="http://twilightstrategy.com/2011/12/25/korean-war/">Korean War*</a>
+    </td>
+    <td>2</td>
+    <td>North Korea invades South Korea. Roll a die and subtract (-1) from the die roll for every US controlled country adjacent to South Korea. On a modified die roll of 4-6, the USSR receives 2 VP and replaces all US Influence in South Korea with USSR Influence. The USSR adds 2 to its Military Operations Track.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>12</td>
+    <td>
+      <a title="Romanian ;Abdication" href="http://twilightstrategy.com/2012/01/02/romanian-abdication/">Romanian Abdication*</a>
+    </td>
+    <td>1</td>
+    <td>Remove all US Influence from Romania. The USSR adds sufficient Influence to Romania for Control.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>13</td>
+    <td>
+      <a title="Arab-Israeli ;War" href="http://twilightstrategy.com/2012/01/16/arab-israeli-war/">Arab-Israeli War</a>
+    </td>
+    <td>2</td>
+    <td>Pan-Arab Coalition invades Israel. Roll a die and subtract (-1) from the die roll for Israel, if it is US controlled, and for every US controlled country adjacent to Israel. On a modified die roll of 4-6, the USSR receives 2 VP and replaces all US Influence in Israel with USSR Influence. The USSR adds 2 to its Military Operations Track. This Event cannot be used after the “#65 – Camp David Accords” Event has been played.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>14</td>
+    <td>
+      <a title="Comecon" href="http://twilightstrategy.com/2012/01/24/comecon/">Comecon*</a>
+    </td>
+    <td>3</td>
+    <td>Add 1 USSR Influence to each of 4 non-US controlled countries of Eastern Europe.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>15</td>
+    <td>
+      <a title="Nasser" href="http://twilightstrategy.com/2012/02/06/nasser/">Nasser*</a>
+    </td>
+    <td>1</td>
+    <td>Add 2 USSR Influence to Egypt. The US removes half, rounded up, of its Influence from Egypt.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>16</td>
+    <td>
+      <a title="Warsaw Pact ;Formed" href="http://twilightstrategy.com/2012/02/20/warsaw-pact-formed/">Warsaw Pact Formed*</a>
+    </td>
+    <td>3</td>
+    <td>Remove all US influence from 4 countries in Eastern Europe or add 5 USSR Influence to any countries in Eastern Europe (adding no more than 2 Influence per country). This Event allows the “#21 – NATO” card to be played as an Event.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>17</td>
+    <td>
+      <a title="De Gaulle Leads ;France" href="http://twilightstrategy.com/2012/02/24/de-gaulle-leads-france/">De Gaulle Leads France*</a>
+    </td>
+    <td>3</td>
+    <td>Remove 2 US Influence from France and add 1 USSR Influence to France. This Event cancels the effect(s) of the “#21 – NATO” Event for France only.</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>18</td>
+    <td>
+      <a title="Captured Nazi ;Scientist" href="http://twilightstrategy.com/2012/02/27/captured-nazi-scientist/">Captured Nazi Scientist*</a>
+    </td>
+    <td>1</td>
+    <td>Move the Space Race Marker ahead by 1 space.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>19</td>
+    <td>
+      <a title="Truman ;Doctrine" href="http://twilightstrategy.com/2012/03/02/truman-doctrine/">Truman Doctrine*</a>
+    </td>
+    <td>1</td>
+    <td>Remove all USSR Influence from a single uncontrolled country in Europe.</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>20</td>
+    <td>
+      <a title="Olympic ;Games" href="http://twilightstrategy.com/2012/03/12/olympic-games/">Olympic Games</a>
+    </td>
+    <td>2</td>
+    <td>This player sponsors the Olympics. The opponent must either participate or boycott. If the opponent participates, each player rolls a die and the sponsor adds 2 to their roll. The player with the highest modified die roll receives 2 VP (reroll ties). If the opponent boycotts, degrade the DEFCON level by 1 and the sponsor may conduct Operations as if they played a 4 Ops card.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>21</td>
+    <td>
+      <a title="NATO" href="http://twilightstrategy.com/2012/03/12/nato/">
+        <span style="text-decoration:underline;">NATO*</span>
+      </a>
+    </td>
+    <td>4</td>
+    <td>The USSR cannot make Coup Attempts or Realignment rolls against any US controlled countries in Europe. US controlled countries in Europe cannot be attacked by play of the “#36 – Brush War” Event. This card requires prior play of either the “#16 – Warsaw Pact Formed” or “#23 – Marshall Plan” Event(s) in order to be played as an Event.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>22</td>
+    <td>
+      <a title="Independent ;Reds" href="http://twilightstrategy.com/2012/03/13/independent-reds/">Independent Reds*</a>
+    </td>
+    <td>2</td>
+    <td>Add US Influence to either Yugoslavia, Romania, Bulgaria, Hungary, or Czechoslovakia so that it equals the USSR Influence in that country.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>23</td>
+    <td>
+      <a title="Marshall ;Plan" href="http://twilightstrategy.com/2012/03/16/marshall-plan/">
+        <span style="text-decoration:underline;">Marshall Plan*</span>
+      </a>
+    </td>
+    <td>4</td>
+    <td>Add 1 US Influence to each of any 7 non-USSR controlled countries in Western Europe. This Event allows the “#21 – NATO” card to be played as an Event.</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>24</td>
+    <td>
+      <a title="Indo-Pakistani ;War" href="http://twilightstrategy.com/2012/03/19/indo-pakistani-war/">Indo-Pakistani War</a>
+    </td>
+    <td>2</td>
+    <td>India invades Pakistan or vice versa (player’s choice). Roll a die and subtract (-1) from the die roll for every enemy controlled country adjacent to the target of the invasion (India or Pakistan). On a modified die roll of 4-6, the player receives 2 VP and replaces all the opponent’s Influence in the target country with their Influence. The player adds 2 to its Military Operations Track.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>25</td>
+    <td>
+      <a title="Containment" href="http://twilightstrategy.com/2012/03/20/containment/">Containment*</a>
+    </td>
+    <td>3</td>
+    <td>All Operations cards played by the US, for the remainder of this turn, receive +1 to their Operations value (to a maximum of 4 Operations per card).</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>26</td>
+    <td>
+      <a title="CIA ;Created" href="http://twilightstrategy.com/2012/03/26/cia-created/">CIA Created*</a>
+    </td>
+    <td>1</td>
+    <td>The USSR reveals their hand of cards for this turn. The US may use the Operations value of this card to conduct Operations.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>27</td>
+    <td>
+      <a title="US/Japan Mutual Defense ;Pact" href="http://twilightstrategy.com/2012/03/27/usjapan-mutual-defense-pact/">
+        <span style="text-decoration:underline;">US/Japan Mutual Defense Pact*</span>
+      </a>
+    </td>
+    <td>4</td>
+    <td>The US adds sufficient Influence to Japan for Control. The USSR cannot make Coup Attempts or Realignment rolls against Japan.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>28</td>
+    <td>
+      <a title="Suez ;Crisis" href="http://twilightstrategy.com/2012/03/29/suez-crisis/">Suez Crisis*</a>
+    </td>
+    <td>3</td>
+    <td>Remove a total of 4 US Influence from France, the United Kingdom and Israel (removing no more than 2 Influence per country).</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>29</td>
+    <td>
+      <a title="East European ;Unrest" href="http://twilightstrategy.com/2012/04/02/east-european-unrest/">East European Unrest</a>
+    </td>
+    <td>3</td>
+    <td>Early or Mid War: Remove 1 USSR Influence from 3 countries in Eastern Europe. Late War: Remove 2 USSR Influence from 3 countries in Eastern Europe.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>30</td>
+    <td>
+      <a title="Decolonization" href="http://twilightstrategy.com/2012/04/05/decolonization/">Decolonization</a>
+    </td>
+    <td>2</td>
+    <td>Add 1 USSR Influence to each of any 4 countries in Africa and/or Southeast Asia.</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>31</td>
+    <td>
+      <a title="Red ;Scare/Purge" href="http://twilightstrategy.com/2012/04/23/red-scarepurge/">Red Scare/Purge</a>
+    </td>
+    <td>4</td>
+    <td>All Operations cards played by the opponent, for the remainder of this turn, receive -1 to their Operations value (to a minimum value of 1 Operations point).</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>32</td>
+    <td>
+      <a title="UN ;Intervention" href="http://twilightstrategy.com/2012/05/07/un-intervention/">UN Intervention</a>
+    </td>
+    <td>1</td>
+    <td>Play this card simultaneously with a card containing an opponent’s associated Event. The opponent’s associated Event is canceled but you may use the Operations value of the opponent’s card to conduct Operations. This Event cannot be played during the Headline Phase.</td>
+  </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>33</td>
+    <td>
+      <a title="De-Stalinization" href="http://twilightstrategy.com/2012/05/29/de-stalinization/">De-Stalinization*</a>
+    </td>
+    <td>3</td>
+    <td>The USSR may reallocate up to a total of 4 Influence from one or more countries to any non-US controlled countries (adding no more than 2 Influence per country).</td>
+  </tr>
+  <tr style="background-color:#d9d9d9;">
+    <td>34</td>
+    <td>
+      <a title="Nuclear Test ;Ban" href="http://twilightstrategy.com/2012/06/11/nuclear-test-ban/">Nuclear Test Ban</a>
+    </td>
+    <td>4</td>
+    <td>The player receives VP equal to the current DEFCON level minus 2 then improves the DEFCON level by 2.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>35</td>
+    <td>
+      <a title="Formosan ;Resolution" href="http://twilightstrategy.com/2012/07/02/formosan-resolution/">
+        <span style="text-decoration:underline;">Formosan Resolution*</span>
+      </a>
+    </td>
+    <td>2</td>
+    <td>If this card’s Event is in effect, Taiwan will be treated as a Battleground country, for scoring purposes only, if Taiwan is US controlled when the Asia Scoring Card is played. This Event is cancelled after the US has played the “#6 – The China Card” card.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>103</td>
+    <td>
+      <a title="Defectors" href="http://twilightstrategy.com/2012/07/09/defectors/">Defectors</a>
+    </td>
+    <td>2</td>
+    <td>The US may play this card during the Headline Phase in order to cancel the USSR Headline Event (including a scoring card). The canceled card is placed into the discard pile. If this card is played by the USSR during its action round, the US gains 1 VP.</td>
+  </tr>
+</tbody>

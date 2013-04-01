@@ -9,19 +9,32 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <p>konio</p>
-            <ul data-bind="foreach: cards">
+            <%--<button data-bind="click:start3rdTurn">Start 3rd turn</button>--%>
+            <%--<h2>Sure in hands this turn</h2>
+            <ul data-bind="foreach: sureInHands">
 
                 <li>
                     <button data-bind="text: Name"></button>
-                    <label>
-                        <input type="checkbox" name="flavorGroup" />
-                        <span data-bind="text: Name"></span>
-                    </label>
+                </li>
+
+            </ul>--%>
+
+            <h2>In deck or in hands</h2>
+            <ul data-bind="foreach: cards">
+
+                <li>
+                    <button data-bind="text: Name, click: $parent.discard"></button>
                 </li>
 
             </ul>
-           
+            <h2>sure in discarded</h2>
+            <ul data-bind="foreach: discarded">
+
+                <li>
+                    <button data-bind="text: Name"></button>
+                </li>
+
+            </ul>
         </div>
     </form>
 

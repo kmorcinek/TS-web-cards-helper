@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,11 +21,14 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 
         protected string GetCards()
         {
-            var cards = new Card[]
-                {
-                    new Card{Name = "5 Year plan"},
-                    new Card{Name = "Truman"},
-                };
+            var cards = new List<Card>();
+
+            var names = File.ReadAllLines(@"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src\KrzysztofMorcinek.TSCardsHelper.Web\cardNames.txt");
+
+            foreach (var name in names)
+            {
+                cards.Add(new Card{Name = name});
+            }
 
             return JsonNetSerializer.SerializeToString(cards);
         }

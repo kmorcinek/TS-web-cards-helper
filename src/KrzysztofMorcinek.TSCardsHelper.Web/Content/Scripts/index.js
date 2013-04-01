@@ -6,6 +6,11 @@
         self.cards = ko.mapping.fromJS(cards);
 
         self.discarded = ko.observableArray([]);
+
+        self.discard = function(card) {
+            self.cards.remove(card);
+            self.discarded.push(card);
+        };
     };
 
     ko.applyBindings(new viewModel(cards));

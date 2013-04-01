@@ -61,6 +61,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cardNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CardsToParse.xml" />
     <Content Include="Content\Scripts\index.js" />
     <Content Include="index.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
