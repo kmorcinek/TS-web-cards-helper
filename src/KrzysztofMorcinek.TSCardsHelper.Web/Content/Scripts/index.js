@@ -12,6 +12,11 @@
             self.cards.remove(card);
             self.discardedPile.push(card);
         };
+        
+        self.remove = function (card) {
+            self.cards.remove(card);
+            self.removedPile.push(card);
+        };
     };
 
     ko.applyBindings(new viewModel(cards));

@@ -27,7 +27,7 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 
             foreach (var name in names)
             {
-                cards.Add(new Card{Name = name});
+                cards.Add(new Card { Name = name, CanRemove = name.EndsWith("*") });
             }
 
             return JsonNetSerializer.SerializeToString(cards);

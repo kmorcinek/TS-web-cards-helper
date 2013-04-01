@@ -66,6 +66,7 @@
     </Content>
     <Content Include="CardsToParse.xml" />
     <Content Include="Content\Scripts\index.js" />
+    <Content Include="Content\Styles\Style.css" />
     <Content Include="index.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />

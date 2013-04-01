@@ -24,7 +24,9 @@
                 <ul data-bind="foreach: cards">
 
                     <li>
-                        <button data-bind="text: Name, click: $parent.discard"></button>
+                        <button data-bind="click: $parent.discard">Discard</button>
+                        <span data-bind="text: Name"></span>
+                        <button data-bind="click: $parent.remove, visible: CanRemove">Remove</button>
                     </li>
 
                 </ul>
