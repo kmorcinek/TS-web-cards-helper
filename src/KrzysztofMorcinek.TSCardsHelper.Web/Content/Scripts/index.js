@@ -5,11 +5,12 @@
 
         self.cards = ko.mapping.fromJS(cards);
 
-        self.discarded = ko.observableArray([]);
+        self.discardedPile = ko.observableArray([]);
+        self.removedPile = ko.observableArray([]);
 
         self.discard = function(card) {
             self.cards.remove(card);
-            self.discarded.push(card);
+            self.discardedPile.push(card);
         };
     };
 

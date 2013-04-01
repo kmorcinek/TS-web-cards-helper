@@ -4,11 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Twilight struggle cards helper</title>
+    <link type="text/css" href="/Content/Styles/Style.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div id="main-container">
             <%--<button data-bind="click:start3rdTurn">Start 3rd turn</button>--%>
             <%--<h2>Sure in hands this turn</h2>
             <ul data-bind="foreach: sureInHands">
@@ -18,23 +19,28 @@
                 </li>
 
             </ul>--%>
+            <div>
+                <h2>In deck or in hands</h2>
+                <ul data-bind="foreach: cards">
 
-            <h2>In deck or in hands</h2>
-            <ul data-bind="foreach: cards">
+                    <li>
+                        <button data-bind="text: Name, click: $parent.discard"></button>
+                    </li>
 
-                <li>
-                    <button data-bind="text: Name, click: $parent.discard"></button>
-                </li>
-
-            </ul>
-            <h2>sure in discarded</h2>
-            <ul data-bind="foreach: discarded">
-
-                <li>
-                    <button data-bind="text: Name"></button>
-                </li>
-
-            </ul>
+                </ul>
+            </div>
+            <div>
+                <h2>Discarded pile</h2>
+                <ul data-bind="foreach: discardedPile">
+                    <li data-bind="text: Name"/>
+                </ul>
+            </div>
+            <div>
+                <h2>Removed pile</h2>
+                <ul data-bind="foreach: removedPile">
+                    <li data-bind="text: Name"/>
+                </ul>
+            </div>
         </div>
     </form>
 
