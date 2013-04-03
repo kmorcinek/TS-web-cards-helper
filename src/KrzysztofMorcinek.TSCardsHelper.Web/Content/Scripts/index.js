@@ -24,17 +24,21 @@
             self.removedPile.push(card);
         };
 
-        self.enable3rdTurn = ko.observable(true);
-        self.start3rdTurn = function () {
-            ko.utils.arrayForEach(self.cards(), function(card) {
+        self.reshuffleCards = function() {
+            ko.utils.arrayForEach(self.cards(), function (card) {
                 self.sureInHands.push(card);
             });
             self.cards.removeAll();
-            
+
             ko.utils.arrayForEach(self.discardedPile(), function (card) {
                 self.cards.push(card);
             });
             self.discardedPile.removeAll();
+        };
+
+        self.enable3rdTurn = ko.observable(true);
+        self.start3rdTurn = function () {
+            self.reshuffleCards();
 
             self.enable3rdTurn(false);
             self.hasMidWarCards(true);
@@ -47,6 +51,15 @@
             });
             
             self.hasMidWarCards(false);
+            self.has7thTurn(true);
+        };
+        
+        self.has7thTurn = ko.observable(false);
+        self.start7thTurn = function () {
+            self.reshuffleCards();
+
+            self.has7thTurn(false);
+//            self.hasMidWarCards(true);
         };
     };
 
