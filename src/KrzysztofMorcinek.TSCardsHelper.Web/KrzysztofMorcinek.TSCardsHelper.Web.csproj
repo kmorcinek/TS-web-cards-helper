@@ -68,6 +68,7 @@
     <Content Include="Content\Scripts\index.js" />
     <Content Include="Content\Styles\Style.css" />
     <Content Include="index.aspx" />
+    <None Include="Properties\PublishProfiles\angelo.hostingasp.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\jquery-1.9.1.js" />
