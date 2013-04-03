@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrzysztofMorcinek.TSCardsHelper.Web", "KrzysztofMorcinek.TSCardsHelper.Web\KrzysztofMorcinek.TSCardsHelper.Web.csproj", "{06BB135D-32B0-4723-A712-F49959E84654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrzysztofMorcinek.TSCardsHelper.Parser", "KrzysztofMorcinek.TSCardsHelper.Parser\KrzysztofMorcinek.TSCardsHelper.Parser.csproj", "{30F40044-EE08-46FE-8C7D-5FA03D3C7DDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{06BB135D-32B0-4723-A712-F49959E84654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BB135D-32B0-4723-A712-F49959E84654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06BB135D-32B0-4723-A712-F49959E84654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F40044-EE08-46FE-8C7D-5FA03D3C7DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F40044-EE08-46FE-8C7D-5FA03D3C7DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F40044-EE08-46FE-8C7D-5FA03D3C7DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F40044-EE08-46FE-8C7D-5FA03D3C7DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
