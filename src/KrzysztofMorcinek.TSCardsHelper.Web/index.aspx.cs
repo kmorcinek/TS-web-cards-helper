@@ -23,7 +23,7 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         {
             var cards = new List<Card>();
 
-            var names = File.ReadAllLines(@"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src\KrzysztofMorcinek.TSCardsHelper.Web\cardNames.txt");
+            var names = File.ReadAllLines(@"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src\KrzysztofMorcinek.TSCardsHelper.Web\midWarCards.txt");
 
             foreach (var name in names)
             {

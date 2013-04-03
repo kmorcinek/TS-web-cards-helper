@@ -1,9 +1,12 @@
-﻿var indexPage = function (cards) {
+﻿var indexPage = function (allCards) {
 
-    var viewModel = function (cards) {
+    var viewModel = function (allCards) {
         var self = this; // TODO remove it?
 
-        self.cards = ko.mapping.fromJS(cards);
+        self.earlyWarCards = allCards.EarlyWar;
+        self.midWarCards = allCards.MidWar;
+
+        self.cards = ko.observableArray(self.earlyWarCards);
 
         self.sureInHands = ko.observableArray([]);
         self.discardedPile = ko.observableArray([]);
@@ -38,11 +41,14 @@
         };
 
         self.hasMidWarCards = ko.observable(false);
-        self.midWarCards = function () {
-
+        self.addMidWarCards = function () {
+            ko.utils.arrayForEach(self.midWarCards, function (card) {
+                self.cards.push(card);
+            });
+            
             self.hasMidWarCards(false);
         };
     };
 
-    ko.applyBindings(new viewModel(cards));
+    ko.applyBindings(new viewModel(allCards));
 };
