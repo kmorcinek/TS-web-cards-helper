@@ -1,1 +1,3 @@
 Bootstrap ju¿ dla przycisku.
+
+Brakuje opcjonalnych kart w ...ToParse...

@@ -17,14 +17,14 @@ namespace KrzysztofMorcinek.TSCardsHelper.Parser
         private static void ParseCardsPage()
         {
             var path =
-                @"DataFiles\MidWarToParse.xml";
+                @"DataFiles\LateWarToParsexml.xml";
 
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
 
             var tbody = doc.ChildNodes[0];
 
-            using (var sw = new StreamWriter("midWarCards.txt"))
+            using (var sw = new StreamWriter("lateWarCards.txt"))
             {
                 foreach (XmlNode row in tbody)
                 {

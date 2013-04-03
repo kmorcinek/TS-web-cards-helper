@@ -64,10 +64,8 @@
     <Content Include="cardNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DataFiles\CardsToParse.xml" />
     <Content Include="Content\Scripts\index.js" />
     <Content Include="Content\Styles\Style.css" />
-    <Content Include="DataFiles\MidWarToParse.xml" />
     <Content Include="index.aspx" />
     <None Include="Properties\PublishProfiles\angelo.hostingasp.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
