@@ -21,6 +21,7 @@
             self.removedPile.push(card);
         };
 
+        self.enable3rdTurn = ko.observable(true);
         self.start3rdTurn = function () {
             ko.utils.arrayForEach(self.cards(), function(card) {
                 self.sureInHands.push(card);
@@ -31,6 +32,15 @@
                 self.cards.push(card);
             });
             self.discardedPile.removeAll();
+
+            self.enable3rdTurn(false);
+            self.hasMidWarCards(true);
+        };
+
+        self.hasMidWarCards = ko.observable(false);
+        self.midWarCards = function () {
+
+            self.hasMidWarCards(false);
         };
     };
 

@@ -8,8 +8,9 @@
     <link type="text/css" href="/Content/Styles/Style.css" rel="stylesheet" />
 </head>
 <body>
+    <button data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
+    <button data-bind="click:midWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
     <div id="main-container">
-        <button data-bind="click:start3rdTurn">Start 3rd turn</button>
         <div>
             <h2>Sure in hands this turn</h2>
             <ul data-bind="foreach: sureInHands">
