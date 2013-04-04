@@ -1,3 +1,7 @@
 Bootstrap ju¿ dla przycisku.
 
 Brakuje opcjonalnych kart w ...ToParse...
+
+ExpandoObject
+
+bez pliku tymczasowego.
