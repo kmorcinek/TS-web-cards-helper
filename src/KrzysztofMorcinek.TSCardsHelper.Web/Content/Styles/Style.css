@@ -6,3 +6,7 @@
 .connected-cards {
     height: 50px;
 }
+
+.connected-cards li{
+    display: inline;
+}
