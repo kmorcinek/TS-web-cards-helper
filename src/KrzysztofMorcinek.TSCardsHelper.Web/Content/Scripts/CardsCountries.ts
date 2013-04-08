@@ -12,7 +12,13 @@ class Card {
 }
 
 class Country {
-    constructor(public id: number, public name: string, public cardIds: number[]) { }
+    public coords: string;
+    constructor(public id: number, public name: string, public cardIds: number[], private x: number, private y: number) {
+        var offsetX = 55;
+        var offsetY = 38;
+
+        this.coords = x + "," + y + "," + (x + offsetX) + "," + (y + offsetY);
+    }
 }
 
 class CardsCountries {
@@ -20,7 +26,7 @@ class CardsCountries {
     examinedCountry = ko.observable("");
     public showForCountry: (countryArea) => void;
 
-    constructor(public cards: Card[], public countries: Country, private mapAreas) {
+    constructor(public cards: Card[], public countries: Country[]) {
 
         this.showForCountry = (countryArea) => {
             this.getCards(countryArea.id);

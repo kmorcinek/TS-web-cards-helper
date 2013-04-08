@@ -12,7 +12,7 @@
     <img src="/images/TS_Vassal_board.PNG" alt="HTML Map"
         border-width="0" usemap="#countries" />
 
-    <map name="countries" data-bind="foreach: mapAreas">
+    <map name="countries" data-bind="foreach: countries">
         <area shape="rect"
             data-bind="event: { mouseover: $parent.showForCountry }, attr: {coords: coords} " />
     </map>

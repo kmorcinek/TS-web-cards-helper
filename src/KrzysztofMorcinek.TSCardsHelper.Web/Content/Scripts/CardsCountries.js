@@ -8,18 +8,22 @@ var Card = (function () {
     return Card;
 })();
 var Country = (function () {
-    function Country(id, name, cardIds) {
+    function Country(id, name, cardIds, x, y) {
         this.id = id;
         this.name = name;
         this.cardIds = cardIds;
+        this.x = x;
+        this.y = y;
+        var offsetX = 55;
+        var offsetY = 38;
+        this.coords = x + "," + y + "," + (x + offsetX) + "," + (y + offsetY);
     }
     return Country;
 })();
 var CardsCountries = (function () {
-    function CardsCountries(cards, countries, mapAreas) {
+    function CardsCountries(cards, countries) {
         this.cards = cards;
         this.countries = countries;
-        this.mapAreas = mapAreas;
         var _this = this;
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable("");
