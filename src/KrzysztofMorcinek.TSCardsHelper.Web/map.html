@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+    <title>Using JavaScript Image Map</title>
+    <script type="text/javascript">
+<!--
+    function showForCountry(countryId) {
+        document.myform.stage.value = countryId;
+    }
+    //-->
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <input type="text" name="stage" size="20" />
+    </form>
+    <!-- Create  Mappings -->
+    <img src="/images/ts_board.jpg" alt="HTML Map"
+        border-width="0" usemap="#tutorials" />
+
+    <map name="tutorials">
+        <area shape="rect"
+            coords="557,480,600,570"
+            alt="Perl Tutorial"
+            onmouseover=" showForCountry('Canada')" />
+
+        <area shape="rect"
+            coords="22,83,126,125"
+            alt="HTML Tutorial"
+            onmouseover=" showForCountry('html')" />
+    </map>
+</body>
+</html>
