@@ -10,12 +10,10 @@
 
     <img src="/images/TS_Vassal_board.PNG" alt="HTML Map"
         border-width="0" usemap="#countries" />
-    
+
     <map name="countries" data-bind="foreach: mapAreas">
         <area shape="rect"
-            coords="230,195,285,235"
-            alt="Perl Tutorial"
-            data-bind="event: { mouseover: $parent.showForCountry } "/>
+            data-bind="event: { mouseover: $parent.showForCountry }, attr: {coords: coords} " />
     </map>
 
     <script src="Scripts/knockout-2.2.1.js"></script>

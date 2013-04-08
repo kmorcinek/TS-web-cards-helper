@@ -16,15 +16,12 @@ var Country = (function () {
     return Country;
 })();
 var CardsCountries = (function () {
-    function CardsCountries(cards, countries) {
+    function CardsCountries(cards, countries, mapAreas) {
         this.cards = cards;
         this.countries = countries;
+        this.mapAreas = mapAreas;
         var _this = this;
         this.connectedCards = ko.observableArray([]);
-        this.mapAreas = ko.observableArray([]);
-        this.mapAreas.push({
-            id: 1
-        });
         this.showForCountry = function (countryArea) {
             _this.getCards(countryArea.id);
         };
