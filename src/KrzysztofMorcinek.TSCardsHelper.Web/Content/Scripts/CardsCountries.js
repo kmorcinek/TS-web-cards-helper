@@ -27,23 +27,16 @@ var CardsCountries = (function () {
         var _this = this;
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable("");
-        this.showForCountry = function (countryArea) {
-            _this.getCards(countryArea.id);
+        this.showForCountry = function (country) {
+            var returningCards = _.filter(_this.cards, function (card) {
+                return _.contains(country.cardIds, card.id);
+            });
+            _this.examinedCountry(country.name);
+            _this.connectedCards.valueWillMutate();
+            _this.connectedCards.removeAll();
+            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, returningCards);
+            _this.connectedCards.valueHasMutated();
         };
     }
-    CardsCountries.prototype.getCards = function (countryId) {
-        var country = underscoreJS.findWhere(this.countries, {
-            id: countryId
-        });
-        var returningCards = _.filter(this.cards, function (card) {
-            return _.contains(country.cardIds, card.id);
-        });
-        this.examinedCountry(country.name);
-        this.connectedCards.valueWillMutate();
-        this.connectedCards.removeAll();
-        KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
-        this.connectedCards.valueHasMutated();
-        return returningCards;
-    };
     return CardsCountries;
 })();

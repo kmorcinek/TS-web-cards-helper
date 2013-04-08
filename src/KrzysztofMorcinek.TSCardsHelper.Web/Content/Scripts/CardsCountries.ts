@@ -28,25 +28,17 @@ class CardsCountries {
 
     constructor(public cards: Card[], public countries: Country[]) {
 
-        this.showForCountry = (countryArea) => {
-            this.getCards(countryArea.id);
+        this.showForCountry = (country) => {
+            var returningCards = _.filter(this.cards, function (card) {
+                return _.contains(country.cardIds, card.id);
+            });
+
+            this.examinedCountry(country.name);
+
+            this.connectedCards.valueWillMutate();
+            this.connectedCards.removeAll();
+            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
+            this.connectedCards.valueHasMutated();
         }
-    }
-
-    getCards(countryId: number) {
-        var country = underscoreJS.findWhere(this.countries, { id: countryId });
-
-        var returningCards = _.filter(this.cards, function (card) {
-            return _.contains(country.cardIds, card.id);
-        });
-
-        this.examinedCountry(country.name);
-
-        this.connectedCards.valueWillMutate();
-        this.connectedCards.removeAll();
-        KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
-        this.connectedCards.valueHasMutated();
-
-        return returningCards;
     }
 }
