@@ -2,7 +2,7 @@
 
 var countries = [
     new Country(1, "Canada", [2]),
-    new Country(2, "UK", [1])
+    new Country(2, "UK", [1,2])
 ];
 
 var cc = new CardsCountries(cards, countries);

@@ -61,17 +61,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Content\Scripts\Card.ts" />
-    <Content Include="Content\Scripts\Card.js">
-      <DependentUpon>Card.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Content\Scripts\CardsCountries.ts" />
     <Content Include="Content\Scripts\CardsCountries.js">
       <DependentUpon>CardsCountries.ts</DependentUpon>
-    </Content>
-    <TypeScriptCompile Include="Content\Scripts\Country.ts" />
-    <Content Include="Content\Scripts\Country.js">
-      <DependentUpon>Country.ts</DependentUpon>
     </Content>
     <Content Include="Content\Scripts\index.js" />
     <Content Include="Content\Scripts\map.js" />

@@ -13,13 +13,14 @@ var Country = (function () {
     }
     return Country;
 })();
+underscoreJS = _;
 var CardsCountries = (function () {
     function CardsCountries(cards, countries) {
         this.cards = cards;
         this.countries = countries;
     }
     CardsCountries.prototype.getCards = function (countryId) {
-        var country = _.findWhere(this.countries, {
+        var country = underscoreJS.findWhere(this.countries, {
             id: countryId
         });
         var returningCards = _.filter(this.cards, function (card) {
