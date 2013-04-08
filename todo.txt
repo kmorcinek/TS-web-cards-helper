@@ -5,3 +5,7 @@ Brakuje opcjonalnych kart w ...ToParse...
 ExpandoObject
 
 bez pliku tymczasowego.
+
+Lista rzeczy które trzeba zawsze mieæ (równie¿ per side) np:
+2x overprotect Italy.
+Overprotect Asia.
