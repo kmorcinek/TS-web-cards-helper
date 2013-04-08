@@ -5,6 +5,7 @@
 
         self.earlyWarCards = allCards.EarlyWar;
         self.midWarCards = allCards.MidWar;
+        self.lateWarCards = allCards.LateWar;
 
         self.cards = ko.observableArray(self.earlyWarCards);
 
@@ -59,7 +60,16 @@
             self.reshuffleCards();
 
             self.has7thTurn(false);
-//            self.hasMidWarCards(true);
+            self.hasLateWarCards(true);
+        };
+        
+        self.hasLateWarCards = ko.observable(false);
+        self.addLateWarCards = function () {
+            ko.utils.arrayForEach(self.lateWarCards, function (card) {
+                self.cards.push(card);
+            });
+
+            self.hasLateWarCards(false);
         };
     };
 
