@@ -17,7 +17,10 @@ class Country {
 
 class CardsCountries {
     connectedCards = ko.observableArray([]);
-    constructor(public cards: Card[], public countries: Country) { }
+    mapAreas = ko.observableArray([]);
+    constructor(public cards: Card[], public countries: Country) {
+        this.mapAreas.push({ id: "1" });
+    }
 
     getCards(countryId: number) {
         var country = underscoreJS.findWhere(this.countries, { id: countryId });
@@ -31,5 +34,9 @@ class CardsCountries {
         this.connectedCards.valueHasMutated();
 
         return returningCards;
+    }
+
+    showForCountry(countryArea) {
+        this.getCards(countryArea.id);
     }
 }
