@@ -6,9 +6,10 @@ var CardsCountries = (function () {
         this.countries = countries;
     }
     CardsCountries.prototype.getCards = function (countryId) {
-        return [
-            this.cards[0]
-        ];
+        var returningCards = _.filter(this.cards, function (card) {
+            return _.contains(this.countries[countryId].cardIds, card.id);
+        });
+        return returningCards;
     };
     return CardsCountries;
 })();

@@ -66,10 +66,16 @@
       <DependentUpon>Card.ts</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Content\Scripts\CardsCountries.ts" />
+    <Content Include="Content\Scripts\Card.min.js">
+      <DependentUpon>Card.ts</DependentUpon>
+    </Content>
     <Content Include="Content\Scripts\CardsCountries.js">
       <DependentUpon>CardsCountries.ts</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Content\Scripts\Country.ts" />
+    <Content Include="Content\Scripts\CardsCountries.min.js">
+      <DependentUpon>CardsCountries.ts</DependentUpon>
+    </Content>
     <Content Include="Content\Scripts\Country.js">
       <DependentUpon>Country.ts</DependentUpon>
     </Content>
