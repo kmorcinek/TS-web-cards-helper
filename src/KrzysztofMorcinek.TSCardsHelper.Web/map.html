@@ -1,13 +1,10 @@
 ﻿<html>
 <head>
     <title>Using JavaScript Image Map</title>
+    <link type="text/css" href="Content/Styles/Style.css" rel="stylesheet" />
 </head>
 <body>
-    <form name="myform">
-        <input type="text" name="stage" size="20" />
-    </form>
-    
-    <ul data-bind="foreach: connectedCards">
+    <ul class="connected-cards" data-bind="foreach: connectedCards">
         <li><span data-bind="text: name"></span></li>
     </ul>
 

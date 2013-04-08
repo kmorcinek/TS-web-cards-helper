@@ -10,6 +10,5 @@ var cc = new CardsCountries(cards, countries);
 ko.applyBindings(cc);
 
 function showForCountry(countryId) {
-    var cards = cc.getCards(countryId);
-    document.myform.stage.value = cards[0].name;
+    cc.getCards(countryId);
 }
