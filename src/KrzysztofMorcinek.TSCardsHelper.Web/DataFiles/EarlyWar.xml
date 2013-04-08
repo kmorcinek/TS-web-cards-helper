@@ -295,4 +295,30 @@
     <td>2</td>
     <td>The US may play this card during the Headline Phase in order to cancel the USSR Headline Event (including a scoring card). The canceled card is placed into the discard pile. If this card is played by the USSR during its action round, the US gains 1 VP.</td>
   </tr>
+  <tr style="background-color:#f4cccc;">
+    <td>104</td>
+    <td>
+      <a title="The Cambridge Five" href="http://twilightstrategy.com/2012/07/11/the-cambridge-five/">The Cambridge Five</a>
+    </td>
+    <td>2</td>
+    <td>The US reveals all scoring cards in their hand of cards. The USSR player may add 1 USSR Influence to a single Region named on one of the revealed scoring cards. This card can not be played as an Event during the Late War.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+    <td>105</td>
+    <td>
+      <a title="Special Relationship" href="http://twilightstrategy.com/2012/07/18/special-relationship/">Special Relationship</a>
+    </td>
+    <td>2</td>
+    <td>Add 1 US Influence to a single country adjacent to the U.K. if the U.K. is US-controlled but NATO is not in effect. Add 2 US Influence to a single country in Western Europe, and the US gains 2 VP, if the U.K. is US-controlled and NATO is in effect.</td>
+  </tr>
+  <tr style="background-color:#c9daf8;">
+      <td>106</td>
+      <td>
+        <span style="text-decoration:underline;">
+          <a title="NORAD" href="http://twilightstrategy.com/2012/07/25/norad/">NORAD</a>*
+        </span>
+      </td>
+      <td>3</td>
+      <td>Add 1 US Influence to a single country containing US Influence, at the end of each Action Round, if Canada is US-controlled and the DEFCON level moved to 2 during that Action Round. This Event is canceled by the “#42 – Quagmire” Event.</td>
+    </tr>
 </tbody>
