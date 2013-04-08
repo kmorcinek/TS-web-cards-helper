@@ -61,9 +61,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cardNames.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Scripts\index.js" />
     <Content Include="Content\Styles\Style.css" />
     <Content Include="DataFiles\EarlyWar.xml">
@@ -79,7 +76,6 @@
     <None Include="Properties\PublishProfiles\angelo.hostingasp.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="index.html" />
-    <Content Include="midWarCards.txt" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
