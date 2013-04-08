@@ -8,7 +8,3 @@ var countries = [
 var cc = new CardsCountries(cards, countries);
 
 ko.applyBindings(cc);
-
-//function showForCountry(countryId) {
-//    cc.getCards(countryId);
-//}

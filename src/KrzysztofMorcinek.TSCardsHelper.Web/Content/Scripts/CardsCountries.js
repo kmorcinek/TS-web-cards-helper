@@ -19,11 +19,15 @@ var CardsCountries = (function () {
     function CardsCountries(cards, countries) {
         this.cards = cards;
         this.countries = countries;
+        var _this = this;
         this.connectedCards = ko.observableArray([]);
         this.mapAreas = ko.observableArray([]);
         this.mapAreas.push({
-            id: "1"
+            id: 1
         });
+        this.showForCountry = function (countryArea) {
+            _this.getCards(countryArea.id);
+        };
     }
     CardsCountries.prototype.getCards = function (countryId) {
         var country = underscoreJS.findWhere(this.countries, {
@@ -37,9 +41,6 @@ var CardsCountries = (function () {
         KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
         this.connectedCards.valueHasMutated();
         return returningCards;
-    };
-    CardsCountries.prototype.showForCountry = function (countryArea) {
-        this.getCards(countryArea.id);
     };
     return CardsCountries;
 })();

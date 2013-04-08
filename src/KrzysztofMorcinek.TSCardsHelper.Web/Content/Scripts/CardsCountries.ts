@@ -18,8 +18,14 @@ class Country {
 class CardsCountries {
     connectedCards = ko.observableArray([]);
     mapAreas = ko.observableArray([]);
+    public showForCountry: (countryArea) => void;
+
     constructor(public cards: Card[], public countries: Country) {
-        this.mapAreas.push({ id: "1" });
+        this.mapAreas.push({ id: 1 });
+
+        this.showForCountry = (countryArea) => {
+            this.getCards(countryArea.id);
+        }
     }
 
     getCards(countryId: number) {
@@ -34,9 +40,5 @@ class CardsCountries {
         this.connectedCards.valueHasMutated();
 
         return returningCards;
-    }
-
-    showForCountry(countryArea) {
-        this.getCards(countryArea.id);
     }
 }
