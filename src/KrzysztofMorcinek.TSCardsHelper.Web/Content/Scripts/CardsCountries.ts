@@ -17,6 +17,7 @@ class Country {
 
 class CardsCountries {
     connectedCards = ko.observableArray([]);
+    examinedCountry = ko.observable("");
     public showForCountry: (countryArea) => void;
 
     constructor(public cards: Card[], public countries: Country, private mapAreas) {
@@ -28,9 +29,12 @@ class CardsCountries {
 
     getCards(countryId: number) {
         var country = underscoreJS.findWhere(this.countries, { id: countryId });
+
         var returningCards = _.filter(this.cards, function (card) {
             return _.contains(country.cardIds, card.id);
         });
+
+        this.examinedCountry(country.name);
 
         this.connectedCards.valueWillMutate();
         this.connectedCards.removeAll();
