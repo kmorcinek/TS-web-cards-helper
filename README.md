@@ -1,4 +1,4 @@
-TS-web-cards-helper is a lightway web app, that helps to play boardgame twilight struggle.
+TS-web-cards-helper is a lightway web app, that helps to play boardgame Twilight Struggle.
 ===================
 The Twilight struggle game itself is ranked first in world wide ranking http://boardgamegeek.com/browse/boardgame/page/1?sort=rank
 
