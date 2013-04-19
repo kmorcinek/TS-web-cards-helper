@@ -5,3 +5,5 @@ Lista rzeczy które trzeba zawsze mieæ (równie¿ per side) np:
 Overprotect Asia.
 
 Optional cards maj¹ inny html na stronie.
+
+Parse all cards.
