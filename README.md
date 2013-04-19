@@ -12,3 +12,5 @@ Main reason for developing this app
 Where it can be used?
 ===============
 I usually play online using vassal engine.
+
+Current version is hosted at http://angelo.hostingasp.pl/index.html (its playable but under development)
