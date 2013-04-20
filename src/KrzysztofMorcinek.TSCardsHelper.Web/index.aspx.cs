@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using KrzysztofMorcinek.TSCardsHelper.Web.Helpers;
+using System.IO;
 
 namespace KrzysztofMorcinek.TSCardsHelper.Web
 {
@@ -19,13 +20,16 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         protected string GetCards()
         {
             dynamic x = new ExpandoObject();
-            x.EarlyWar = CardParser.ParseCardsPage(@"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src\KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml")
+
+            // TODO annoying rights path
+            var basePath = @"D:\Work\Git\TS-web-cards-helper\src";
+            x.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
                 .Select(name => new Card {Name = name, CanRemove = name.EndsWith("*")}).ToArray();
 
-            x.MidWar = CardParser.ParseCardsPage(@"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src\KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml")
+            x.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
                 .Select(name => new Card {Name = name, CanRemove = name.EndsWith("*")}).ToArray();
 
-            x.LateWar = CardParser.ParseCardsPage(@"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src\KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml")
+            x.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml"))
                 .Select(name => new Card {Name = name, CanRemove = name.EndsWith("*")}).ToArray();
 
             return JsonNetSerializer.SerializeToString(x);
