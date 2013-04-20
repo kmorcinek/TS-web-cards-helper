@@ -17,9 +17,9 @@ var Region = (function () {
 })();
 
 var regions = [
-    new Region(1, "Europe", 0, 8),
-    new Region(11, "West Europe", 0, 0),
-    new Region(12, "East Europe", 0, 0),
+    new Region(1, "Europe", 0, 20),
+    new Region(11, "West Europe", 0, 14),
+    new Region(12, "East Europe", 13, 20),
 //    new Region(2, "Middle East"),
 //    new Region(3, "Asia"),
 //    new Region(31, "SE Asia"),
@@ -38,6 +38,18 @@ var countries = [
     new Country(6, "Denmark", [], 538, 110),
     new Country(7, "W.Germany", [10], 566, 190),
     new Country(8, "Italy", [], 576, 273),
+    new Country(9, "E.Germany", [], 586, 150),
+    new Country(10, "Sweden", [], 607, 102),
+    new Country(11, "Greece", [], 652, 318),
+    new Country(12, "Turkey", [], 758, 279),
+    new Country(13, "Austria", [], 591, 231),
+    new Country(14, "Finland", [], 686, 70),
+    new Country(15, "Yugoslavia", [], 637, 273),
+    new Country(16, "Chechoslovakia", [], 638, 190),
+    new Country(17, "Poland", [], 649, 149),
+    new Country(18, "Hungary", [], 651, 230),
+    new Country(19, "Bulgaria", [], 699, 273),
+    new Country(20, "Romania", [], 711, 230),
 ];
 
 var cc = new CardsCountries(cards, countries, countries);
