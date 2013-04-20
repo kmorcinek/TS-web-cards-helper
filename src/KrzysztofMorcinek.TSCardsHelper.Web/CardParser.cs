@@ -5,22 +5,25 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 {
     public class CardParser
     {
-        public static IEnumerable<string> ParseCardsPage(string path)
+        public static IEnumerable<Card> ParseCardsPage(string path)
         {
             var doc = new XmlDocument();
             doc.Load(path);
 
             var tbody = doc.ChildNodes[0];
 
-            var names = new List<string>();
+            var cards = new List<Card>();
 
             foreach (XmlNode row in tbody)
             {
+                var id = row.ChildNodes[0]; 
                 var secondTd = row.ChildNodes[1];
-                names.Add(secondTd.InnerText);
+                var name = secondTd.InnerText;
+
+                cards.Add(new Card { Name = name, CanRemove = name.EndsWith("*") });
             }
 
-            return names;
+            return cards;
         }
     }
 }

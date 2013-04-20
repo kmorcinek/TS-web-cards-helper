@@ -21,16 +21,16 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         {
             dynamic x = new ExpandoObject();
 
-            // TODO annoying rights path
+            // TODO annoying right path
             var basePath = @"D:\Work\Git\TS-web-cards-helper\src";
             x.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
-                .Select(name => new Card {Name = name, CanRemove = name.EndsWith("*")}).ToArray();
+                .ToArray();
 
             x.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
-                .Select(name => new Card {Name = name, CanRemove = name.EndsWith("*")}).ToArray();
+                .ToArray();
 
             x.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml"))
-                .Select(name => new Card {Name = name, CanRemove = name.EndsWith("*")}).ToArray();
+                .ToArray();
 
             return JsonNetSerializer.SerializeToString(x);
         }
