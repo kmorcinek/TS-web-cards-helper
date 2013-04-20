@@ -6,6 +6,26 @@
     new Card(105, "Special Relationship"),
     ];
 
+var Region = (function () {
+    function Region(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    return Region;
+})();
+
+var regions = [
+    new Region(1, "Europe"),
+    new Region(11, "West Europe"),
+    new Region(12, "East Europe"),
+    new Region(2, "Middle East"),
+    new Region(3, "Asia"),
+    new Region(31, "SE Asia"),
+    new Region(4, "Africa"),
+    new Region(5, "Central America"),
+    new Region(6, "South America"),
+    ];
+
 var countries = [
     new Country(1, "Canada", [2], 230, 195),
     new Country(2, "UK", [2, 28, 105], 460, 147),

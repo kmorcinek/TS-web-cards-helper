@@ -7,3 +7,5 @@ Overprotect Asia.
 Optional cards maj¹ inny html na stronie.
 
 Parse all cards.
+
+How to treat countries like Austria (both WE EE)
