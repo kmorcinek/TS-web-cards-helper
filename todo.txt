@@ -8,8 +8,4 @@ Optional cards maj¹ inny html na stronie.
 
 Parse all cards.
 
-How to treat countries like Austria (both WE EE)o
-
-Cards should have reference to countries or regions. Not opposite like now.
-
 Change js names to camelCase.

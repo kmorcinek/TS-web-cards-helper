@@ -1,9 +1,10 @@
 underscoreJS = _;
 KnockoutNewFunctions = ko;
 var Card = (function () {
-    function Card(id, name) {
+    function Card(id, name, countryIds) {
         this.id = id;
         this.name = name;
+        this.countryIds = countryIds;
     }
     return Card;
 })();
@@ -17,10 +18,9 @@ var Region = (function () {
     return Region;
 })();
 var Country = (function () {
-    function Country(id, name, cardIds, x, y) {
+    function Country(id, name, x, y) {
         this.id = id;
         this.name = name;
-        this.cardIds = cardIds;
         this.x = x;
         this.y = y;
         var offsetX = 55;
@@ -38,7 +38,7 @@ var CardsCountries = (function () {
         this.examinedCountry = ko.observable("");
         this.showForCountry = function (country) {
             var returningCards = _.filter(_this.cards, function (card) {
-                return _.contains(country.cardIds, card.id);
+                return _.contains(card.countryIds, country.id);
             });
             _this.examinedCountry(country.name);
             _this.connectedCards.valueWillMutate();

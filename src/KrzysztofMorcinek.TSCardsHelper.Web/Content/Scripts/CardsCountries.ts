@@ -8,7 +8,7 @@ declare var KnockoutNewFunctions: any;
 KnockoutNewFunctions = ko;
 
 class Card {
-    constructor(public id: number, public name: string) { }
+    constructor(public id: number, public name: string, public countryIds: number[]) { }
 }
 
 class Region {
@@ -17,7 +17,7 @@ class Region {
 
 class Country {
     public coords: string;
-    constructor(public id: number, public name: string, public cardIds: number[], private x: number, private y: number) {
+    constructor(public id: number, public name: string, private x: number, private y: number) {
         var offsetX = 55;
         var offsetY = 38;
 
@@ -34,7 +34,7 @@ class CardsCountries {
 
         this.showForCountry = (country) => {
             var returningCards = _.filter(this.cards, function (card) {
-                return _.contains(country.cardIds, card.id);
+                return _.contains(card.countryIds, country.id);
             });
 
             this.examinedCountry(country.name);
