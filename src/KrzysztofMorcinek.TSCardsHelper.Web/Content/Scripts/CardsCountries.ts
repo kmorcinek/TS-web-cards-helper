@@ -8,11 +8,18 @@ declare var KnockoutNewFunctions: any;
 KnockoutNewFunctions = ko;
 
 class Card {
-    constructor(public id: number, public name: string, public countryIds: number[]) { }
+    constructor(public id: number, public name: string, public countryIds: number[], public regionIds: number[]) { }
 }
 
 class Region {
-    constructor(public id: number, public name: string, public firstCountryId: number, public lastCountryId: number) { }
+    public countryIds: number[];
+    constructor(public name: string, private firstCountryId: number, private lastCountryId: number) {
+        this.countryIds = [];
+
+        for (var i = firstCountryId; i < lastCountryId + 1; i++) {
+            this.countryIds.push(i);
+        }
+    }
 }
 
 class Country {
@@ -30,11 +37,20 @@ class CardsCountries {
     examinedCountry = ko.observable("");
     public showForCountry: (countryArea) => void;
 
-    constructor(public cards: Card[], public countries: Country[]) {
+    constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
 
         this.showForCountry = (country) => {
             var returningCards = _.filter(this.cards, function (card) {
-                return _.contains(card.countryIds, country.id);
+                var resultFromRegion = false;
+                
+                if (card.regionIds !== undefined) {
+                    for (var i = 0; i < card.regionIds.length; i++) {
+                        var idsFromRegion = this.regions[card.regionIds[i]].countryIds;
+                        resultFromRegion = resultFromRegion || _.contains(idsFromRegion, country.id);
+                    }
+                }
+
+                return _.contains(card.countryIds, country.id) || resultFromRegion;
             });
 
             this.examinedCountry(country.name);

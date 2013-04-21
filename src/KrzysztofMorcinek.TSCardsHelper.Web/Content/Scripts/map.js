@@ -1,11 +1,11 @@
 ﻿var cards = [
-    { "id": 1, "name": "Asia Scoring" }, { "id": 2, "name": "Europe Scoring", countryIds: [0, 1, 2] }, { "id": 3, "name": "Middle East Scoring" }, { "id": 4, "name": "Duck and Cover" }, { "id": 5, "name": "Five Year Plan" }, { "id": 6, "name": "The China Card" }, { "id": 7, "name": "Socialist Governments" }, { "id": 8, "name": "Fidel*" }, { "id": 9, "name": "Vietnam Revolts*" }, { "id": 10, "name": "Blockade*" }, { "id": 11, "name": "Korean War*" }, { "id": 12, "name": "Romanian Abdication*" }, { "id": 13, "name": "Arab-Israeli War" }, { "id": 14, "name": "Comecon*" }, { "id": 15, "name": "Nasser*" }, { "id": 16, "name": "Warsaw Pact Formed*" }, { "id": 17, "name": "De Gaulle Leads France*", countryIds: [3] }, { "id": 18, "name": "Captured Nazi Scientist*" }, { "id": 19, "name": "Truman Doctrine*" }, { "id": 20, "name": "Olympic Games" }, { "id": 21, "name": "NATO*" }, { "id": 22, "name": "Independent Reds*" }, { "id": 23, "name": "Marshall Plan*" }, { "id": 24, "name": "Indo-Pakistani War" }, { "id": 25, "name": "Containment*" }, { "id": 26, "name": "CIA Created*" }, { "id": 27, "name": "US/Japan Mutual Defense Pact*" }, { "id": 28, "name": "Suez Crisis*" }, { "id": 29, "name": "East European Unrest" }, { "id": 30, "name": "Decolonization" }, { "id": 31, "name": "Red Scare/Purge" }, { "id": 32, "name": "UN Intervention" }, { "id": 33, "name": "De-Stalinization*" }, { "id": 34, "name": "Nuclear Test Ban" }, { "id": 35, "name": "Formosan Resolution*" }, { "id": 103, "name": "Defectors" }, { "id": 104, "name": "The Cambridge Five" }, { "id": 105, "name": "Special Relationship" }, { "id": 106, "name": "NORAD*" }
+    { "id": 1, "name": "Asia Scoring" }, { "id": 2, "name": "Europe Scoring", regionIds: [0] }, { "id": 3, "name": "Middle East Scoring" }, { "id": 4, "name": "Duck and Cover" }, { "id": 5, "name": "Five Year Plan" }, { "id": 6, "name": "The China Card" }, { "id": 7, "name": "Socialist Governments" }, { "id": 8, "name": "Fidel*" }, { "id": 9, "name": "Vietnam Revolts*" }, { "id": 10, "name": "Blockade*" }, { "id": 11, "name": "Korean War*" }, { "id": 12, "name": "Romanian Abdication*" }, { "id": 13, "name": "Arab-Israeli War" }, { "id": 14, "name": "Comecon*" }, { "id": 15, "name": "Nasser*" }, { "id": 16, "name": "Warsaw Pact Formed*" }, { "id": 17, "name": "De Gaulle Leads France*", countryIds: [3] }, { "id": 18, "name": "Captured Nazi Scientist*" }, { "id": 19, "name": "Truman Doctrine*" }, { "id": 20, "name": "Olympic Games" }, { "id": 21, "name": "NATO*" }, { "id": 22, "name": "Independent Reds*" }, { "id": 23, "name": "Marshall Plan*" }, { "id": 24, "name": "Indo-Pakistani War" }, { "id": 25, "name": "Containment*" }, { "id": 26, "name": "CIA Created*" }, { "id": 27, "name": "US/Japan Mutual Defense Pact*" }, { "id": 28, "name": "Suez Crisis*" }, { "id": 29, "name": "East European Unrest" }, { "id": 30, "name": "Decolonization" }, { "id": 31, "name": "Red Scare/Purge" }, { "id": 32, "name": "UN Intervention" }, { "id": 33, "name": "De-Stalinization*" }, { "id": 34, "name": "Nuclear Test Ban" }, { "id": 35, "name": "Formosan Resolution*" }, { "id": 103, "name": "Defectors" }, { "id": 104, "name": "The Cambridge Five" }, { "id": 105, "name": "Special Relationship" }, { "id": 106, "name": "NORAD*" }
     ];
 
 var regions = [
-    new Region(1, "Europe", 0, 20),
-    new Region(11, "West Europe", 0, 14),
-    new Region(12, "East Europe", 13, 20),
+    new Region("Europe", 0, 20),
+//    new Region("West Europe", 0, 14),
+//    new Region("East Europe", 13, 20),
 //    new Region(2, "Middle East"),
 //    new Region(3, "Asia"),
 //    new Region(31, "SE Asia"),
@@ -38,6 +38,6 @@ var countries = [
     new Country(20, "Romania", 711, 230),
 ];
 
-var cc = new CardsCountries(cards, countries, countries);
+var cc = new CardsCountries(cards, countries, regions);
 
 ko.applyBindings(cc);

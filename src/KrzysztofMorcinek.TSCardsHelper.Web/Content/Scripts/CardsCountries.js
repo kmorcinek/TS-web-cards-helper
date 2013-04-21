@@ -1,19 +1,23 @@
 underscoreJS = _;
 KnockoutNewFunctions = ko;
 var Card = (function () {
-    function Card(id, name, countryIds) {
+    function Card(id, name, countryIds, regionIds) {
         this.id = id;
         this.name = name;
         this.countryIds = countryIds;
+        this.regionIds = regionIds;
     }
     return Card;
 })();
 var Region = (function () {
-    function Region(id, name, firstCountryId, lastCountryId) {
-        this.id = id;
+    function Region(name, firstCountryId, lastCountryId) {
         this.name = name;
         this.firstCountryId = firstCountryId;
         this.lastCountryId = lastCountryId;
+        this.countryIds = [];
+        for(var i = firstCountryId; i < lastCountryId + 1; i++) {
+            this.countryIds.push(i);
+        }
     }
     return Region;
 })();
@@ -30,15 +34,23 @@ var Country = (function () {
     return Country;
 })();
 var CardsCountries = (function () {
-    function CardsCountries(cards, countries) {
+    function CardsCountries(cards, countries, regions) {
         this.cards = cards;
         this.countries = countries;
+        this.regions = regions;
         var _this = this;
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable("");
         this.showForCountry = function (country) {
             var returningCards = _.filter(_this.cards, function (card) {
-                return _.contains(card.countryIds, country.id);
+                var resultFromRegion = false;
+                if(card.regionIds !== undefined) {
+                    for(var i = 0; i < card.regionIds.length; i++) {
+                        var idsFromRegion = this.regions[card.regionIds[i]].countryIds;
+                        resultFromRegion = resultFromRegion || _.contains(idsFromRegion, country.id);
+                    }
+                }
+                return _.contains(card.countryIds, country.id) || resultFromRegion;
             });
             _this.examinedCountry(country.name);
             _this.connectedCards.valueWillMutate();
