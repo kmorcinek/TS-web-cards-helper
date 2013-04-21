@@ -7,6 +7,15 @@ var Card = (function () {
     }
     return Card;
 })();
+var Region = (function () {
+    function Region(id, name, firstCountryId, lastCountryId) {
+        this.id = id;
+        this.name = name;
+        this.firstCountryId = firstCountryId;
+        this.lastCountryId = lastCountryId;
+    }
+    return Region;
+})();
 var Country = (function () {
     function Country(id, name, cardIds, x, y) {
         this.id = id;

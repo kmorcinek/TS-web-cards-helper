@@ -11,6 +11,10 @@ class Card {
     constructor(public id: number, public name: string) { }
 }
 
+class Region {
+    constructor(public id: number, public name: string, public firstCountryId: number, public lastCountryId: number) { }
+}
+
 class Country {
     public coords: string;
     constructor(public id: number, public name: string, public cardIds: number[], private x: number, private y: number) {
