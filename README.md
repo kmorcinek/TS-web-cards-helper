@@ -13,4 +13,5 @@ Where it can be used?
 ===============
 I usually play online using vassal engine.
 
-Current version is hosted at http://angelo.hostingasp.pl/index.html (its playable but under development)
+Current version is hosted at 
+http://angelo.hostingasp.pl/index.html and http://angelo.hostingasp.pl/map.html (its playable but under development)
