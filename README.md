@@ -15,3 +15,7 @@ I usually play online using vassal engine.
 
 Current version is hosted at 
 http://angelo.hostingasp.pl/index.html and http://angelo.hostingasp.pl/map.html (its playable but under development)
+
+Technologies used
+===============
+JavaScript, KnockoutJS, (TypeScript). (evolve towards Single Page Application).
