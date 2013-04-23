@@ -12,3 +12,5 @@ Change js names to camelCase.
 Special Relationship is regards whole Europe but UK is most important. - as well in countries?
 
 Add pictures, first from twilightStrategy, later download.
+
+Add reference from application (Help button?) to GitHub.
