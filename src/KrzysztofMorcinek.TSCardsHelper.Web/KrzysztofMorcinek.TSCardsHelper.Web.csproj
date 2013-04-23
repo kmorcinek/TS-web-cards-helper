@@ -78,7 +78,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\TS_Vassal_board.PNG" />
-    <Content Include="index.aspx" />
+    <Content Include="provideData.aspx" />
     <None Include="Properties\PublishProfiles\angelo.hostingasp.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="index.html" />
@@ -102,12 +102,12 @@
     <Compile Include="Card.cs" />
     <Compile Include="CardParser.cs" />
     <Compile Include="Helpers\JsonNetSerializer.cs" />
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="provideData.aspx.cs">
+      <DependentUpon>provideData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="provideData.aspx.designer.cs">
+      <DependentUpon>provideData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
