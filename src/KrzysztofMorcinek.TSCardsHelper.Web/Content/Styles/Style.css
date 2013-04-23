@@ -6,3 +6,11 @@
 .connected-cards {
     height: 50px;
 }
+
+.connected-cards li {
+    display: inline;
+    border-color: blue;
+    border-width: 3px;
+    padding: 10px;
+    border-style: dashed;
+}
