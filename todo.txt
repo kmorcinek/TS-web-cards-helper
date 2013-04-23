@@ -3,9 +3,12 @@ Bootstrap ju¿ dla przycisku.
 Lista rzeczy które trzeba zawsze mieæ (równie¿ per side) np:
 2x overprotect Italy.
 Overprotect Asia.
+- General notice.
 
-Optional cards maj¹ inny html na stronie.
-
-Parse all cards.
+Optional cards have different html on page.
 
 Change js names to camelCase.
+
+Special Relationship is regards whole Europe but UK is most important. - as well in countries?
+
+Add pictures, first from twilightStrategy, later download.

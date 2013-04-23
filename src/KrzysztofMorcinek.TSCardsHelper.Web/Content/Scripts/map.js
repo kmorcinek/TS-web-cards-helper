@@ -9,29 +9,29 @@ var cardsForCountries = [
 { "id": 4, "countryIds": [], "regionIds": [] }, // Duck and Cover
 { "id": 5, "countryIds": [], "regionIds": [] }, // Five Year Plan
 { "id": 6, "countryIds": [], "regionIds": [] }, // The China Card
-{ "id": 7, "countryIds": [], "regionIds": [] }, // Socialist Governments
+{ "id": 7, "countryIds": [], "regionIds": [1] }, // Socialist Governments
 { "id": 8, "countryIds": [], "regionIds": [] }, // Fidel*
 { "id": 9, "countryIds": [], "regionIds": [] }, // Vietnam Revolts*
-{ "id": 10, "countryIds": [], "regionIds": [] }, // Blockade*
+{ "id": 10, "countryIds": [7], "regionIds": [] }, // Blockade*
 { "id": 11, "countryIds": [], "regionIds": [] }, // Korean War*
-{ "id": 12, "countryIds": [], "regionIds": [] }, // Romanian Abdication*
+{ "id": 12, "countryIds": [20], "regionIds": [] }, // Romanian Abdication*
 { "id": 13, "countryIds": [], "regionIds": [] }, // Arab-Israeli War
-{ "id": 14, "countryIds": [], "regionIds": [] }, // Comecon*
+{ "id": 14, "countryIds": [], "regionIds": [2] }, // Comecon*
 { "id": 15, "countryIds": [], "regionIds": [] }, // Nasser*
-{ "id": 16, "countryIds": [], "regionIds": [] }, // Warsaw Pact Formed*
+{ "id": 16, "countryIds": [], "regionIds": [2] }, // Warsaw Pact Formed*
 { "id": 17, "countryIds": [3], "regionIds": [] }, // De Gaulle Leads France*
 { "id": 18, "countryIds": [], "regionIds": [] }, // Captured Nazi Scientist*
-{ "id": 19, "countryIds": [], "regionIds": [] }, // Truman Doctrine*
+{ "id": 19, "countryIds": [], "regionIds": [0] }, // Truman Doctrine*
 { "id": 20, "countryIds": [], "regionIds": [] }, // Olympic Games
-{ "id": 21, "countryIds": [], "regionIds": [] }, // NATO*
-{ "id": 22, "countryIds": [], "regionIds": [] }, // Independent Reds*
-{ "id": 23, "countryIds": [], "regionIds": [] }, // Marshall Plan*
+{ "id": 21, "countryIds": [], "regionIds": [0] }, // NATO*
+{ "id": 22, "countryIds": [15, 20, 19, 18, 16], "regionIds": [] }, // Independent Reds*
+{ "id": 23, "countryIds": [], "regionIds": [1] }, // Marshall Plan*
 { "id": 24, "countryIds": [], "regionIds": [] }, // Indo-Pakistani War
 { "id": 25, "countryIds": [], "regionIds": [] }, // Containment*
 { "id": 26, "countryIds": [], "regionIds": [] }, // CIA Created*
 { "id": 27, "countryIds": [], "regionIds": [] }, // US/Japan Mutual Defense Pact*
-{ "id": 28, "countryIds": [], "regionIds": [] }, // Suez Crisis*
-{ "id": 29, "countryIds": [], "regionIds": [] }, // East European Unrest
+{ "id": 28, "countryIds": [3,1], "regionIds": [] }, // Suez Crisis*
+{ "id": 29, "countryIds": [], "regionIds": [2] }, // East European Unrest
 { "id": 30, "countryIds": [], "regionIds": [] }, // Decolonization
 { "id": 31, "countryIds": [], "regionIds": [] }, // Red Scare/Purge
 { "id": 32, "countryIds": [], "regionIds": [] }, // UN Intervention
@@ -40,8 +40,9 @@ var cardsForCountries = [
 { "id": 35, "countryIds": [], "regionIds": [] }, // Formosan Resolution*
 { "id": 103, "countryIds": [], "regionIds": [] }, // Defectors
 { "id": 104, "countryIds": [], "regionIds": [] }, // The Cambridge Five
-{ "id": 105, "countryIds": [], "regionIds": [] }, // Special Relationship
-{ "id": 106, "countryIds": [], "regionIds": [] }, // NORAD*];
+{ "id": 105, "countryIds": [], "regionIds": [1] }, // Special Relationship
+{ "id": 106, "countryIds": [0], "regionIds": [] }, // NORAD*
+];
 
 // Apply cards with countries they reference
 for (var i = 0; i < cardsForCountries.length; i++) {
@@ -53,8 +54,8 @@ for (var i = 0; i < cardsForCountries.length; i++) {
 
 var regions = [
     new Region("Europe", 0, 20),
-//    new Region("West Europe", 0, 14),
-//    new Region("East Europe", 13, 20),
+    new Region("West Europe", 0, 14),
+    new Region("East Europe", 13, 20),
 //    new Region(2, "Middle East"),
 //    new Region(3, "Asia"),
 //    new Region(31, "SE Asia"),
@@ -71,7 +72,7 @@ var countries = [
     new Country(4, "Benelux", 506, 190),
     new Country(5, "Norway", 525, 68),
     new Country(6, "Denmark", 538, 110),
-    new Country(7, "W.Germany", [10], 566, 190),
+    new Country(7, "W.Germany", 566, 190),
     new Country(8, "Italy", 576, 273),
     new Country(9, "E.Germany", 586, 150),
     new Country(10, "Sweden", 607, 102),
