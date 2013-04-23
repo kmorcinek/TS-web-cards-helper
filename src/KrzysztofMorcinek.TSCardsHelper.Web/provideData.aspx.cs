@@ -12,6 +12,9 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 {
     public partial class provideData : System.Web.UI.Page
     {
+        // TODO annoying right path
+        private string basePath = @"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
@@ -24,9 +27,8 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         {
             dynamic cards = new ExpandoObject();
 
-            // TODO annoying right path
-            var basePath = @"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src";
-            cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml")).Select(card => new {Id = card.Id, Name = card.Name})
+            cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
+                .Select(card => new {card.Id, card.Name})
                 .ToArray();
 
             //x.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
@@ -46,6 +48,25 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             return JsonConvert.SerializeObject(cards, Formatting.Indented, jsonSerializerSettings);
+        }
+
+        protected string GetCardsPictures()
+        {
+            IEnumerable<Card> cardsPage = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"));
+
+            var sb = new StringBuilder();
+
+            foreach (var card in cardsPage)
+            {
+                var imagePath = card.Name.ToLower()
+                                    .Replace(' ', '-')
+                                    .Replace("*", "")
+                                    .Replace("/","-");
+                sb.AppendFormat("<image src=\"http://twilightstrategy.files.wordpress.com/2012/01/{0}.jpg?w=160\"/ alt=\"{0}\">",
+                          imagePath);
+            }
+
+            return sb.ToString();
         }
     }
 }
