@@ -4,8 +4,12 @@
     <link type="text/css" href="Content/Styles/Style.css" rel="stylesheet" />
 </head>
 <body>
+    <menu>
+        <a href="index.html">Cards</a>
+        <a href="map.html">Map</a>
+        <a href="info.html">Info</a>
+    </menu>
     <h3 data-bind="text: examinedCountry"></h3>
-    <a href="index.html">Cards</a>
     <ul class="connected-cards" data-bind="foreach: connectedCards">
         <li><a data-bind="attr: {href: href}" target="_blank"><img data-bind="attr: {src: picturePath + '?w=160', alt: name, title:name}"/></a></li>
     </ul>

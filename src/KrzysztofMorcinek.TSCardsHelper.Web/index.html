@@ -5,67 +5,71 @@
     <title>Twilight struggle cards helper</title>
     <link type="text/css" href="Content/Styles/Style.css" rel="stylesheet" />
 </head>
-<body>
-    <button data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
-    <button data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
-    <button data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
-    <button data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
-    <a href="map.html">Map</a>
-    <div id="main-container">
-        <div>
-            <h2>Sure in hands this turn</h2>
-            <ul data-bind="foreach: sureInHands">
+    <body>
+        <menu>
+            <a href="index.html">Cards</a>
+            <a href="map.html">Map</a>
+            <a href="info.html">Info</a>
+        </menu>
+        <button data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
+        <button data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
+        <button data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
+        <button data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
+        <div id="main-container">
+            <div>
+                <h2>Sure in hands this turn</h2>
+                <ul data-bind="foreach: sureInHands">
 
-                <li>
-                    <button data-bind="click: $parent.discard">Discard</button>
-                    <span data-bind="text: Name"></span>
-                    <button data-bind="click: $parent.remove, visible: CanRemove">Remove</button>
-                </li>
+                    <li>
+                        <button data-bind="click: $parent.discard">Discard</button>
+                        <span data-bind="text: Name"></span>
+                        <button data-bind="click: $parent.remove, visible: CanRemove">Remove</button>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
+            <div>
+                <h2>In deck or in hands</h2>
+                <ul data-bind="foreach: cards">
+
+                    <li>
+                        <button data-bind="click: $parent.discard">Discard</button>
+                        <span data-bind="text: Name"></span>
+                        <button data-bind="click: $parent.remove, visible: CanRemove">Remove</button>
+                    </li>
+
+                </ul>
+            </div>
+            <div>
+                <h2>Discarded pile</h2>
+                <ul data-bind="foreach: discardedPile">
+                    <li data-bind="text: Name" />
+                </ul>
+            </div>
+            <div>
+                <h2>Removed pile</h2>
+                <ul data-bind="foreach: removedPile">
+                    <li data-bind="text: Name" />
+                </ul>
+            </div>
         </div>
-        <div>
-            <h2>In deck or in hands</h2>
-            <ul data-bind="foreach: cards">
 
-                <li>
-                    <button data-bind="click: $parent.discard">Discard</button>
-                    <span data-bind="text: Name"></span>
-                    <button data-bind="click: $parent.remove, visible: CanRemove">Remove</button>
-                </li>
+        <script src="Scripts/jquery-1.9.1.js"></script>
+        <script src="Scripts/knockout-2.2.1.js"></script>
+        <script src="Scripts/knockout.mapping-latest.js"></script>
 
-            </ul>
-        </div>
-        <div>
-            <h2>Discarded pile</h2>
-            <ul data-bind="foreach: discardedPile">
-                <li data-bind="text: Name" />
-            </ul>
-        </div>
-        <div>
-            <h2>Removed pile</h2>
-            <ul data-bind="foreach: removedPile">
-                <li data-bind="text: Name" />
-            </ul>
-        </div>
-    </div>
-
-    <script src="Scripts/jquery-1.9.1.js"></script>
-    <script src="Scripts/knockout-2.2.1.js"></script>
-    <script src="Scripts/knockout.mapping-latest.js"></script>
-
-    <script src="Content/Scripts/index.js"></script>
-    <script>
-        $(function () {
-            indexPage({
-                "EarlyWar":
-                    [{ "Name": "Asia Scoring", "CanRemove": false }, { "Name": "Europe Scoring", "CanRemove": false }, { "Name": "Middle East Scoring", "CanRemove": false }, { "Name": "Duck and Cover", "CanRemove": false }, { "Name": "Five Year Plan", "CanRemove": false }, { "Name": "The China Card", "CanRemove": false }, { "Name": "Socialist Governments", "CanRemove": false }, { "Name": "Fidel*", "CanRemove": true }, { "Name": "Vietnam Revolts*", "CanRemove": true }, { "Name": "Blockade*", "CanRemove": true }, { "Name": "Korean War*", "CanRemove": true }, { "Name": "Romanian Abdication*", "CanRemove": true }, { "Name": "Arab-Israeli War", "CanRemove": false }, { "Name": "Comecon*", "CanRemove": true }, { "Name": "Nasser*", "CanRemove": true }, { "Name": "Warsaw Pact Formed*", "CanRemove": true }, { "Name": "De Gaulle Leads France*", "CanRemove": true }, { "Name": "Captured Nazi Scientist*", "CanRemove": true }, { "Name": "Truman Doctrine*", "CanRemove": true }, { "Name": "Olympic Games", "CanRemove": false }, { "Name": "NATO*", "CanRemove": true }, { "Name": "Independent Reds*", "CanRemove": true }, { "Name": "Marshall Plan*", "CanRemove": true }, { "Name": "Indo-Pakistani War", "CanRemove": false }, { "Name": "Containment*", "CanRemove": true }, { "Name": "CIA Created*", "CanRemove": true }, { "Name": "US/Japan Mutual Defense Pact*", "CanRemove": true }, { "Name": "Suez Crisis*", "CanRemove": true }, { "Name": "East European Unrest", "CanRemove": false }, { "Name": "Decolonization", "CanRemove": false }, { "Name": "Red Scare/Purge", "CanRemove": false }, { "Name": "UN Intervention", "CanRemove": false }, { "Name": "De-Stalinization*", "CanRemove": true }, { "Name": "Nuclear Test Ban", "CanRemove": false }, { "Name": "Formosan Resolution*", "CanRemove": true }, { "Name": "Defectors", "CanRemove": false }, { "Name": "The Cambridge Five", "CanRemove": false }, { "Name": "Special Relationship", "CanRemove": false }, { "Name": "NORAD*", "CanRemove": true }],
-                "MidWar":
-                    [{ "Name": "Brush War", "CanRemove": false }, { "Name": "Central America Scoring", "CanRemove": false }, { "Name": "Southeast Asia Scoring*", "CanRemove": true }, { "Name": "Arms Race", "CanRemove": false }, { "Name": "Cuban Missile Crisis*", "CanRemove": true }, { "Name": "Nuclear Subs*", "CanRemove": true }, { "Name": "Quagmire*", "CanRemove": true }, { "Name": "SALT Negotiations*", "CanRemove": true }, { "Name": "Bear Trap*", "CanRemove": true }, { "Name": "Summit", "CanRemove": false }, { "Name": "How I Learned to Stop Worrying*", "CanRemove": true }, { "Name": "Junta", "CanRemove": false }, { "Name": "Kitchen Debates*", "CanRemove": true }, { "Name": "Missile Envy", "CanRemove": false }, { "Name": "“We Will Bury You”*", "CanRemove": true }, { "Name": "Brezhnev Doctrine*", "CanRemove": true }, { "Name": "Portuguese Empire Crumbles*", "CanRemove": true }, { "Name": "South African Unrest", "CanRemove": false }, { "Name": "Allende*", "CanRemove": true }, { "Name": "Willy Brandt*", "CanRemove": true }, { "Name": "Muslim Revolution", "CanRemove": false }, { "Name": "ABM Treaty", "CanRemove": false }, { "Name": "Cultural Revolution*", "CanRemove": true }, { "Name": "Flower Power*", "CanRemove": true }, { "Name": "U2 Incident*", "CanRemove": true }, { "Name": "OPEC", "CanRemove": false }, { "Name": "“Lone Gunman”*", "CanRemove": true }, { "Name": "Colonial Rear Guards", "CanRemove": false }, { "Name": "Panama Canal Returned*", "CanRemove": true }, { "Name": "Camp David Accords*", "CanRemove": true }, { "Name": "Puppet Governments*", "CanRemove": true }, { "Name": "Grain Sales to Soviets", "CanRemove": false }, { "Name": "John Paul II Elected Pope*", "CanRemove": true }, { "Name": "Latin American Death Squads", "CanRemove": false }, { "Name": "OAS Founded*", "CanRemove": true }, { "Name": "Nixon Plays the China Card*", "CanRemove": true }, { "Name": "Sadat Expels Soviets*", "CanRemove": true }, { "Name": "Shuttle Diplomacy", "CanRemove": false }, { "Name": "The Voice of America", "CanRemove": false }, { "Name": "Liberation Theology", "CanRemove": false }, { "Name": "Ussuri River Skirmish*", "CanRemove": true }, { "Name": "“Ask Not What Your Country…”*", "CanRemove": true }, { "Name": "Alliance for Progress*", "CanRemove": true }, { "Name": "Africa Scoring", "CanRemove": false }, { "Name": "“One Small Step…”", "CanRemove": false }, { "Name": "South America Scoring", "CanRemove": false }, { "Name": "Che", "CanRemove": false }, { "Name": "Our Man in Tehran*", "CanRemove": true }],
-                "LateWar":
-                    [{ "Name": "Iranian Hostage Crisis*", "CanRemove": true }, { "Name": "The Iron Lady*", "CanRemove": true }, { "Name": "Reagan Bombs Libya*", "CanRemove": true }, { "Name": "Star Wars*", "CanRemove": true }, { "Name": "North Sea Oil*", "CanRemove": true }, { "Name": "The Reformer*", "CanRemove": true }, { "Name": "Marine Barracks Bombing*", "CanRemove": true }, { "Name": "Soviets Shoot Down KAL-007*", "CanRemove": true }, { "Name": "Glasnost*", "CanRemove": true }, { "Name": "Ortega Elected in Nicaragua*", "CanRemove": true }, { "Name": "Terrorism", "CanRemove": false }, { "Name": "Iran-Contra Scandal*", "CanRemove": true }, { "Name": "Chernobyl*", "CanRemove": true }, { "Name": "Latin American Debt Crisis", "CanRemove": false }, { "Name": "Tear Down this Wall*", "CanRemove": true }, { "Name": "“An Evil Empire”*", "CanRemove": true }, { "Name": "Aldrich Ames Remix*", "CanRemove": true }, { "Name": "Pershing II Deployed*", "CanRemove": true }, { "Name": "Wargames*", "CanRemove": true }, { "Name": "Solidarity*", "CanRemove": true }, { "Name": "Iran-Iraq War*", "CanRemove": true }, { "Name": "Yuri and Samantha*", "CanRemove": true }, { "Name": "AWACS Sale to Saudis*", "CanRemove": true }]
+        <script src="Content/Scripts/index.js"></script>
+        <script>
+            $(function () {
+                indexPage({
+                    "EarlyWar":
+                        [{ "Name": "Asia Scoring", "CanRemove": false }, { "Name": "Europe Scoring", "CanRemove": false }, { "Name": "Middle East Scoring", "CanRemove": false }, { "Name": "Duck and Cover", "CanRemove": false }, { "Name": "Five Year Plan", "CanRemove": false }, { "Name": "The China Card", "CanRemove": false }, { "Name": "Socialist Governments", "CanRemove": false }, { "Name": "Fidel*", "CanRemove": true }, { "Name": "Vietnam Revolts*", "CanRemove": true }, { "Name": "Blockade*", "CanRemove": true }, { "Name": "Korean War*", "CanRemove": true }, { "Name": "Romanian Abdication*", "CanRemove": true }, { "Name": "Arab-Israeli War", "CanRemove": false }, { "Name": "Comecon*", "CanRemove": true }, { "Name": "Nasser*", "CanRemove": true }, { "Name": "Warsaw Pact Formed*", "CanRemove": true }, { "Name": "De Gaulle Leads France*", "CanRemove": true }, { "Name": "Captured Nazi Scientist*", "CanRemove": true }, { "Name": "Truman Doctrine*", "CanRemove": true }, { "Name": "Olympic Games", "CanRemove": false }, { "Name": "NATO*", "CanRemove": true }, { "Name": "Independent Reds*", "CanRemove": true }, { "Name": "Marshall Plan*", "CanRemove": true }, { "Name": "Indo-Pakistani War", "CanRemove": false }, { "Name": "Containment*", "CanRemove": true }, { "Name": "CIA Created*", "CanRemove": true }, { "Name": "US/Japan Mutual Defense Pact*", "CanRemove": true }, { "Name": "Suez Crisis*", "CanRemove": true }, { "Name": "East European Unrest", "CanRemove": false }, { "Name": "Decolonization", "CanRemove": false }, { "Name": "Red Scare/Purge", "CanRemove": false }, { "Name": "UN Intervention", "CanRemove": false }, { "Name": "De-Stalinization*", "CanRemove": true }, { "Name": "Nuclear Test Ban", "CanRemove": false }, { "Name": "Formosan Resolution*", "CanRemove": true }, { "Name": "Defectors", "CanRemove": false }, { "Name": "The Cambridge Five", "CanRemove": false }, { "Name": "Special Relationship", "CanRemove": false }, { "Name": "NORAD*", "CanRemove": true }],
+                    "MidWar":
+                        [{ "Name": "Brush War", "CanRemove": false }, { "Name": "Central America Scoring", "CanRemove": false }, { "Name": "Southeast Asia Scoring*", "CanRemove": true }, { "Name": "Arms Race", "CanRemove": false }, { "Name": "Cuban Missile Crisis*", "CanRemove": true }, { "Name": "Nuclear Subs*", "CanRemove": true }, { "Name": "Quagmire*", "CanRemove": true }, { "Name": "SALT Negotiations*", "CanRemove": true }, { "Name": "Bear Trap*", "CanRemove": true }, { "Name": "Summit", "CanRemove": false }, { "Name": "How I Learned to Stop Worrying*", "CanRemove": true }, { "Name": "Junta", "CanRemove": false }, { "Name": "Kitchen Debates*", "CanRemove": true }, { "Name": "Missile Envy", "CanRemove": false }, { "Name": "“We Will Bury You”*", "CanRemove": true }, { "Name": "Brezhnev Doctrine*", "CanRemove": true }, { "Name": "Portuguese Empire Crumbles*", "CanRemove": true }, { "Name": "South African Unrest", "CanRemove": false }, { "Name": "Allende*", "CanRemove": true }, { "Name": "Willy Brandt*", "CanRemove": true }, { "Name": "Muslim Revolution", "CanRemove": false }, { "Name": "ABM Treaty", "CanRemove": false }, { "Name": "Cultural Revolution*", "CanRemove": true }, { "Name": "Flower Power*", "CanRemove": true }, { "Name": "U2 Incident*", "CanRemove": true }, { "Name": "OPEC", "CanRemove": false }, { "Name": "“Lone Gunman”*", "CanRemove": true }, { "Name": "Colonial Rear Guards", "CanRemove": false }, { "Name": "Panama Canal Returned*", "CanRemove": true }, { "Name": "Camp David Accords*", "CanRemove": true }, { "Name": "Puppet Governments*", "CanRemove": true }, { "Name": "Grain Sales to Soviets", "CanRemove": false }, { "Name": "John Paul II Elected Pope*", "CanRemove": true }, { "Name": "Latin American Death Squads", "CanRemove": false }, { "Name": "OAS Founded*", "CanRemove": true }, { "Name": "Nixon Plays the China Card*", "CanRemove": true }, { "Name": "Sadat Expels Soviets*", "CanRemove": true }, { "Name": "Shuttle Diplomacy", "CanRemove": false }, { "Name": "The Voice of America", "CanRemove": false }, { "Name": "Liberation Theology", "CanRemove": false }, { "Name": "Ussuri River Skirmish*", "CanRemove": true }, { "Name": "“Ask Not What Your Country…”*", "CanRemove": true }, { "Name": "Alliance for Progress*", "CanRemove": true }, { "Name": "Africa Scoring", "CanRemove": false }, { "Name": "“One Small Step…”", "CanRemove": false }, { "Name": "South America Scoring", "CanRemove": false }, { "Name": "Che", "CanRemove": false }, { "Name": "Our Man in Tehran*", "CanRemove": true }],
+                    "LateWar":
+                        [{ "Name": "Iranian Hostage Crisis*", "CanRemove": true }, { "Name": "The Iron Lady*", "CanRemove": true }, { "Name": "Reagan Bombs Libya*", "CanRemove": true }, { "Name": "Star Wars*", "CanRemove": true }, { "Name": "North Sea Oil*", "CanRemove": true }, { "Name": "The Reformer*", "CanRemove": true }, { "Name": "Marine Barracks Bombing*", "CanRemove": true }, { "Name": "Soviets Shoot Down KAL-007*", "CanRemove": true }, { "Name": "Glasnost*", "CanRemove": true }, { "Name": "Ortega Elected in Nicaragua*", "CanRemove": true }, { "Name": "Terrorism", "CanRemove": false }, { "Name": "Iran-Contra Scandal*", "CanRemove": true }, { "Name": "Chernobyl*", "CanRemove": true }, { "Name": "Latin American Debt Crisis", "CanRemove": false }, { "Name": "Tear Down this Wall*", "CanRemove": true }, { "Name": "“An Evil Empire”*", "CanRemove": true }, { "Name": "Aldrich Ames Remix*", "CanRemove": true }, { "Name": "Pershing II Deployed*", "CanRemove": true }, { "Name": "Wargames*", "CanRemove": true }, { "Name": "Solidarity*", "CanRemove": true }, { "Name": "Iran-Iraq War*", "CanRemove": true }, { "Name": "Yuri and Samantha*", "CanRemove": true }, { "Name": "AWACS Sale to Saudis*", "CanRemove": true }]
+                });
             });
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>

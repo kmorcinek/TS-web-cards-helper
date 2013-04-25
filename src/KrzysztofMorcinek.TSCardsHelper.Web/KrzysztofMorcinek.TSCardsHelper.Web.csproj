@@ -78,6 +78,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\TS_Vassal_board.PNG" />
+    <Content Include="info.html" />
     <Content Include="provideData.aspx" />
     <None Include="Properties\PublishProfiles\angelo.hostingasp.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
