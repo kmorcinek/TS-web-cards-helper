@@ -7,7 +7,8 @@
     <h3 data-bind="text: examinedCountry"></h3>
     <a href="index.html">Cards</a>
     <ul class="connected-cards" data-bind="foreach: connectedCards">
-        <li><span data-bind="text: name"></span></li>
+        <li><img data-bind="attr: {src: picturePath + '?w=160', alt: name, title:name}"/></li>
+        <!--<li><span data-bind="text: name"></span></li>-->
     </ul>
 
     <img src="/images/TS_Vassal_board.PNG" alt="HTML Map"

@@ -1,9 +1,10 @@
 underscoreJS = _;
 KnockoutNewFunctions = ko;
 var Card = (function () {
-    function Card(id, name, countryIds, regionIds) {
+    function Card(id, name, picturePath, countryIds, regionIds) {
         this.id = id;
         this.name = name;
+        this.picturePath = picturePath;
         this.countryIds = countryIds;
         this.regionIds = regionIds;
     }

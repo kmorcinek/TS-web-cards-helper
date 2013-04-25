@@ -8,7 +8,7 @@ declare var KnockoutNewFunctions: any;
 KnockoutNewFunctions = ko;
 
 class Card {
-    constructor(public id: number, public name: string, public countryIds: number[], public regionIds: number[]) { }
+    constructor(public id: number, public name: string, public picturePath: string, public countryIds: number[], public regionIds: number[]) { }
 }
 
 class Region {
