@@ -19,3 +19,10 @@ http://angelo.hostingasp.pl/index.html and http://angelo.hostingasp.pl/map.html 
 Technologies used
 ===============
 JavaScript, KnockoutJS, (TypeScript). (probably will evolve towards Single Page Application).
+
+Screenshots
+===============
+
+2013-04-25:
+![Connected cards as a pictures](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/Cards_as_a_pictures.JPG)
+Hover over a country and you will see cards that are somehow connected to this country.
