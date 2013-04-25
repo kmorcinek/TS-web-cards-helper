@@ -14,3 +14,5 @@ Special Relationship is regards whole Europe but UK is most important. - as well
 Add pictures, first from twilightStrategy, later download.
 
 Add reference from application (Help button?) to GitHub.
+
+Basic manuall for user (could be important for developers not familiar with game). Especially for map.html.
