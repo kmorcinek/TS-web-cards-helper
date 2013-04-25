@@ -18,4 +18,4 @@ http://angelo.hostingasp.pl/index.html and http://angelo.hostingasp.pl/map.html 
 
 Technologies used
 ===============
-JavaScript, KnockoutJS, (TypeScript). (evolve towards Single Page Application).
+JavaScript, KnockoutJS, (TypeScript). (probably will evolve towards Single Page Application).
