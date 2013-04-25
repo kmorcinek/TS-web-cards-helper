@@ -18,7 +18,13 @@ http://angelo.hostingasp.pl/index.html and http://angelo.hostingasp.pl/map.html 
 
 Technologies used
 ===============
-JavaScript, KnockoutJS, (TypeScript). (probably will evolve towards Single Page Application).
+JavaScript, KnockoutJS, (TypeScript), C# (only for offline data parsing from other pages and converting to JSON). (probably will evolve towards Single Page Application).
+
+Contributors
+===============
+http://twilightstrategy.com - for providing great website about the game. I am parsing knowlegde already entered there.
+
+I need some help. Not only developers, there is also some data that have to be manually entered based on the knowlegde of board game.
 
 Screenshots
 ===============
