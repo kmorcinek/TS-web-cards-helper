@@ -28,7 +28,7 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
             dynamic cards = new ExpandoObject();
 
             cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
-                .Select(card => new {card.Id, card.Name})
+                .Select(card => new { card.Id, card.Name })
                 .ToArray();
 
             //x.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
@@ -38,7 +38,7 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
             //    .ToArray();
 
             var sb = new StringBuilder();
-            foreach (dynamic card in cards.EarlyWar )
+            foreach (dynamic card in cards.EarlyWar)
             {
                 sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}", "{", "}", card.Id, card.Name);
                 sb.AppendLine();
@@ -58,17 +58,22 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 
             foreach (var card in cardsPage)
             {
-                var imagePath = card.Name.ToLower()
-                                    .Replace(' ', '-')
-                                    .Replace("*", "")
-                                    .Replace("/","-");
-                sb.AppendFormat("<image src=\"http://twilightstrategy.files.wordpress.com/2012/01/{0}.jpg?w=160\"/ alt=\"{0}\">",
-                          imagePath);
+                sb.AppendFormat(GetPicturePath(card.Name));
             }
 
             return sb.ToString();
         }
 
-//        private string GetPicturePath(string cardName)
+        private string GetPicturePath(string cardName)
+        {
+            var imagePath = cardName.ToLower()
+                                    .Replace(' ', '-')
+                                    .Replace("*", "")
+                                    .Replace("/", "-");
+
+            return string.Format(
+                    "<image src=\"http://twilightstrategy.files.wordpress.com/2012/01/{0}.jpg?w=160\"/ alt=\"{0}\">",
+                    imagePath);
+        }
     }
 }
