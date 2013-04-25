@@ -68,5 +68,7 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 
             return sb.ToString();
         }
+
+//        private string GetPicturePath(string cardName)
     }
 }

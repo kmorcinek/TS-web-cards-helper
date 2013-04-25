@@ -14,3 +14,7 @@
     padding: 10px;
     border-style: dashed;
 }
+
+a {
+    float: right;
+}
