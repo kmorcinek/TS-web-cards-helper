@@ -314,9 +314,7 @@
   <tr style="background-color:#c9daf8;">
       <td>106</td>
       <td>
-        <span style="text-decoration:underline;">
-          <a title="NORAD" href="http://twilightstrategy.com/2012/07/25/norad/">NORAD*</a>
-        </span>
+        <a title="NORAD" href="http://twilightstrategy.com/2012/07/25/norad/">NORAD*</a>
       </td>
       <td>3</td>
       <td>Add 1 US Influence to a single country containing US Influence, at the end of each Action Round, if Canada is US-controlled and the DEFCON level moved to 2 during that Action Round. This Event is canceled by the “#42 – Quagmire” Event.</td>

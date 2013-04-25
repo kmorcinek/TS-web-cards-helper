@@ -16,18 +16,15 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 
             foreach (XmlNode row in tbody)
             {
-                var id = int.Parse(row.ChildNodes[0].InnerText);
                 var secondTd = row.ChildNodes[1];
-                var name = secondTd.InnerText;
-                var ops = int.Parse(row.ChildNodes[2].InnerText);
-                var description = row.ChildNodes[3].InnerText;
 
                 cards.Add(new Card { 
-                    Id = id, 
-                    Name = name, 
-                    Ops = ops, 
-                    Description = description, 
-                    CanRemove = name.EndsWith("*") });
+                    Id = int.Parse(row.ChildNodes[0].InnerText), 
+                    Name = secondTd.InnerText, 
+                    Href = row.ChildNodes[1].ChildNodes[0].Attributes["href"].InnerText,
+                    Ops = int.Parse(row.ChildNodes[2].InnerText), 
+                    Description = row.ChildNodes[3].InnerText, 
+                    CanRemove = secondTd.InnerText.EndsWith("*") });
             }
 
             return cards;

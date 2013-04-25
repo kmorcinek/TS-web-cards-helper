@@ -28,7 +28,7 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
             dynamic cards = new ExpandoObject();
 
             cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
-                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name) })
+                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
                 .ToArray();
 
             //x.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
