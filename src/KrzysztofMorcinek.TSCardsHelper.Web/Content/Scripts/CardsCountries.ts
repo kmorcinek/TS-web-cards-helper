@@ -55,6 +55,14 @@ class CardsCountries {
 
             this.examinedCountry(country.name);
 
+            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+
+            returningCards = _.filter(returningCards, function (item) {
+                return _.filter(removedPile, function (removedItem) {
+                    return removedItem.Name === item.name;
+                }).length === 0;
+            });
+
             this.connectedCards.valueWillMutate();
             this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);

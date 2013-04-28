@@ -71,6 +71,12 @@
 
             self.hasLateWarCards(false);
         };
+
+        ko.computed(function() {
+            localStorage.setItem('ts-cards', ko.toJSON(self.removedPile));
+        }).extend({
+            throttle: 500
+        });
     };
 
     ko.applyBindings(new viewModel(allCards));
