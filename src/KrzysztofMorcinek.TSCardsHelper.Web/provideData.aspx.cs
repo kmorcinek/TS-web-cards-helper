@@ -27,24 +27,25 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         {
             dynamic cards = new ExpandoObject();
 
-            cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
+//            cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
+//                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
+//                .ToArray();
+
+            cards.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
                 .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
                 .ToArray();
-
-            //x.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
-            //    .ToArray();
 
             //x.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml"))
             //    .ToArray();
 
-//            var sb = new StringBuilder();
-//            foreach (dynamic card in cards.EarlyWar)
-//            {
-//                sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}", "{", "}", card.Id, card.Name);
-//                sb.AppendLine();
-//            }
-//
-//            return sb.ToString();
+            var sb = new StringBuilder();
+            foreach (dynamic card in cards.MidWar)
+            {
+                sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}", "{", "}", card.Id, card.Name);
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
 
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             return JsonConvert.SerializeObject(cards, Formatting.Indented, jsonSerializerSettings);
