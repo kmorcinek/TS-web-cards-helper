@@ -3,11 +3,10 @@
     var viewModel = function (allCards) {
         var self = this; // TODO remove it?
 
-        self.earlyWarCards = allCards.EarlyWar;
         self.midWarCards = allCards.MidWar;
         self.lateWarCards = allCards.LateWar;
 
-        self.cards = ko.observableArray(self.earlyWarCards);
+        self.cardsInDeck = ko.observableArray(allCards.EarlyWar);
 
         self.sureInHands = ko.observableArray([]);
         self.discardedPile = ko.observableArray([]);
@@ -15,24 +14,24 @@
 
         self.discard = function(card) {
             self.sureInHands.remove(card);
-            self.cards.remove(card);
+            self.cardsInDeck.remove(card);
             self.discardedPile.push(card);
         };
         
         self.remove = function (card) {
             self.sureInHands.remove(card);
-            self.cards.remove(card);
+            self.cardsInDeck.remove(card);
             self.removedPile.push(card);
         };
 
         self.reshuffleCards = function() {
-            ko.utils.arrayForEach(self.cards(), function (card) {
+            ko.utils.arrayForEach(self.cardsInDeck(), function (card) {
                 self.sureInHands.push(card);
             });
-            self.cards.removeAll();
+            self.cardsInDeck.removeAll();
 
             ko.utils.arrayForEach(self.discardedPile(), function (card) {
-                self.cards.push(card);
+                self.cardsInDeck.push(card);
             });
             self.discardedPile.removeAll();
         };
@@ -48,7 +47,7 @@
         self.hasMidWarCards = ko.observable(false);
         self.addMidWarCards = function () {
             ko.utils.arrayForEach(self.midWarCards, function (card) {
-                self.cards.push(card);
+                self.cardsInDeck.push(card);
             });
             
             self.hasMidWarCards(false);
@@ -66,14 +65,21 @@
         self.hasLateWarCards = ko.observable(false);
         self.addLateWarCards = function () {
             ko.utils.arrayForEach(self.lateWarCards, function (card) {
-                self.cards.push(card);
+                self.cardsInDeck.push(card);
             });
 
             self.hasLateWarCards(false);
         };
 
-        ko.computed(function() {
-            localStorage.setItem('ts-cards', ko.toJSON(self.removedPile));
+        ko.computed(function () {
+            var a = {
+                cardsInDeck: self.cardsInDeck(),
+                sureInHands: self.sureInHands(),
+                discardedPile: self.discardedPile(),
+                removedPile: self.removedPile(),
+            };
+
+            localStorage.setItem('ts-cards', ko.toJSON(a));
         }).extend({
             throttle: 500
         });

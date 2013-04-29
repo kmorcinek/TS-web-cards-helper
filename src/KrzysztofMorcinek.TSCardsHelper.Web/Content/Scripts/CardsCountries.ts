@@ -55,7 +55,7 @@ class CardsCountries {
 
             this.examinedCountry(country.name);
 
-            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards')).removedPile;
 
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {

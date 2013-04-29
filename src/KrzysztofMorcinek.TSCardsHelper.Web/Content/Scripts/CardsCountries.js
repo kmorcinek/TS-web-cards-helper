@@ -54,7 +54,7 @@ var CardsCountries = (function () {
                 return _.contains(card.countryIds, country.id) || resultFromRegion;
             });
             _this.examinedCountry(country.name);
-            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards')).removedPile;
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
                     return removedItem.Name === item.name;
