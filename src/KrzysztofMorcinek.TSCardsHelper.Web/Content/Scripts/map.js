@@ -3,21 +3,21 @@
     ];
 
 var cardsForCountries = [
-{ "id": 1, "countryIds": [], "regionIds": [] }, // Asia Scoring
+{ "id": 1, "countryIds": [], "regionIds": [4] }, // Asia Scoring
 { "id": 2, "countryIds": [], "regionIds": [0] }, // Europe Scoring
-{ "id": 3, "countryIds": [], "regionIds": [] }, // Middle East Scoring
+{ "id": 3, "countryIds": [], "regionIds": [3] }, // Middle East Scoring
 { "id": 4, "countryIds": [], "regionIds": [] }, // Duck and Cover
 { "id": 5, "countryIds": [], "regionIds": [] }, // Five Year Plan
-{ "id": 6, "countryIds": [], "regionIds": [] }, // The China Card
+{ "id": 6, "countryIds": [], "regionIds": [4] }, // The China Card
 { "id": 7, "countryIds": [], "regionIds": [1] }, // Socialist Governments
-{ "id": 8, "countryIds": [], "regionIds": [] }, // Fidel*
-{ "id": 9, "countryIds": [], "regionIds": [] }, // Vietnam Revolts*
+{ "id": 8, "countryIds": [71], "regionIds": [] }, // Fidel*
+{ "id": 9, "countryIds": [37], "regionIds": [5] }, // Vietnam Revolts*
 { "id": 10, "countryIds": [7], "regionIds": [] }, // Blockade*
-{ "id": 11, "countryIds": [], "regionIds": [] }, // Korean War*
+{ "id": 11, "countryIds": [42,43,44,45], "regionIds": [] }, // Korean War*
 { "id": 12, "countryIds": [20], "regionIds": [] }, // Romanian Abdication*
-{ "id": 13, "countryIds": [], "regionIds": [] }, // Arab-Israeli War
+{ "id": 13, "countryIds": [21,22,23,27,28], "regionIds": [] }, // Arab-Israeli War
 { "id": 14, "countryIds": [], "regionIds": [2] }, // Comecon*
-{ "id": 15, "countryIds": [], "regionIds": [] }, // Nasser*
+{ "id": 15, "countryIds": [27], "regionIds": [] }, // Nasser*
 { "id": 16, "countryIds": [], "regionIds": [2] }, // Warsaw Pact Formed*
 { "id": 17, "countryIds": [3], "regionIds": [] }, // De Gaulle Leads France*
 { "id": 18, "countryIds": [], "regionIds": [] }, // Captured Nazi Scientist*
@@ -26,18 +26,18 @@ var cardsForCountries = [
 { "id": 21, "countryIds": [], "regionIds": [0] }, // NATO*
 { "id": 22, "countryIds": [15, 20, 19, 18, 16], "regionIds": [] }, // Independent Reds*
 { "id": 23, "countryIds": [], "regionIds": [1] }, // Marshall Plan*
-{ "id": 24, "countryIds": [], "regionIds": [] }, // Indo-Pakistani War
+{ "id": 24, "countryIds": [25,31,32,33,34], "regionIds": [] }, // Indo-Pakistani War
 { "id": 25, "countryIds": [], "regionIds": [] }, // Containment*
 { "id": 26, "countryIds": [], "regionIds": [] }, // CIA Created*
-{ "id": 27, "countryIds": [], "regionIds": [] }, // US/Japan Mutual Defense Pact*
-{ "id": 28, "countryIds": [3,1], "regionIds": [] }, // Suez Crisis*
+{ "id": 27, "countryIds": [42], "regionIds": [] }, // US/Japan Mutual Defense Pact*
+{ "id": 28, "countryIds": [1,3,23], "regionIds": [] }, // Suez Crisis*
 { "id": 29, "countryIds": [], "regionIds": [2] }, // East European Unrest
-{ "id": 30, "countryIds": [], "regionIds": [] }, // Decolonization
+{ "id": 30, "countryIds": [], "regionIds": [5,6] }, // Decolonization
 { "id": 31, "countryIds": [], "regionIds": [] }, // Red Scare/Purge
 { "id": 32, "countryIds": [], "regionIds": [] }, // UN Intervention
-{ "id": 33, "countryIds": [], "regionIds": [] }, // De-Stalinization*
+{ "id": 33, "countryIds": [], "regionIds": [0,3,4,6,7,8] }, // De-Stalinization*
 { "id": 34, "countryIds": [], "regionIds": [] }, // Nuclear Test Ban
-{ "id": 35, "countryIds": [], "regionIds": [] }, // Formosan Resolution*
+{ "id": 35, "countryIds": [43], "regionIds": [] }, // Formosan Resolution*
 { "id": 103, "countryIds": [], "regionIds": [] }, // Defectors
 { "id": 104, "countryIds": [], "regionIds": [] }, // The Cambridge Five
 { "id": 105, "countryIds": [1], "regionIds": [1] }, // Special Relationship
