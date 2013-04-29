@@ -61,8 +61,11 @@ var CardsCountries = (function () {
             var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards')).removedPile;
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
-                    return removedItem.Name === item.name;
+                    return removedItem.name === item.name;
                 }).length === 0;
+            });
+            ko.utils.arrayForEach(returningCards, function (card) {
+                card.urgency = "sureInHands";
             });
             _this.connectedCards.valueWillMutate();
             _this.connectedCards.removeAll();

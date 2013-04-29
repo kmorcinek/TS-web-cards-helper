@@ -65,8 +65,13 @@ class CardsCountries {
 
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
-                    return removedItem.Name === item.name;
+                    return removedItem.name === item.name;
                 }).length === 0;
+            });
+
+            // add color
+            ko.utils.arrayForEach(returningCards, function (card) {
+                card.urgency = "sureInHands";
             });
 
             this.connectedCards.valueWillMutate();

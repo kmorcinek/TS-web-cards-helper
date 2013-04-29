@@ -11,7 +11,7 @@
     </menu>
     <h3 data-bind="text: examinedCountry"></h3>
     <ul class="connected-cards" data-bind="foreach: connectedCards">
-        <li><a data-bind="attr: {href: href}" target="_blank"><img data-bind="attr: {src: picturePath + '?w=160', alt: name, title:name}"/></a></li>
+        <li><a data-bind="attr: {href: href}" target="_blank"><img data-bind="attr: {src: picturePath + '?w=120', alt: name, title:name}, css: urgency"/></a></li>
     </ul>
 
     <img src="/images/TS_Vassal_board.PNG" alt="HTML Map"
