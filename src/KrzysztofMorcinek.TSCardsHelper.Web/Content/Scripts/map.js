@@ -40,7 +40,7 @@ var cardsForCountries = [
 { "id": 35, "countryIds": [], "regionIds": [] }, // Formosan Resolution*
 { "id": 103, "countryIds": [], "regionIds": [] }, // Defectors
 { "id": 104, "countryIds": [], "regionIds": [] }, // The Cambridge Five
-{ "id": 105, "countryIds": [], "regionIds": [1] }, // Special Relationship
+{ "id": 105, "countryIds": [1], "regionIds": [1] }, // Special Relationship
 { "id": 106, "countryIds": [0], "regionIds": [] }, // NORAD*
 ];
 

@@ -40,7 +40,11 @@ class CardsCountries {
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
 
         this.showForCountry = (country) => {
-            var returningCards = _.filter(this.cards, function (card) {
+            var cardsConnectedById = _.filter(this.cards, function (card) {
+                return _.contains(card.countryIds, country.id);
+            });
+
+            var cardsConnectedByRegion = _.filter(this.cards, function (card) {
                 var resultFromRegion = false;
                 
                 if (card.regionIds !== undefined) {
@@ -50,8 +54,10 @@ class CardsCountries {
                     }
                 }
 
-                return _.contains(card.countryIds, country.id) || resultFromRegion;
+                return resultFromRegion;
             });
+
+            var returningCards = _.uniq(cardsConnectedById.concat(cardsConnectedByRegion));
 
             this.examinedCountry(country.name);
 

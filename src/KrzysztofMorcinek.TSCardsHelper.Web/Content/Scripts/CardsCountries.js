@@ -43,7 +43,10 @@ var CardsCountries = (function () {
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable("Hover over a country (Europe)");
         this.showForCountry = function (country) {
-            var returningCards = _.filter(_this.cards, function (card) {
+            var cardsConnectedById = _.filter(_this.cards, function (card) {
+                return _.contains(card.countryIds, country.id);
+            });
+            var cardsConnectedByRegion = _.filter(_this.cards, function (card) {
                 var resultFromRegion = false;
                 if(card.regionIds !== undefined) {
                     for(var i = 0; i < card.regionIds.length; i++) {
@@ -51,8 +54,9 @@ var CardsCountries = (function () {
                         resultFromRegion = resultFromRegion || _.contains(idsFromRegion, country.id);
                     }
                 }
-                return _.contains(card.countryIds, country.id) || resultFromRegion;
+                return resultFromRegion;
             });
+            var returningCards = _.uniq(cardsConnectedById.concat(cardsConnectedByRegion));
             _this.examinedCountry(country.name);
             var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards')).removedPile;
             returningCards = _.filter(returningCards, function (item) {
