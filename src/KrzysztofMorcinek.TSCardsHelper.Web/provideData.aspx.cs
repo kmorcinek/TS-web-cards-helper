@@ -31,17 +31,18 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 //                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
 //                .ToArray();
 
-            cards.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
+//            cards.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
+//                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
+//                .ToArray();
+
+            cards.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml"))
                 .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
                 .ToArray();
 
-            //x.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml"))
-            //    .ToArray();
-
             var sb = new StringBuilder();
-            foreach (dynamic card in cards.MidWar)
+            foreach (dynamic card in cards.LateWar)
             {
-                sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}", "{", "}", card.Id, card.Name);
+                sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}<br/>", "{", "}", card.Id, card.Name);
                 sb.AppendLine();
             }
 
