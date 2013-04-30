@@ -36,17 +36,52 @@ class CardsCountries {
     connectedCards = ko.observableArray([]);
     examinedCountry = ko.observable("Hover over a country (Europe)");
     public showForCountry: (countryArea) => void;
+    private getConnectedCards: (country) => Card[];
 
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
 
         this.showForCountry = (country) => {
+            
+            this.examinedCountry(country.name);
+
+            var returningCards = this.getConnectedCards(country);
+
+            var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+            var removedPile = cards.removedPile;
+
+            returningCards = _.filter(returningCards, function (item) {
+                return _.filter(removedPile, function (removedItem) {
+                    // TODO id not name
+                    return removedItem.name === item.name;
+                }).length === 0;
+            });
+
+            // add color
+            ko.utils.arrayForEach(returningCards, function (card) {
+                //var sureInHands = _.pluck(cards.sureInHands, "name");
+                if (underscoreJS.findWhere(cards.sureInHands, { name: card.name }) !== undefined) {
+                    card.urgency = "sureInHands";
+                } else if (underscoreJS.findWhere(cards.cardsInDeck, { name: card.name }) !== undefined) {
+                    card.urgency = "cardsInDeck";
+                } else {
+                    card.urgency = "empty";
+                }
+            });
+
+            this.connectedCards.valueWillMutate();
+            this.connectedCards.removeAll();
+            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
+            this.connectedCards.valueHasMutated();
+        }
+
+        this.getConnectedCards = (country) => {
             var cardsConnectedById = _.filter(this.cards, function (card) {
                 return _.contains(card.countryIds, country.id);
             });
 
             var cardsConnectedByRegion = _.filter(this.cards, function (card) {
                 var resultFromRegion = false;
-                
+
                 if (card.regionIds !== undefined) {
                     for (var i = 0; i < card.regionIds.length; i++) {
                         var idsFromRegion = this.regions[card.regionIds[i]].countryIds;
@@ -57,27 +92,7 @@ class CardsCountries {
                 return resultFromRegion;
             });
 
-            var returningCards = _.uniq(cardsConnectedById.concat(cardsConnectedByRegion));
-
-            this.examinedCountry(country.name);
-
-            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards')).removedPile;
-
-            returningCards = _.filter(returningCards, function (item) {
-                return _.filter(removedPile, function (removedItem) {
-                    return removedItem.name === item.name;
-                }).length === 0;
-            });
-
-            // add color
-            ko.utils.arrayForEach(returningCards, function (card) {
-                card.urgency = "sureInHands";
-            });
-
-            this.connectedCards.valueWillMutate();
-            this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
-            this.connectedCards.valueHasMutated();
+            return _.uniq(cardsConnectedById.concat(cardsConnectedByRegion));
         }
     }
 }

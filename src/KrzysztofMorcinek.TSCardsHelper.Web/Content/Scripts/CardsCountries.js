@@ -43,6 +43,34 @@ var CardsCountries = (function () {
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable("Hover over a country (Europe)");
         this.showForCountry = function (country) {
+            _this.examinedCountry(country.name);
+            var returningCards = _this.getConnectedCards(country);
+            var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+            var removedPile = cards.removedPile;
+            returningCards = _.filter(returningCards, function (item) {
+                return _.filter(removedPile, function (removedItem) {
+                    return removedItem.name === item.name;
+                }).length === 0;
+            });
+            ko.utils.arrayForEach(returningCards, function (card) {
+                if(underscoreJS.findWhere(cards.sureInHands, {
+                    name: card.name
+                }) !== undefined) {
+                    card.urgency = "sureInHands";
+                } else if(underscoreJS.findWhere(cards.cardsInDeck, {
+                    name: card.name
+                }) !== undefined) {
+                    card.urgency = "cardsInDeck";
+                } else {
+                    card.urgency = "empty";
+                }
+            });
+            _this.connectedCards.valueWillMutate();
+            _this.connectedCards.removeAll();
+            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, returningCards);
+            _this.connectedCards.valueHasMutated();
+        };
+        this.getConnectedCards = function (country) {
             var cardsConnectedById = _.filter(_this.cards, function (card) {
                 return _.contains(card.countryIds, country.id);
             });
@@ -56,21 +84,7 @@ var CardsCountries = (function () {
                 }
                 return resultFromRegion;
             });
-            var returningCards = _.uniq(cardsConnectedById.concat(cardsConnectedByRegion));
-            _this.examinedCountry(country.name);
-            var removedPile = ko.utils.parseJson(localStorage.getItem('ts-cards')).removedPile;
-            returningCards = _.filter(returningCards, function (item) {
-                return _.filter(removedPile, function (removedItem) {
-                    return removedItem.name === item.name;
-                }).length === 0;
-            });
-            ko.utils.arrayForEach(returningCards, function (card) {
-                card.urgency = "sureInHands";
-            });
-            _this.connectedCards.valueWillMutate();
-            _this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, returningCards);
-            _this.connectedCards.valueHasMutated();
+            return _.uniq(cardsConnectedById.concat(cardsConnectedByRegion));
         };
     }
     return CardsCountries;

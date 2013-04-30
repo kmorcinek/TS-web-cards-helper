@@ -72,14 +72,14 @@
         };
 
         ko.computed(function () {
-            var a = {
+            var cards = {
                 cardsInDeck: self.cardsInDeck(),
                 sureInHands: self.sureInHands(),
                 discardedPile: self.discardedPile(),
                 removedPile: self.removedPile(),
             };
 
-            localStorage.setItem('ts-cards', ko.toJSON(a));
+            localStorage.setItem('ts-cards', ko.toJSON(cards));
         }).extend({
             throttle: 500
         });

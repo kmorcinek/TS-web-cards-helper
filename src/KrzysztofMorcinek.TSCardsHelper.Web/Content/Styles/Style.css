@@ -24,3 +24,7 @@ a {
 img.sureInHands {
     border-color: red;
 }
+
+img.cardsInDeck {
+    border-style:none;
+}
