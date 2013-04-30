@@ -51,14 +51,12 @@ class CardsCountries {
 
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
-                    // TODO id not name
-                    return removedItem.name === item.name;
+                    return removedItem.id === item.id;
                 }).length === 0;
             });
 
             // add color
             ko.utils.arrayForEach(returningCards, function (card) {
-                //var sureInHands = _.pluck(cards.sureInHands, "name");
                 if (underscoreJS.findWhere(cards.sureInHands, { name: card.name }) !== undefined) {
                     card.urgency = "sureInHands";
                 } else if (underscoreJS.findWhere(cards.cardsInDeck, { name: card.name }) !== undefined) {

@@ -49,7 +49,7 @@ var CardsCountries = (function () {
             var removedPile = cards.removedPile;
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
-                    return removedItem.name === item.name;
+                    return removedItem.id === item.id;
                 }).length === 0;
             });
             ko.utils.arrayForEach(returningCards, function (card) {
