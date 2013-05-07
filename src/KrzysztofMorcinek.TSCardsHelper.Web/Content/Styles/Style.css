@@ -3,8 +3,9 @@
     width: 500px;
 }
 
-.connected-cards {
-    height: 220px;
+ul.connected-cards {
+    height: 360px;
+    width: 1388px;
 }
 
 .connected-cards li {
