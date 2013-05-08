@@ -1,5 +1,3 @@
-Bootstrap ju¿ dla przycisku.
-
 Lista rzeczy które trzeba zawsze mieæ (równie¿ per side) np:
 2x overprotect Italy.
 Overprotect Asia.
@@ -9,6 +7,6 @@ Optional cards have different html on page.
 
 Change js names to camelCase.
 
-Is it ok to use pictures from http://twilightstrategy.com/?
-
 Basic manuall for user (could be important for developers not familiar with game). Especially for map.html.
+
+Wassal is writting logs to a file.
