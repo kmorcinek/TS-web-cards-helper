@@ -71,7 +71,11 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
             var imagePath = cardName.ToLower()
                                     .Replace(' ', '-')
                                     .Replace("*", "")
-                                    .Replace("/", "-");
+                                    .Replace("/", "-")
+                                    .Replace("…", "") // “Ask Not What Your Country…”*
+                                    .Replace("007", "7") // Soviets Shoot Down KAL-007*
+                                    .Replace("“", "")
+                                    .Replace("”", "");
 
             return string.Format(
                     "http://twilightstrategy.files.wordpress.com/2012/01/{0}.jpg",
