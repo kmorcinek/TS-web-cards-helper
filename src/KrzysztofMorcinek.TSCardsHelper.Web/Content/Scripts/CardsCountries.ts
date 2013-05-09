@@ -34,7 +34,7 @@ class Country {
 
 class CardsCountries {
     connectedCards = ko.observableArray([]);
-    examinedCountry = ko.observable("Hover over a country (Europe)");
+    examinedCountry = ko.observable("Hover over a country");
     public showForCountry: (countryArea) => void;
     private getConnectedCards: (country) => Card[];
 
