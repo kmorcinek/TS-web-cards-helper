@@ -24,7 +24,10 @@
 
         <ul class="connected-cards" data-bind="foreach: connectedCards, css: cardsPosition, visible:connectedCards().length">
             <li><a data-bind="attr: {href: href}" target="_blank">
-                <img data-bind="attr: {src: picturePath + '?w=80', alt: name, title:name}, css: urgency" /></a></li>
+                    <h2 class="card-image-replacement" data-bind="style: {'background-position': backgroundPosition }, css: urgency">
+                        <span>sprite</span>
+                    </h2>
+                </a></li>
         </ul>
 
     </div>

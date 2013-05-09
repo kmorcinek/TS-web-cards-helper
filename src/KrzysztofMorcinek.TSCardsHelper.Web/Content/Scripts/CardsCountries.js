@@ -42,6 +42,9 @@ var CardsCountries = (function () {
         var _this = this;
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable();
+        ko.utils.arrayForEach(cards, function (card) {
+            card.backgroundPosition = "0 " + (card.id - 1) * -113;
+        });
         this.cardsPosition = ko.computed(function () {
             if(_this.examinedCountry() !== undefined && _.contains(_this.regions[0].countryIds, _this.examinedCountry().id)) {
                 return "down-cards";

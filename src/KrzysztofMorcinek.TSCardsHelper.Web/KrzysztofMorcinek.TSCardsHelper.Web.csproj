@@ -77,6 +77,7 @@
     <Content Include="DataFiles\MidWarToParse.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\cards_80px.png" />
     <Content Include="images\TS_Vassal_board.PNG" />
     <Content Include="info.html" />
     <Content Include="provideData.aspx" />

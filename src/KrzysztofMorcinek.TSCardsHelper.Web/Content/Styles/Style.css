@@ -1,15 +1,18 @@
-﻿div#main-container div {
+﻿div#main-container div
+{
     float: left;
     width: 500px;
 }
 
-.world-map {
-    position:absolute;
+.world-map
+{
+    position: absolute;
 }
 
-ul.connected-cards {
-    position:absolute;
-    z-index:100;
+ul.connected-cards
+{
+    position: absolute;
+    z-index: 100;
     width: 1315px;
     left: 0;
     background-color: powderblue;
@@ -17,31 +20,50 @@ ul.connected-cards {
     border-color: blue;
     border-radius: 10px;
     margin: 22px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-ul.down-cards {
+ul.down-cards
+{
     top: 470px;
 }
 
-.connected-cards li {
+.connected-cards li
+{
     display: inline-block;
     padding: 5px;
 }
 
-a {
+a
+{
     padding: 5px;
 }
 
-.connected-cards img {
-    border-style:dashed;
-    border-width:2px;
+.connected-cards h2
+{
+    border-style: dashed;
+    border-width: 2px;
 }
 
-img.sureInHands {
+h2.sureInHands
+{
     border-color: red;
 }
 
-img.cardsInDeck {
-    border-style:none;
+h2.cardsInDeck
+{
+    border-style: none;
 }
+
+h2.card-image-replacement
+{
+    width: 80px;
+    height: 112px;
+    background-image: url(/images/cards_80px.PNG);
+    margin: 0;
+}
+
+    h2.card-image-replacement span
+    {
+        display: none;
+    }

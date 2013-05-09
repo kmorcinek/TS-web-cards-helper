@@ -42,6 +42,10 @@ class CardsCountries {
     private getConnectedCards: (country) => Card[];
 
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
+        ko.utils.arrayForEach(cards, function (card) {
+            card.backgroundPosition = "0 " + (card.id - 1) * -113;
+        });
+
         this.cardsPosition = ko.computed(() => {
             // TODO Europe hardcoded on index 0
             if (this.examinedCountry() !== undefined && _.contains(this.regions[0].countryIds, this.examinedCountry().id)) {
