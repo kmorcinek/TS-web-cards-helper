@@ -34,15 +34,28 @@ class Country {
 
 class CardsCountries {
     connectedCards = ko.observableArray([]);
-    examinedCountry = ko.observable("Hover over a country");
+    cardsPosition: any;
+    examinedCountry = ko.observable();
+    examinedCountryName: any;
     public showForCountry: (countryArea) => void;
     private getConnectedCards: (country) => Card[];
 
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
+        this.cardsPosition = ko.computed(() => {
+            return "";
+        });
+
+        this.examinedCountryName = ko.computed(() => {
+            if (this.examinedCountry() === undefined) {
+                return "Hover over a country";
+            } else {
+                return this.examinedCountry().name;
+            }
+        });
 
         this.showForCountry = (country) => {
-            
-            this.examinedCountry(country.name);
+
+            this.examinedCountry(country);
 
             var returningCards = this.getConnectedCards(country);
 

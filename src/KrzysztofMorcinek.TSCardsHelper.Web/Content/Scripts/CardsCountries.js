@@ -41,9 +41,19 @@ var CardsCountries = (function () {
         this.regions = regions;
         var _this = this;
         this.connectedCards = ko.observableArray([]);
-        this.examinedCountry = ko.observable("Hover over a country (Europe)");
+        this.examinedCountry = ko.observable();
+        this.cardsPosition = ko.computed(function () {
+            return "";
+        });
+        this.examinedCountryName = ko.computed(function () {
+            if(_this.examinedCountry() === undefined) {
+                return "Hover over a country";
+            } else {
+                return _this.examinedCountry().name;
+            }
+        });
         this.showForCountry = function (country) {
-            _this.examinedCountry(country.name);
+            _this.examinedCountry(country);
             var returningCards = _this.getConnectedCards(country);
             var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
             var removedPile = cards.removedPile;

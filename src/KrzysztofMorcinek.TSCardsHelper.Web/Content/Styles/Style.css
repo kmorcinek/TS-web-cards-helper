@@ -14,12 +14,8 @@ ul.connected-cards {
     left: 0;
 }
 
-ul.up-cards {
-    top: 0;
-}
-
 ul.down-cards {
-    bottom: 0;
+    top: 700px;
 }
 
 .connected-cards li {
