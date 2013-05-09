@@ -12,7 +12,8 @@
     <h3 data-bind="text: examinedCountryName"></h3>
     <div id="container">
         <img class="world-map" src="/images/TS_Vassal_board.PNG" alt="HTML Map"
-            border-width="0" usemap="#countries" />
+             border-width="0" usemap="#countries" 
+             data-bind="click: clickMap"/>
 
         <map name="countries" data-bind="foreach: countries">
             <area shape="rect"

@@ -37,6 +37,7 @@ class CardsCountries {
     cardsPosition: any;
     examinedCountry = ko.observable();
     examinedCountryName: any;
+    clickMap: any;
     public showForCountry: (countryArea) => void;
     private getConnectedCards: (country) => Card[];
 
@@ -57,6 +58,14 @@ class CardsCountries {
 
             return "Hover over a country";
         });
+
+        this.clickMap = () => {
+            this.examinedCountry(undefined);
+
+            this.connectedCards.valueWillMutate();
+            this.connectedCards.removeAll();
+            this.connectedCards.valueHasMutated();
+        }
 
         this.showForCountry = (country) => {
 

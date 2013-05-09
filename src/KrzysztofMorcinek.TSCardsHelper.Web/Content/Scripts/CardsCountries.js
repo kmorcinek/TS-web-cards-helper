@@ -54,6 +54,12 @@ var CardsCountries = (function () {
             }
             return "Hover over a country";
         });
+        this.clickMap = function () {
+            _this.examinedCountry(undefined);
+            _this.connectedCards.valueWillMutate();
+            _this.connectedCards.removeAll();
+            _this.connectedCards.valueHasMutated();
+        };
         this.showForCountry = function (country) {
             _this.examinedCountry(country);
             var returningCards = _this.getConnectedCards(country);
