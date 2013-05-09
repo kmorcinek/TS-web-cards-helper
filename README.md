@@ -29,10 +29,10 @@ I need some help. Not only developers, there is also some data that have to be m
 Screenshots
 ===============
 
-2013-04-25:
-![Connected cards as a pictures](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/Cards_as_a_pictures.JPG)
-Hover over a country and you will see cards that are somehow connected to this country.
-
-2013-05-09:
+* 2013-05-09:
 ![Connected cards as a pictures](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/All_countries_and_cards_Cards_on_the_map.JPG)
-All countries and cards are added. Connected cards are displayed on the map (not next to map like before), saves space.
+  All countries and cards are added. Connected cards are displayed on the map (not next to map like before), saves space.
+
+* 2013-04-25:
+![Connected cards as a pictures](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/Cards_as_a_pictures.JPG)
+  Hover over a country and you will see cards that are somehow connected to this country.
