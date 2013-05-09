@@ -10,18 +10,21 @@
         <a href="info.html">Info</a>
     </menu>
     <h3 data-bind="text: examinedCountry"></h3>
-    <ul class="connected-cards" data-bind="foreach: connectedCards">
-        <li><a data-bind="attr: {href: href}" target="_blank"><img data-bind="attr: {src: picturePath + '?w=120', alt: name, title:name}, css: urgency"/></a></li>
-    </ul>
+    <div id="container">
+        <img class="world-map" src="/images/TS_Vassal_board.PNG" alt="HTML Map"
+            border-width="0" usemap="#countries" />
 
-    <img src="/images/TS_Vassal_board.PNG" alt="HTML Map"
-        border-width="0" usemap="#countries" />
+        <map name="countries" data-bind="foreach: countries">
+            <area shape="rect"
+                  data-bind="event: { mouseover: $parent.showForCountry }, attr: {coords: coords} " />
+        </map>
+        
+        <ul class="connected-cards" data-bind="foreach: connectedCards">
+            <li><a data-bind="attr: {href: href}" target="_blank">
+                <img data-bind="attr: {src: picturePath + '?w=80', alt: name, title:name}, css: urgency" /></a></li>
+        </ul>
 
-    <map name="countries" data-bind="foreach: countries">
-        <area shape="rect"
-            data-bind="event: { mouseover: $parent.showForCountry }, attr: {coords: coords} " />
-    </map>
-
+    </div>
     <script src="Scripts/knockout-2.2.1.js"></script>
     <script type="text/javascript" src="Scripts/underscore.min.js"></script>
     <script type="text/javascript" src="Content/Scripts/CardsCountries.js"></script>

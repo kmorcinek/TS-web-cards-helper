@@ -3,9 +3,23 @@
     width: 500px;
 }
 
+.world-map {
+    position:absolute;
+}
+
 ul.connected-cards {
-    height: 360px;
-    width: 1388px;
+    position:absolute;
+    z-index:100;
+    width: 1355px;
+    left: 0;
+}
+
+ul.up-cards {
+    top: 0;
+}
+
+ul.down-cards {
+    bottom: 0;
 }
 
 .connected-cards li {
