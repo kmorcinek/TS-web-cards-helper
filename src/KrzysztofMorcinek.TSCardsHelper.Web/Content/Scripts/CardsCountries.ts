@@ -42,15 +42,20 @@ class CardsCountries {
 
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
         this.cardsPosition = ko.computed(() => {
+            // TODO Europe hardcoded on index 0
+            if (this.examinedCountry() !== undefined && _.contains(this.regions[0].countryIds, this.examinedCountry().id)) {
+                return "down-cards";
+            }
+
             return "";
         });
 
         this.examinedCountryName = ko.computed(() => {
-            if (this.examinedCountry() === undefined) {
-                return "Hover over a country";
-            } else {
+            if (this.examinedCountry() !== undefined) {
                 return this.examinedCountry().name;
             }
+
+            return "Hover over a country";
         });
 
         this.showForCountry = (country) => {

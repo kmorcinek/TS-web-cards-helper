@@ -43,14 +43,16 @@ var CardsCountries = (function () {
         this.connectedCards = ko.observableArray([]);
         this.examinedCountry = ko.observable();
         this.cardsPosition = ko.computed(function () {
+            if(_this.examinedCountry() !== undefined && _.contains(_this.regions[0].countryIds, _this.examinedCountry().id)) {
+                return "down-cards";
+            }
             return "";
         });
         this.examinedCountryName = ko.computed(function () {
-            if(_this.examinedCountry() === undefined) {
-                return "Hover over a country";
-            } else {
+            if(_this.examinedCountry() !== undefined) {
                 return _this.examinedCountry().name;
             }
+            return "Hover over a country";
         });
         this.showForCountry = function (country) {
             _this.examinedCountry(country);
