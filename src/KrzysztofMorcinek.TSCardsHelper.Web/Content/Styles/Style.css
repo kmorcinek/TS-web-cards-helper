@@ -10,8 +10,14 @@
 ul.connected-cards {
     position:absolute;
     z-index:100;
-    width: 1355px;
+    width: 1315px;
     left: 0;
+    background-color: powderblue;
+    border-style: inset;
+    border-color: blue;
+    border-radius: 10px;
+    margin: 22px;
+    padding: 20px;
 }
 
 ul.down-cards {

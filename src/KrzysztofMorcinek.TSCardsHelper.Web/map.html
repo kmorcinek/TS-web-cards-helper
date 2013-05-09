@@ -20,7 +20,7 @@
                   data-bind="event: { mouseover: $parent.showForCountry }, attr: {coords: coords} " />
         </map>
         
-        <ul class="connected-cards" data-bind="foreach: connectedCards, css: cardsPosition">
+        <ul class="connected-cards" data-bind="foreach: connectedCards, css: cardsPosition, visible:connectedCards().length">
             <li><a data-bind="attr: {href: href}" target="_blank">
                 <img data-bind="attr: {src: picturePath + '?w=80', alt: name, title:name}, css: urgency" /></a></li>
         </ul>
