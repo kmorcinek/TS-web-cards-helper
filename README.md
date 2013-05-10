@@ -2,8 +2,12 @@ TS-web-cards-helper is a lightway web app, that helps to play boardgame Twilight
 ===================
 The Twilight struggle game itself is ranked first in world wide ranking http://boardgamegeek.com/browse/boardgame/page/1?sort=rank
 
+Current version is hosted at  
+http://angelo.hostingasp.pl/map.html and  
+http://angelo.hostingasp.pl/index.html (its playable but under development)
+
 ## Issues
-- Sad but it displays correctly only on Chrome.
+- Sad, but it displays correctly only on Chrome.
 
 ## Main reason for developing this app
 
@@ -12,9 +16,6 @@ The Twilight struggle game itself is ranked first in world wide ranking http://b
 
 ## Where it can be used?
 I usually play online using vassal engine.
-
-Current version is hosted at 
-http://angelo.hostingasp.pl/index.html and http://angelo.hostingasp.pl/map.html (its playable but under development)
 
 ## Technologies used
 JavaScript, KnockoutJS, (TypeScript), C# (only for offline data parsing from other pages and converting to JSON). (probably will evolve towards Single Page Application).
