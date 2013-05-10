@@ -33,3 +33,7 @@ I need some help. Not only developers, there is also some data that have to be m
 * 2013-04-25:
 ![Connected cards as a pictures](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/Cards_as_a_pictures.JPG)
   Hover over a country and you will see cards that are somehow connected to this country.
+
+## Contact
+
+krzysztof.morcinek@gmail.com
