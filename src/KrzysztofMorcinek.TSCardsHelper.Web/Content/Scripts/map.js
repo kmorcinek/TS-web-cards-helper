@@ -10,7 +10,7 @@ var cardsForCountries = [
 { "id": 3, "countryIds": [], "regionIds": [3] }, // Middle East Scoring
 { "id": 4, "countryIds": [], "regionIds": [] }, // Duck and Cover
 { "id": 5, "countryIds": [], "regionIds": [] }, // Five Year Plan
-{ "id": 6, "countryIds": [31,36], "regionIds": [4] }, // The China Card
+{ "id": 6, "countryIds": [31,32,36], "regionIds": [4] }, // The China Card
 { "id": 7, "countryIds": [], "regionIds": [1] }, // Socialist Governments
 { "id": 8, "countryIds": [71], "regionIds": [] }, // Fidel*
 { "id": 9, "countryIds": [37], "regionIds": [5] }, // Vietnam Revolts*
