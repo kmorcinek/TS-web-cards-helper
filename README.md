@@ -8,6 +8,7 @@ http://angelo.hostingasp.pl/index.html (its playable but under development)
 
 ## Issues
 - Sad, but it displays correctly only on Chrome.
+- map.html - htmls are by default cached. Even if I put meta tags about NOT caching, I don't own proxies between server and browser. And I feel my solutions is not perfect due to [Cache Invalidation](http://martinfowler.com/bliki/TwoHardThings.html). I suggest hard reloading (cache empty) when in doubt.
 
 ## Main reason for developing this app
 
