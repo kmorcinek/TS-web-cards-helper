@@ -47,9 +47,7 @@ class CardsCountries {
             card.backgroundPosition = "0 " + (card.id - 1) * -113;
         });
 
-        this.selectedCountry = ko.computed(() => {
-            return this.hoveredCountry();
-        }).extend({ throttle: 500 });
+        this.selectedCountry = ko.computed(this.hoveredCountry).extend({ throttle: 500 });
 
         this.cardsPosition = ko.computed(() => {
             // TODO Europe hardcoded on index 0

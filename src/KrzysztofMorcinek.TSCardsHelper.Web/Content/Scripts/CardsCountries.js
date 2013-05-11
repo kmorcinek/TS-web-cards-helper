@@ -45,9 +45,7 @@ var CardsCountries = (function () {
         ko.utils.arrayForEach(cards, function (card) {
             card.backgroundPosition = "0 " + (card.id - 1) * -113;
         });
-        this.selectedCountry = ko.computed(function () {
-            return _this.hoveredCountry();
-        }).extend({
+        this.selectedCountry = ko.computed(this.hoveredCountry).extend({
             throttle: 500
         });
         this.cardsPosition = ko.computed(function () {
