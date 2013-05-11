@@ -59,12 +59,16 @@ var CardsCountries = (function () {
         });
         this.clickMap = function () {
             _this.examinedCountry(undefined);
-            _this.connectedCards.valueWillMutate();
-            _this.connectedCards.removeAll();
-            _this.connectedCards.valueHasMutated();
         };
         this.showForCountry = function (country) {
             _this.examinedCountry(country);
+        };
+        ko.computed(function () {
+            var country = _this.examinedCountry();
+            if(country === undefined) {
+                _this.connectedCards.removeAll();
+                return;
+            }
             var returningCards = _this.getConnectedCards(country);
             var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
             if(cards === null) {
@@ -98,7 +102,7 @@ var CardsCountries = (function () {
             _this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, returningCards);
             _this.connectedCards.valueHasMutated();
-        };
+        });
         this.getConnectedCards = function (country) {
             var cardsConnectedById = _.filter(_this.cards, function (card) {
                 return _.contains(card.countryIds, country.id);

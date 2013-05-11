@@ -65,15 +65,19 @@ class CardsCountries {
 
         this.clickMap = () => {
             this.examinedCountry(undefined);
-
-            this.connectedCards.valueWillMutate();
-            this.connectedCards.removeAll();
-            this.connectedCards.valueHasMutated();
         }
 
         this.showForCountry = (country) => {
-
             this.examinedCountry(country);
+        };
+
+        ko.computed(() => {
+            var country = this.examinedCountry();
+
+            if (country === undefined) {
+                this.connectedCards.removeAll();
+                return;
+            }
 
             var returningCards = this.getConnectedCards(country);
 
@@ -105,7 +109,7 @@ class CardsCountries {
             this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, returningCards);
             this.connectedCards.valueHasMutated();
-        }
+        });
 
         this.getConnectedCards = (country) => {
             var cardsConnectedById = _.filter(this.cards, function (card) {
