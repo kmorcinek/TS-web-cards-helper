@@ -28,8 +28,12 @@ I need some help. Not only developers, there is also some data that have to be m
 
 ## Screenshots
 
+* 2013-05-11:
+![Directly connected cards are first](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/TS_directly_connected_cards_are_first.JPG)
+  Cards that are connected directly to a country (UK in this example) are shown first before cards connected with Region (Europe).
+  
 * 2013-05-09:
-![Connected cards as a pictures](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/All_countries_and_cards_Cards_on_the_map.JPG)
+![All countries and cards](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/All_countries_and_cards_Cards_on_the_map.JPG)
   All countries and cards are added. Connected cards are displayed on the map (not next to map like before), saves space.
 
 * 2013-04-25:
