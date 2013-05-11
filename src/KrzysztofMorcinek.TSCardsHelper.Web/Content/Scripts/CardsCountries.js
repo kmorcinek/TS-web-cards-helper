@@ -67,6 +67,14 @@ var CardsCountries = (function () {
             _this.examinedCountry(country);
             var returningCards = _this.getConnectedCards(country);
             var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+            if(cards === null) {
+                cards = {
+                    removedPile: [],
+                    sureInHands: [],
+                    cardsInDeck: [],
+                    discardedPile: []
+                };
+            }
             var removedPile = cards.removedPile;
             returningCards = _.filter(returningCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
