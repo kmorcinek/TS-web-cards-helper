@@ -41,35 +41,35 @@ var CardsCountries = (function () {
         this.regions = regions;
         var _this = this;
         this.connectedCards = ko.observableArray([]);
-        this.examinedCountry = ko.observable();
+        this.selectedCountry = ko.observable();
         ko.utils.arrayForEach(cards, function (card) {
             card.backgroundPosition = "0 " + (card.id - 1) * -113;
         });
         this.cardsPosition = ko.computed(function () {
-            if(_this.examinedCountry() !== undefined && _.contains(_this.regions[0].countryIds, _this.examinedCountry().id)) {
+            if(_this.selectedCountry() !== undefined && _.contains(_this.regions[0].countryIds, _this.selectedCountry().id)) {
                 return "down-cards";
             }
             return "";
         });
-        this.examinedCountryName = ko.computed(function () {
-            if(_this.examinedCountry() !== undefined) {
-                return _this.examinedCountry().name;
+        this.selectedCountryName = ko.computed(function () {
+            if(_this.selectedCountry() !== undefined) {
+                return _this.selectedCountry().name;
             }
             return "Hover over a country";
         });
         this.clickMap = function () {
-            _this.examinedCountry(undefined);
+            _this.selectedCountry(undefined);
         };
         this.showForCountry = function (country) {
-            _this.examinedCountry(country);
+            _this.selectedCountry(country);
         };
         ko.computed(function () {
-            var country = _this.examinedCountry();
+            var country = _this.selectedCountry();
             if(country === undefined) {
                 _this.connectedCards.removeAll();
                 return;
             }
-            var returningCards = _this.getConnectedCards(country);
+            var allConnectedCards = _this.getConnectedCards(country);
             var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
             if(cards === null) {
                 cards = {
@@ -80,12 +80,12 @@ var CardsCountries = (function () {
                 };
             }
             var removedPile = cards.removedPile;
-            returningCards = _.filter(returningCards, function (item) {
+            allConnectedCards = _.filter(allConnectedCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
                     return removedItem.id === item.id;
                 }).length === 0;
             });
-            ko.utils.arrayForEach(returningCards, function (card) {
+            ko.utils.arrayForEach(allConnectedCards, function (card) {
                 if(underscoreJS.findWhere(cards.sureInHands, {
                     name: card.name
                 }) !== undefined) {
@@ -100,7 +100,7 @@ var CardsCountries = (function () {
             });
             _this.connectedCards.valueWillMutate();
             _this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, returningCards);
+            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, allConnectedCards);
             _this.connectedCards.valueHasMutated();
         });
         this.getConnectedCards = function (country) {
