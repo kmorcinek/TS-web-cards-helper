@@ -35,7 +35,8 @@ class Country {
 class CardsCountries {
     connectedCards = ko.observableArray([]);
     cardsPosition: any;
-    selectedCountry = ko.observable();
+    hoveredCountry = ko.observable();
+    selectedCountry: any;
     selectedCountryName: any;
     clickMap: any;
     public showForCountry: (countryArea) => void;
@@ -45,6 +46,10 @@ class CardsCountries {
         ko.utils.arrayForEach(cards, function (card) {
             card.backgroundPosition = "0 " + (card.id - 1) * -113;
         });
+
+        this.selectedCountry = ko.computed(() => {
+            return this.hoveredCountry();
+        }).extend({ throttle: 500 });
 
         this.cardsPosition = ko.computed(() => {
             // TODO Europe hardcoded on index 0
@@ -64,11 +69,11 @@ class CardsCountries {
         });
 
         this.clickMap = () => {
-            this.selectedCountry(undefined);
+            this.hoveredCountry(undefined);
         }
 
         this.showForCountry = (country) => {
-            this.selectedCountry(country);
+            this.hoveredCountry(country);
         };
 
         ko.computed(() => {
@@ -109,7 +114,7 @@ class CardsCountries {
             this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, allConnectedCards);
             this.connectedCards.valueHasMutated();
-        }).extend({ throttle: 500 });;
+        });
 
         this.getConnectedCards = (country) => {
             var cardsConnectedById = _.filter(this.cards, function (card) {

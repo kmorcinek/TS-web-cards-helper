@@ -41,9 +41,14 @@ var CardsCountries = (function () {
         this.regions = regions;
         var _this = this;
         this.connectedCards = ko.observableArray([]);
-        this.selectedCountry = ko.observable();
+        this.hoveredCountry = ko.observable();
         ko.utils.arrayForEach(cards, function (card) {
             card.backgroundPosition = "0 " + (card.id - 1) * -113;
+        });
+        this.selectedCountry = ko.computed(function () {
+            return _this.hoveredCountry();
+        }).extend({
+            throttle: 500
         });
         this.cardsPosition = ko.computed(function () {
             if(_this.selectedCountry() !== undefined && _.contains(_this.regions[0].countryIds, _this.selectedCountry().id)) {
@@ -58,10 +63,10 @@ var CardsCountries = (function () {
             return "Hover over a country";
         });
         this.clickMap = function () {
-            _this.selectedCountry(undefined);
+            _this.hoveredCountry(undefined);
         };
         this.showForCountry = function (country) {
-            _this.selectedCountry(country);
+            _this.hoveredCountry(country);
         };
         ko.computed(function () {
             var country = _this.selectedCountry();
@@ -102,10 +107,7 @@ var CardsCountries = (function () {
             _this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, allConnectedCards);
             _this.connectedCards.valueHasMutated();
-        }).extend({
-            throttle: 500
         });
-        ;
         this.getConnectedCards = function (country) {
             var cardsConnectedById = _.filter(_this.cards, function (card) {
                 return _.contains(card.countryIds, country.id);
