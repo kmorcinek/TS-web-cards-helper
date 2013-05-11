@@ -109,7 +109,7 @@ class CardsCountries {
             this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, allConnectedCards);
             this.connectedCards.valueHasMutated();
-        });
+        }).extend({ throttle: 500 });;
 
         this.getConnectedCards = (country) => {
             var cardsConnectedById = _.filter(this.cards, function (card) {

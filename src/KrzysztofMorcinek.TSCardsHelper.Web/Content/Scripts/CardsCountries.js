@@ -102,7 +102,10 @@ var CardsCountries = (function () {
             _this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, allConnectedCards);
             _this.connectedCards.valueHasMutated();
+        }).extend({
+            throttle: 500
         });
+        ;
         this.getConnectedCards = function (country) {
             var cardsConnectedById = _.filter(_this.cards, function (card) {
                 return _.contains(card.countryIds, country.id);
