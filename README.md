@@ -19,7 +19,11 @@ http://angelo.hostingasp.pl/index.html (its playable but under development)
 I usually play online using vassal engine.
 
 ## Technologies used
-JavaScript, KnockoutJS, (TypeScript), C# (only for offline data parsing from other pages and converting to JSON). (probably will evolve towards Single Page Application).
+* JavaScript
+* KnockoutJS
+* TypeScript (you need [Web Essentails 2012](http://visualstudiogallery.msdn.microsoft.com/07d54d12-7133-4e15-becb-6f451ea3bea6) to generate .js when saving .ts files)
+* C# (only for offline data parsing from other pages and converting to JSON)
+* (probably will evolve towards Single Page Application).
 
 ## Contributors
 http://twilightstrategy.com - for providing great website about the game. I am parsing knowlegde already entered there.
