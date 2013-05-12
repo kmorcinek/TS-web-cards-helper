@@ -87,7 +87,9 @@ class CardsCountries {
 
             var cardsInGame = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
             if (cardsInGame === null) {
-                cardsInGame = { sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [] }
+                // TODO initialize cardsInDeckIds from cardsByStage.
+                alert("Visit 'index.html' and start choosing cards");
+                cardsInGame = { sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [], progress: "start", midWarIds: [], lateWarIds:[] }
             }
 
             var filterByIdsAndAddUrgency = function (allConnectedCards, ids, urgency) {
@@ -101,8 +103,7 @@ class CardsCountries {
 
             var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
-
-            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, this.getWillComeSoonIds(cardsInGame), "empty");
+            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, this.getWillComeSoonIds(cardsInGame), "willComeSoon");
 
             this.connectedCards.valueWillMutate();
             this.connectedCards.removeAll();
