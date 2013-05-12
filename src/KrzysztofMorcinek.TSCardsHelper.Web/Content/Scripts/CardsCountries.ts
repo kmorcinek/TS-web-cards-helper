@@ -50,7 +50,7 @@ class CardsCountries {
         this.selectedCountry = ko.computed(this.hoveredCountry).extend({ throttle: 500 });
 
         this.cardsPosition = ko.computed(() => {
-            // TODO Europe hardcoded on index 0
+            // HACK Europe hardcoded on index 0
             if (this.selectedCountry() !== undefined && _.contains(this.regions[0].countryIds, this.selectedCountry().id)) {
                 return "down-cards";
             }
@@ -84,34 +84,40 @@ class CardsCountries {
 
             var allConnectedCards = this.getConnectedCards(country);
 
-            var cards = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
-            if (cards === null) {
-                cards = { removedPileIds: [], sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [] }
+            var cardsInGame = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
+            if (cardsInGame === null) {
+                cardsInGame = { removedPileIds: [], sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [] }
             }
             // TODO remove discardedPileIds
 
-            var removedPileIds = cards.removedPileIds;
+            var removedPileIds = cardsInGame.removedPileIds;
 
-            allConnectedCards = _.filter(allConnectedCards, function (item) {
-                return _.filter(removedPileIds, function (removedItem) {
-                    return removedItem === item.name;
-                }).length === 0;
-            });
+            var filterByIdsAndAddUrgency = function (allConnectedCards, ids, urgency) {
+                return ko.utils.arrayFilter(allConnectedCards, function (card) {
+                    if (_.contains(ids, card.id)) {
+                        card.urgency = urgency;
+                        return true;
+                    }
+                });
+            };
+
+            var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
+            var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
 
             // add color
-            ko.utils.arrayForEach(allConnectedCards, function (card) {
-                if (_.contains(cards.sureInHandsIds, card.id)) {
-                    card.urgency = "sureInHands";
-                } else if (_.contains(cards.cardsInDeckIds, card.id)) {
-                    card.urgency = "cardsInDeck";
-                } else {
-                    card.urgency = "empty";
-                }
-            });
+            //ko.utils.arrayForEach(allConnectedCards, function (card) {
+            //    if (_.contains(cardsInGame.sureInHandsIds, card.id)) {
+            //        card.urgency = "sureInHands";
+            //    } else if (_.contains(cardsInGame.cardsInDeckIds, card.id)) {
+            //        card.urgency = "cardsInDeck";
+            //    } else {
+            //        card.urgency = "empty";
+            //    }
+            //});
 
             this.connectedCards.valueWillMutate();
             this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, allConnectedCards);
+            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, connectedInHands.concat(connectedInDeck));
             this.connectedCards.valueHasMutated();
         });
 

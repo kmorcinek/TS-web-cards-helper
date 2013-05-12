@@ -73,33 +73,29 @@ var CardsCountries = (function () {
                 return;
             }
             var allConnectedCards = _this.getConnectedCards(country);
-            var cards = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
-            if(cards === null) {
-                cards = {
+            var cardsInGame = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
+            if(cardsInGame === null) {
+                cardsInGame = {
                     removedPileIds: [],
                     sureInHandsIds: [],
                     cardsInDeckIds: [],
                     discardedPileIds: []
                 };
             }
-            var removedPileIds = cards.removedPileIds;
-            allConnectedCards = _.filter(allConnectedCards, function (item) {
-                return _.filter(removedPileIds, function (removedItem) {
-                    return removedItem === item.name;
-                }).length === 0;
-            });
-            ko.utils.arrayForEach(allConnectedCards, function (card) {
-                if(_.contains(cards.sureInHandsIds, card.id)) {
-                    card.urgency = "sureInHands";
-                } else if(_.contains(cards.cardsInDeckIds, card.id)) {
-                    card.urgency = "cardsInDeck";
-                } else {
-                    card.urgency = "empty";
-                }
-            });
+            var removedPileIds = cardsInGame.removedPileIds;
+            var filterByIdsAndAddUrgency = function (allConnectedCards, ids, urgency) {
+                return ko.utils.arrayFilter(allConnectedCards, function (card) {
+                    if(_.contains(ids, card.id)) {
+                        card.urgency = urgency;
+                        return true;
+                    }
+                });
+            };
+            var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
+            var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
             _this.connectedCards.valueWillMutate();
             _this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, allConnectedCards);
+            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, connectedInHands.concat(connectedInDeck));
             _this.connectedCards.valueHasMutated();
         });
         this.getConnectedCards = function (country) {
