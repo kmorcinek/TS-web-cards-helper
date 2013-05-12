@@ -20,7 +20,7 @@
         <button class="btn btn-primary" data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
         <div id="main-container">
             <div>
-                <h2>Sure in hands this turn</h2>
+                <h3>Sure in hands this turn</h3>
                 <ul data-bind="foreach: sureInHands">
 
                     <li>
@@ -32,7 +32,7 @@
                 </ul>
             </div>
             <div>
-                <h2>In deck or in hands</h2>
+                <h3>In deck or in hands</h3>
                 <ul data-bind="foreach: cardsInDeck">
 
                     <li>
@@ -44,13 +44,13 @@
                 </ul>
             </div>
             <div>
-                <h2>Discarded pile</h2>
+                <h3>Discarded pile</h3>
                 <ul data-bind="foreach: discardedPile">
                     <li data-bind="text: name" />
                 </ul>
             </div>
             <div>
-                <h2>Removed pile</h2>
+                <h3>Removed pile</h3>
                 <ul data-bind="foreach: removedPile">
                     <li data-bind="text: name" />
                 </ul>
