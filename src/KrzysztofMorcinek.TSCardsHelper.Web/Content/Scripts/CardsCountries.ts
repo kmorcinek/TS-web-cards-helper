@@ -84,24 +84,25 @@ class CardsCountries {
 
             var allConnectedCards = this.getConnectedCards(country);
 
-            var cards = ko.utils.parseJson(localStorage.getItem('ts-cards'));
+            var cards = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
             if (cards === null) {
-                cards = { removedPile: [], sureInHands: [], cardsInDeck: [], discardedPile: [] }
+                cards = { removedPileIds: [], sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [] }
             }
+            // TODO remove discardedPileIds
 
-            var removedPile = cards.removedPile;
+            var removedPileIds = cards.removedPileIds;
 
             allConnectedCards = _.filter(allConnectedCards, function (item) {
-                return _.filter(removedPile, function (removedItem) {
-                    return removedItem.name === item.name;
+                return _.filter(removedPileIds, function (removedItem) {
+                    return removedItem === item.name;
                 }).length === 0;
             });
 
             // add color
             ko.utils.arrayForEach(allConnectedCards, function (card) {
-                if (underscoreJS.findWhere(cards.sureInHands, { name: card.name }) !== undefined) {
+                if (_.contains(cards.sureInHandsIds, card.id)) {
                     card.urgency = "sureInHands";
-                } else if (underscoreJS.findWhere(cards.cardsInDeck, { name: card.name }) !== undefined) {
+                } else if (_.contains(cards.cardsInDeckIds, card.id)) {
                     card.urgency = "cardsInDeck";
                 } else {
                     card.urgency = "empty";

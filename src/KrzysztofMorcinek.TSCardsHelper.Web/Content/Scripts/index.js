@@ -73,13 +73,13 @@
 
         ko.computed(function () {
             var cards = {
-                cardsInDeck: self.cardsInDeck(),
-                sureInHands: self.sureInHands(),
-                discardedPile: self.discardedPile(),
-                removedPile: self.removedPile(),
+                cardsInDeckIds: _.pluck(self.cardsInDeck(), "id"),
+                sureInHandsIds: _.pluck(self.sureInHands(), "id"),
+                discardedPileIds: _.pluck(self.discardedPile(), "id"),
+                removedPileIds: _.pluck(self.removedPile(), "id"),
             };
 
-            localStorage.setItem('ts-cards', ko.toJSON(cards));
+            localStorage.setItem('ts-cards#2', ko.toJSON(cards));
         }).extend({
             throttle: 500
         });
