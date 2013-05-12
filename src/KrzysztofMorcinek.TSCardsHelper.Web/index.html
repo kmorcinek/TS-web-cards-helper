@@ -14,48 +14,50 @@
             <a href="map.html">Map</a>
             <a href="info.html">Info</a>
         </menu>
-        <button class="btn btn-primary" data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
-        <button class="btn btn-primary" data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
-        <button class="btn btn-primary" data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
-        <button class="btn btn-primary" data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
-        <div id="main-container">
-            <div>
-                <h3>Sure in hands this turn</h3>
-                <ul data-bind="foreach: sureInHands">
+        <section>
+            <button class="btn btn-primary" data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
+            <button class="btn btn-primary" data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
+            <button class="btn btn-primary" data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
+            <button class="btn btn-primary" data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
+            <div id="main-container">
+                <div>
+                    <h3>Sure in hands this turn</h3>
+                    <ul data-bind="foreach: sureInHands">
 
-                    <li>
-                        <button class="btn" data-bind="click: $parent.discard">Discard</button>
-                        <span data-bind="text: name"></span>
-                        <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i> Remove</button>
-                    </li>
+                        <li>
+                            <button class="btn" data-bind="click: $parent.discard">Discard</button>
+                            <span data-bind="text: name"></span>
+                            <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i> Remove</button>
+                        </li>
 
-                </ul>
-            </div>
-            <div>
-                <h3>In deck or in hands</h3>
-                <ul data-bind="foreach: cardsInDeck">
+                    </ul>
+                </div>
+                <div>
+                    <h3>In deck or in hands</h3>
+                    <ul data-bind="foreach: cardsInDeck">
 
-                    <li>
-                        <button class="btn" data-bind="click: $parent.discard">Discard</button>
-                        <span data-bind="text: name"></span>
-                        <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i> Remove</button>
-                    </li>
+                        <li>
+                            <button class="btn" data-bind="click: $parent.discard">Discard</button>
+                            <span data-bind="text: name"></span>
+                            <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i> Remove</button>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Discarded pile</h3>
+                    <ul data-bind="foreach: discardedPile">
+                        <li data-bind="text: name" />
+                    </ul>
+                </div>
+                <div>
+                    <h3>Removed pile</h3>
+                    <ul data-bind="foreach: removedPile">
+                        <li data-bind="text: name" />
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h3>Discarded pile</h3>
-                <ul data-bind="foreach: discardedPile">
-                    <li data-bind="text: name" />
-                </ul>
-            </div>
-            <div>
-                <h3>Removed pile</h3>
-                <ul data-bind="foreach: removedPile">
-                    <li data-bind="text: name" />
-                </ul>
-            </div>
-        </div>
+        </section>
 
         <script src="Scripts/jquery-1.9.1.min.js"></script>
         <script src="Scripts/bootstrap.min.js"></script>
