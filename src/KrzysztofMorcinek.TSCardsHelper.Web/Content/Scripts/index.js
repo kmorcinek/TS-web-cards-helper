@@ -74,6 +74,8 @@
                 sureInHandsIds: _.pluck(self.sureInHands(), "id"),
                 discardedPileIds: _.pluck(self.discardedPile(), "id"),
                 removedPileIds: _.pluck(self.removedPile(), "id"),
+                midWarIds: _.pluck(allCards.midWar, "id"),
+                lateWarIds: _.pluck(allCards.lateWar, "id"),
             };
 
             localStorage.setItem('ts-cards#2', ko.toJSON(cards));

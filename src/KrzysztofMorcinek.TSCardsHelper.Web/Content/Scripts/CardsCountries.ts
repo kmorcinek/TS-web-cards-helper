@@ -103,21 +103,11 @@ class CardsCountries {
 
             var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
-
-            // add color
-            //ko.utils.arrayForEach(allConnectedCards, function (card) {
-            //    if (_.contains(cardsInGame.sureInHandsIds, card.id)) {
-            //        card.urgency = "sureInHands";
-            //    } else if (_.contains(cardsInGame.cardsInDeckIds, card.id)) {
-            //        card.urgency = "cardsInDeck";
-            //    } else {
-            //        card.urgency = "empty";
-            //    }
-            //});
+            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.discardedPileIds.concat(cardsInGame.midWarIds), "empty");
 
             this.connectedCards.valueWillMutate();
             this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, connectedInHands.concat(connectedInDeck));
+            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
             this.connectedCards.valueHasMutated();
         });
 
