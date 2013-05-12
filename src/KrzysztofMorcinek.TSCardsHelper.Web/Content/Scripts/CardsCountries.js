@@ -85,7 +85,7 @@ var CardsCountries = (function () {
             var removedPile = cards.removedPile;
             allConnectedCards = _.filter(allConnectedCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
-                    return removedItem.id === item.id;
+                    return removedItem.name === item.name;
                 }).length === 0;
             });
             ko.utils.arrayForEach(allConnectedCards, function (card) {

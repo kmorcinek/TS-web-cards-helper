@@ -93,7 +93,7 @@ class CardsCountries {
 
             allConnectedCards = _.filter(allConnectedCards, function (item) {
                 return _.filter(removedPile, function (removedItem) {
-                    return removedItem.id === item.id;
+                    return removedItem.name === item.name;
                 }).length === 0;
             });
 
