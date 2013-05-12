@@ -32,12 +32,13 @@ I need some help. Not only developers, there is also some data that have to be m
 
 ## Screenshots
 
-* 2013-05-12:
+* 2013-05-12:  
 ![Card border shows probability of card appearance](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/TS_card_border_shows_the_probability_of_card.JPG)
+  
   Example of Iran. Cards with:
-  * red border are 'Sure to be in somebodys hand'
+  * red border are "Sure to be in somebody's hand now"
   * no border are in the deck
-  * blue border are 'Will come soon, but not in the yet' - if you are in early war this means cards after reshaftle and Mid War cards, in Mid Game this means cards after second reshaffle and Late War.
+  * blue border are "Will come soon, but not in the deck yet" - if you are in early war this means cards after reshaftle and Mid War cards, in Mid Game this means cards after second reshaffle and Late War.
   
 * 2013-05-11:
 ![Directly connected cards are first](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/TS_directly_connected_cards_are_first.JPG)
