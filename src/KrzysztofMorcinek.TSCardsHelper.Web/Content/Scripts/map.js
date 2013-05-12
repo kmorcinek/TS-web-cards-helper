@@ -1,6 +1,12 @@
 ﻿// flat cards
 var cards = cardsByStage.earlyWar.concat(cardsByStage.midWar, cardsByStage.lateWar);
 
+var cardsInGame = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
+if (cardsInGame === null) {
+    cardsInGame = { sureInHandsIds: [], cardsInDeckIds: _.pluck(cardsByStage.earlyWar, "id"), discardedPileIds: [], progress: "start", midWarIds: [], lateWarIds: [] };
+    localStorage.setItem('ts-cards#2', ko.toJSON(cardsInGame));
+}
+
 var cardsForCountries = [
 { "id": 1, "countryIds": [], "regionIds": [4] }, // Asia Scoring
 { "id": 2, "countryIds": [], "regionIds": [0] }, // Europe Scoring

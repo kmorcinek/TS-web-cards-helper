@@ -75,7 +75,7 @@ var CardsCountries = (function () {
             var allConnectedCards = _this.getConnectedCards(country);
             var cardsInGame = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
             if(cardsInGame === null) {
-                alert("Visit 'index.html' and start choosing cards");
+                alert("Visit 'Cards' and start choosing cards");
                 cardsInGame = {
                     sureInHandsIds: [],
                     cardsInDeckIds: [],
