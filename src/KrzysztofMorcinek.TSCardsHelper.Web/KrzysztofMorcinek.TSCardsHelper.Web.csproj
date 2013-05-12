@@ -62,10 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\Scripts\CardsCountries.ts" />
-    <Content Include="Content\Styles\bootstrap-responsive.css" />
-    <Content Include="Content\Styles\bootstrap-responsive.min.css" />
-    <Content Include="Content\Styles\bootstrap.css" />
-    <Content Include="Content\Styles\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\Scripts\CardsCountries.js">
