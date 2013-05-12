@@ -41,6 +41,7 @@ class CardsCountries {
     clickMap: any;
     public showForCountry: (countryArea) => void;
     private getConnectedCards: (country) => Card[];
+    getWillComeSoonIds: (any) => number[];
 
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
         ko.utils.arrayForEach(cards, function (card) {
@@ -86,11 +87,8 @@ class CardsCountries {
 
             var cardsInGame = ko.utils.parseJson(localStorage.getItem('ts-cards#2'));
             if (cardsInGame === null) {
-                cardsInGame = { removedPileIds: [], sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [] }
+                cardsInGame = { sureInHandsIds: [], cardsInDeckIds: [], discardedPileIds: [] }
             }
-            // TODO remove discardedPileIds
-
-            var removedPileIds = cardsInGame.removedPileIds;
 
             var filterByIdsAndAddUrgency = function (allConnectedCards, ids, urgency) {
                 return ko.utils.arrayFilter(allConnectedCards, function (card) {
@@ -103,13 +101,38 @@ class CardsCountries {
 
             var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
-            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.discardedPileIds.concat(cardsInGame.midWarIds), "empty");
+
+            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, this.getWillComeSoonIds(cardsInGame), "empty");
 
             this.connectedCards.valueWillMutate();
             this.connectedCards.removeAll();
             KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
             this.connectedCards.valueHasMutated();
         });
+
+        // TODO maybe outside of constructor
+        this.getWillComeSoonIds = (cardsInGame) => {
+            switch (cardsInGame.progress) {
+                case "start":
+                    return cardsInGame.discardedPileIds.concat(cardsInGame.midWarIds);
+                    break;
+                case "start3rdTurn":
+                    return cardsInGame.midWarIds;
+                    break;
+                case "addMidWarCards":
+                    return cardsInGame.discardedPileIds.concat(cardsInGame.lateWarIds);
+                    break;
+                case "start7thTurn":
+                    return cardsInGame.lateWarIds;
+                    break;
+                case "addLateWarCards":
+                    return [];
+                    break;
+                default:
+                    throw "cardsInGame.progress is out of range";
+                    break;
+            }
+        };
 
         this.getConnectedCards = (country) => {
             var cardsConnectedById = _.filter(this.cards, function (card) {

@@ -9,6 +9,8 @@
         self.discardedPile = ko.observableArray([]);
         self.removedPile = ko.observableArray([]);
 
+        self.progress = new ko.observable("start");
+
         self.discard = function(card) {
             self.sureInHands.remove(card);
             self.cardsInDeck.remove(card);
@@ -39,6 +41,8 @@
 
             self.enable3rdTurn(false);
             self.hasMidWarCards(true);
+
+            self.progress("start3rdTurn");
         };
 
         self.hasMidWarCards = ko.observable(false);
@@ -49,6 +53,8 @@
             
             self.hasMidWarCards(false);
             self.has7thTurn(true);
+
+            self.progress("addMidWarCards");
         };
         
         self.has7thTurn = ko.observable(false);
@@ -57,6 +63,8 @@
 
             self.has7thTurn(false);
             self.hasLateWarCards(true);
+            
+            self.progress("start7thTurn");
         };
         
         self.hasLateWarCards = ko.observable(false);
@@ -66,6 +74,8 @@
             });
 
             self.hasLateWarCards(false);
+            
+            self.progress("addLateWarCards");
         };
 
         ko.computed(function () {
@@ -73,9 +83,9 @@
                 cardsInDeckIds: _.pluck(self.cardsInDeck(), "id"),
                 sureInHandsIds: _.pluck(self.sureInHands(), "id"),
                 discardedPileIds: _.pluck(self.discardedPile(), "id"),
-                removedPileIds: _.pluck(self.removedPile(), "id"),
                 midWarIds: _.pluck(allCards.midWar, "id"),
                 lateWarIds: _.pluck(allCards.lateWar, "id"),
+                progress: self.progress(),
             };
 
             localStorage.setItem('ts-cards#2', ko.toJSON(cards));
