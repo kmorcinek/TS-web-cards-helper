@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\Scripts\CardsCountries.ts" />
+    <Content Include="Content\Styles\bootstrap-responsive.css" />
+    <Content Include="Content\Styles\bootstrap-responsive.min.css" />
+    <Content Include="Content\Styles\bootstrap.css" />
+    <Content Include="Content\Styles\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\Scripts\CardsCountries.js">
       <DependentUpon>CardsCountries.ts</DependentUpon>
     </Content>
@@ -85,6 +91,8 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="index.html" />
     <Content Include="map.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />

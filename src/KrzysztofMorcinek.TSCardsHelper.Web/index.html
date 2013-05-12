@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Twilight struggle cards helper</title>
+    <link href="Content/Styles/bootstrap.min.css" rel="stylesheet" media="screen">
     <link type="text/css" href="Content/Styles/Style.css" rel="stylesheet" />
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
@@ -13,19 +14,19 @@
             <a href="map.html">Map</a>
             <a href="info.html">Info</a>
         </menu>
-        <button data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
-        <button data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
-        <button data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
-        <button data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
+        <button class="btn btn-primary" data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
+        <button class="btn btn-primary" data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
+        <button class="btn btn-primary" data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
+        <button class="btn btn-primary" data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
         <div id="main-container">
             <div>
                 <h2>Sure in hands this turn</h2>
                 <ul data-bind="foreach: sureInHands">
 
                     <li>
-                        <button data-bind="click: $parent.discard">Discard</button>
+                        <button class="btn" data-bind="click: $parent.discard">Discard</button>
                         <span data-bind="text: name"></span>
-                        <button data-bind="click: $parent.remove, visible: canRemove">Remove</button>
+                        <button class="btn" data-bind="click: $parent.remove, visible: canRemove">Remove</button>
                     </li>
 
                 </ul>
@@ -35,9 +36,9 @@
                 <ul data-bind="foreach: cardsInDeck">
 
                     <li>
-                        <button data-bind="click: $parent.discard">Discard</button>
+                        <button class="btn" data-bind="click: $parent.discard">Discard</button>
                         <span data-bind="text: name"></span>
-                        <button data-bind="click: $parent.remove, visible: canRemove">Remove</button>
+                        <button class="btn" data-bind="click: $parent.remove, visible: canRemove">Remove</button>
                     </li>
 
                 </ul>
@@ -56,6 +57,8 @@
             </div>
         </div>
 
+        <script src="Scripts/jquery-1.9.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
         <script src="Scripts/jquery-1.9.1.js"></script>
         <script src="Scripts/knockout-2.2.1.js"></script>
         <script src="Scripts/knockout.mapping-latest.js"></script>

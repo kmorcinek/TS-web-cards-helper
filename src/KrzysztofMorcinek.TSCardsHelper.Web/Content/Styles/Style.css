@@ -1,4 +1,19 @@
-﻿div#main-container div
+﻿/*
+    Workaround for bootstrap and maps.
+    http://stackoverflow.com/questions/9141249/twitter-bootstrap-css-affecting-google-maps/9600412#9600412
+    */
+#container img { 
+  max-width: none;
+}
+
+#container label { 
+  width: auto; display:inline; 
+} 
+/*
+    End of Workaround for bootstrap and maps.
+    */
+
+div#main-container div
 {
     float: left;
     width: 500px;
