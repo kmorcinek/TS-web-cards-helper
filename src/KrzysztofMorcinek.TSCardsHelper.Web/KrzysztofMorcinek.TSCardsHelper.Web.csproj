@@ -71,6 +71,7 @@
     <Content Include="Content\Scripts\CardsCountries.js">
       <DependentUpon>CardsCountries.ts</DependentUpon>
     </Content>
+    <Content Include="Content\Scripts\cardsData.js" />
     <Content Include="Content\Scripts\index.js" />
     <Content Include="Content\Scripts\map.js" />
     <Content Include="Content\Styles\Style.css" />

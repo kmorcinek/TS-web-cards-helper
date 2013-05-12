@@ -3,10 +3,10 @@
     var viewModel = function (allCards) {
         var self = this; // TODO remove it?
 
-        self.midWarCards = allCards.MidWar;
-        self.lateWarCards = allCards.LateWar;
+        self.midWarCards = allCards.midWar;
+        self.lateWarCards = allCards.lateWar;
 
-        self.cardsInDeck = ko.observableArray(allCards.EarlyWar);
+        self.cardsInDeck = ko.observableArray(allCards.earlyWar);
 
         self.sureInHands = ko.observableArray([]);
         self.discardedPile = ko.observableArray([]);
@@ -87,3 +87,7 @@
 
     ko.applyBindings(new viewModel(allCards));
 };
+
+$(function () {
+    indexPage(cardsByStage);
+});

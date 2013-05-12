@@ -9,6 +9,5 @@
 </head>
 <body>
     <p><%# this.GetCards() %></p>
-    <%--<div><%# this.GetCardsPictures() %></div>--%>
 </body>
 </html>

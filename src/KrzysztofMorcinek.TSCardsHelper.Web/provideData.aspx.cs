@@ -13,6 +13,10 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
 {
     public partial class provideData : System.Web.UI.Page
     {
+        private const string EarlyWarXml = @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml";
+        private const string MidWarXml = @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml";
+        private const string LateWarXml = @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml";
+
         // TODO annoying right path
         private string basePath = @"D:\NieWirtualki\Work\GitHub\TS-web-cards-helper\src";
 
@@ -28,31 +32,31 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         {
             dynamic cards = new ExpandoObject();
 
-            cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"))
-                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
+            cards.EarlyWar = CardParser.ParseCardsPage(Path.Combine(basePath, EarlyWarXml))
+                //                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
                 .ToArray();
 
-            cards.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\MidWarToParse.xml"))
-                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
+            cards.MidWar = CardParser.ParseCardsPage(Path.Combine(basePath, MidWarXml))
+                //                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
                 .ToArray();
 
-            cards.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\LateWarToParsexml.xml"))
-                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
+            cards.LateWar = CardParser.ParseCardsPage(Path.Combine(basePath, LateWarXml))
+                //                .Select(card => new { card.Id, card.Name, PicturePath = GetPicturePath(card.Name), card.Href })
                 .ToArray();
 
-            var sb = new StringBuilder();
+            //            var sb = new StringBuilder();
+            //
+            //            foreach (dynamic card in cards.EarlyWar)
+            //            {
+            //                sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}<br/>", "{", "}", card.Id, card.Name);
+            //                sb.AppendLine();
+            //            }
 
-            foreach (dynamic card in cards.EarlyWar)
-            {
-                sb.AppendFormat("{0}\"id\":{2}, \"countryIds\":[], \"regionIds\":[]{1},// {3}<br/>", "{", "}", card.Id, card.Name);
-                sb.AppendLine();
-            }
+            //            return sb.ToString();
 
-//            DownloadImages(cards.EarlyWar);
-//            DownloadImages(cards.MidWar);
-//            DownloadImages(cards.LateWar);
-
-            return sb.ToString();
+            //            DownloadImages(cards.EarlyWar);
+            //            DownloadImages(cards.MidWar);
+            //            DownloadImages(cards.LateWar);
 
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             return JsonConvert.SerializeObject(cards, Formatting.Indented, jsonSerializerSettings);
@@ -62,27 +66,13 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
         {
             foreach (dynamic card in cards)
             {
-                using (WebClient Client = new WebClient())
+                using (var client = new WebClient())
                 {
-                    Client.DownloadFile(card.PicturePath + "?w=80",
+                    client.DownloadFile(card.PicturePath + "?w=80",
                                         Path.Combine(@"E:\Users\krzysztof.morcinek\Desktop\Cards images 80", card.Id + ".jpg")
                         );
                 }
             }
-        }
-
-        protected string GetCardsPictures()
-        {
-            IEnumerable<Card> cardsPage = CardParser.ParseCardsPage(Path.Combine(basePath, @"KrzysztofMorcinek.TSCardsHelper.Web\DataFiles\EarlyWar.xml"));
-
-            var sb = new StringBuilder();
-
-            foreach (var card in cardsPage)
-            {
-                sb.AppendFormat("<image src=\"" + GetPicturePath(card.Name) + "?w=160\"/>");
-            }
-
-            return sb.ToString();
         }
 
         private string GetPicturePath(string cardName)
