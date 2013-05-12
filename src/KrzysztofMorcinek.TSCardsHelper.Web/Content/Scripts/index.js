@@ -3,9 +3,6 @@
     var viewModel = function (allCards) {
         var self = this; // TODO remove it?
 
-        self.midWarCards = allCards.midWar;
-        self.lateWarCards = allCards.lateWar;
-
         self.cardsInDeck = ko.observableArray(allCards.earlyWar);
 
         self.sureInHands = ko.observableArray([]);
@@ -46,7 +43,7 @@
 
         self.hasMidWarCards = ko.observable(false);
         self.addMidWarCards = function () {
-            ko.utils.arrayForEach(self.midWarCards, function (card) {
+            ko.utils.arrayForEach(allCards.midWar, function (card) {
                 self.cardsInDeck.push(card);
             });
             
@@ -64,7 +61,7 @@
         
         self.hasLateWarCards = ko.observable(false);
         self.addLateWarCards = function () {
-            ko.utils.arrayForEach(self.lateWarCards, function (card) {
+            ko.utils.arrayForEach(allCards.lateWar, function (card) {
                 self.cardsInDeck.push(card);
             });
 
