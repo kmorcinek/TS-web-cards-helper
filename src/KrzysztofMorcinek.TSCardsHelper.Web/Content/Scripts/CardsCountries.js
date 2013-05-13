@@ -43,7 +43,7 @@ var CardsCountries = (function () {
         this.connectedCards = ko.observableArray([]);
         this.hoveredCountry = ko.observable();
         ko.utils.arrayForEach(cards, function (card) {
-            card.backgroundPosition = "0 " + (card.id - 1) * -113;
+            card.backgroundPositionY = (card.id - 1) * -113;
         });
         this.selectedCountry = ko.computed(this.hoveredCountry).extend({
             throttle: 500
