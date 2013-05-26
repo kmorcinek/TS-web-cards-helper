@@ -36,6 +36,7 @@ ul.connected-cards
     border-radius: 10px;
     margin: 22px;
     padding: 0 20px;
+    opacity: 0.9;
 }
 
 ul.down-cards
@@ -55,23 +56,25 @@ a
 
 .connected-cards h2
 {
-    border-style: dashed;
-    border-width: 4px;
+  padding: 4px;
+  box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.5);       
+    /*border-style: dashed;*/
+    /*border-width: 4px;*/
 }
 
 h2.sureInHands
 {
-    border-color: red;
+    /*border-color: red;*/
 }
 
 h2.cardsInDeck
 {
-    border-style: none;
+    /*border-style: none;*/
 }
 
 h2.willComeSoon 
 {
-    border-color: blue;
+    /*border-color: blue;*/
 }
 
 h2.card-image-replacement
