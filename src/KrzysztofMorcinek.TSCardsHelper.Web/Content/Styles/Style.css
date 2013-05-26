@@ -43,7 +43,6 @@ ul.connected-cards
 {
     position: absolute;
     z-index: 100;
-    width: 1315px;
     left: 0;
     background-color: powderblue;
     border-style: inset;
