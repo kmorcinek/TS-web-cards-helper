@@ -96,10 +96,7 @@ var CardsCountries = (function () {
             var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
             var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, _this.getWillComeSoonIds(cardsInGame), "willComeSoon");
-            _this.connectedCards.valueWillMutate();
-            _this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(_this.connectedCards, connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
-            _this.connectedCards.valueHasMutated();
+            _this.connectedCards(connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
         });
         this.getWillComeSoonIds = function (cardsInGame) {
             switch(cardsInGame.progress) {

@@ -104,10 +104,7 @@ class CardsCountries {
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
             var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, this.getWillComeSoonIds(cardsInGame), "willComeSoon");
 
-            this.connectedCards.valueWillMutate();
-            this.connectedCards.removeAll();
-            KnockoutNewFunctions.utils.arrayPushAll(this.connectedCards, connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
-            this.connectedCards.valueHasMutated();
+            this.connectedCards(connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
         });
 
         // TODO maybe outside of constructor
