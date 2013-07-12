@@ -1,5 +1,13 @@
 ﻿var indexPage = function (allCards) {
 
+    var runIfConfirmed = function(functionToRun) {
+        var confirmation = confirm("Are you sure you want to proceed to next 'phase'?");
+
+        if (confirmation === true) {
+            functionToRun();
+        }
+    };
+
     var viewModel = function (allCards) {
         var self = this; // TODO remove it?
 
@@ -37,45 +45,53 @@
 
         self.enable3rdTurn = ko.observable(true);
         self.start3rdTurn = function () {
-            self.reshuffleCards();
+            runIfConfirmed(function() {
+                self.reshuffleCards();
 
-            self.enable3rdTurn(false);
-            self.hasMidWarCards(true);
+                self.enable3rdTurn(false);
+                self.hasMidWarCards(true);
 
-            self.progress("start3rdTurn");
+                self.progress("start3rdTurn");
+            });
         };
 
         self.hasMidWarCards = ko.observable(false);
         self.addMidWarCards = function () {
-            ko.utils.arrayForEach(allCards.midWar, function (card) {
-                self.cardsInDeck.push(card);
-            });
-            
-            self.hasMidWarCards(false);
-            self.has7thTurn(true);
+            runIfConfirmed(function() {
+                ko.utils.arrayForEach(allCards.midWar, function(card) {
+                    self.cardsInDeck.push(card);
+                });
 
-            self.progress("addMidWarCards");
+                self.hasMidWarCards(false);
+                self.has7thTurn(true);
+
+                self.progress("addMidWarCards");
+            });
         };
         
         self.has7thTurn = ko.observable(false);
         self.start7thTurn = function () {
-            self.reshuffleCards();
+            runIfConfirmed(function() {
+                self.reshuffleCards();
 
-            self.has7thTurn(false);
-            self.hasLateWarCards(true);
+                self.has7thTurn(false);
+                self.hasLateWarCards(true);
             
-            self.progress("start7thTurn");
+                self.progress("start7thTurn");
+            });
         };
         
         self.hasLateWarCards = ko.observable(false);
         self.addLateWarCards = function () {
-            ko.utils.arrayForEach(allCards.lateWar, function (card) {
-                self.cardsInDeck.push(card);
-            });
+            runIfConfirmed(function() {
+                ko.utils.arrayForEach(allCards.lateWar, function (card) {
+                    self.cardsInDeck.push(card);
+                });
 
-            self.hasLateWarCards(false);
+                self.hasLateWarCards(false);
             
-            self.progress("addLateWarCards");
+                self.progress("addLateWarCards");
+            });
         };
 
         ko.computed(function () {
