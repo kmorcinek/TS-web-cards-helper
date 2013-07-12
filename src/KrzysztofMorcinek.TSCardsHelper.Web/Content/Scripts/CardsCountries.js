@@ -49,6 +49,7 @@ var CardsCountries = (function () {
         this.regions = regions;
         this.connectedCards = ko.observableArray([]);
         this.hoveredCountry = ko.observable();
+        this.isOnlyCurrentCardShown = true;
         ko.utils.arrayForEach(cards, function (card) {
             card.backgroundPositionY = (card.id - 1) * -113;
         });
@@ -106,7 +107,11 @@ var CardsCountries = (function () {
 
             var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
-            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, _this.getWillComeSoonIds(cardsInGame), "willComeSoon");
+
+            var connectedWillComeSoon = [];
+            if (_this.isOnlyCurrentCardShown === false) {
+                connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, _this.getWillComeSoonIds(cardsInGame), "willComeSoon");
+            }
 
             _this.connectedCards(connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
         });

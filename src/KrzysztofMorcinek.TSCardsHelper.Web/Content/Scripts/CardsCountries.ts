@@ -42,9 +42,11 @@ class CardsCountries {
     public showForCountry: (countryArea) => void;
     private getConnectedCards: (country) => Card[];
     getWillComeSoonIds: (any) => number[];
+	isOnlyCurrentCardShown: boolean;
 
     constructor(public cards: Card[], public countries: Country[], private regions: Region[]) {
-        ko.utils.arrayForEach(cards, function (card) {
+        this.isOnlyCurrentCardShown = true;
+		ko.utils.arrayForEach(cards, function (card) {
             card.backgroundPositionY = (card.id - 1) * -113;
         });
 
@@ -102,7 +104,11 @@ class CardsCountries {
 
             var connectedInHands = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.sureInHandsIds, "sureInHands");
             var connectedInDeck = filterByIdsAndAddUrgency(allConnectedCards, cardsInGame.cardsInDeckIds, "cardsInDeck");
-            var connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, this.getWillComeSoonIds(cardsInGame), "willComeSoon");
+            
+			var connectedWillComeSoon = [];
+			if(this.isOnlyCurrentCardShown === false){
+				connectedWillComeSoon = filterByIdsAndAddUrgency(allConnectedCards, this.getWillComeSoonIds(cardsInGame), "willComeSoon");
+			}
 
             this.connectedCards(connectedInHands.concat(connectedInDeck, connectedWillComeSoon));
         });
