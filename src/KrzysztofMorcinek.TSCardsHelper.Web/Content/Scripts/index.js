@@ -9,7 +9,7 @@
         self.discardedPile = ko.observableArray([]);
         self.removedPile = ko.observableArray([]);
 
-        self.progress = new ko.observable("start");
+        self.progress = ko.observable("start");
 
         self.discard = function(card) {
             self.sureInHands.remove(card);
