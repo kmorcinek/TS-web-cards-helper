@@ -1,4 +1,4 @@
-/// <reference path="../../Scripts/typings/underscore/underscore-typed-1.4.3.d.ts" />
+/// <reference path="../../Scripts/typings/underscore/underscore-typed.d.ts" />
 /// <reference path="../../Scripts/typings/knockout/knockout.d.ts" />
 
 // Workaround for not having all _ methods in definitions.
