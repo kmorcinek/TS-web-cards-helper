@@ -19,13 +19,43 @@
 
         self.progress = ko.observable("start");
 
+        self.createUndo = function() {
+            var sureClone = self.sureInHands.slice(0);
+            var inDeckClone = self.cardsInDeck.slice(0);
+            var discardedClone = self.discardedPile.slice(0);
+            var removedClone = self.removedPile.slice(0);
+
+            self.procedureToUndo ( function () {
+                self.sureInHands(sureClone);
+                self.cardsInDeck(inDeckClone);
+                self.discardedPile(discardedClone);
+                self.removedPile(removedClone);
+
+                self.procedureToUndo(null);
+            });
+        };
+
+        self.undo = function () {
+            self.procedureToUndo()();
+        };
+
+        self.procedureToUndo = ko.observable(null);
+
+        self.undoEnabled = ko.computed(function () {
+            return self.procedureToUndo() !== null;
+        });
+
         self.discard = function(card) {
+            self.createUndo();
+            
             self.sureInHands.remove(card);
             self.cardsInDeck.remove(card);
             self.discardedPile.push(card);
         };
         
         self.remove = function (card) {
+            self.createUndo();
+
             self.sureInHands.remove(card);
             self.cardsInDeck.remove(card);
             self.removedPile.push(card);
@@ -51,6 +81,7 @@
                 self.enable3rdTurn(false);
                 self.hasMidWarCards(true);
 
+                self.procedureToUndo(null);
                 self.progress("start3rdTurn");
             });
         };
@@ -65,6 +96,7 @@
                 self.hasMidWarCards(false);
                 self.has7thTurn(true);
 
+                self.procedureToUndo(null);
                 self.progress("addMidWarCards");
             });
         };
@@ -77,6 +109,7 @@
                 self.has7thTurn(false);
                 self.hasLateWarCards(true);
             
+                self.procedureToUndo(null);
                 self.progress("start7thTurn");
             });
         };
@@ -90,6 +123,7 @@
 
                 self.hasLateWarCards(false);
             
+                self.procedureToUndo(null);
                 self.progress("addLateWarCards");
             });
         };
