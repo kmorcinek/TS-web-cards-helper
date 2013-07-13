@@ -36,13 +36,13 @@
         };
 
         self.undo = function () {
-            self.procedureToUndo()();
+            ko.unwrap(self.procedureToUndo)();
         };
 
         self.procedureToUndo = ko.observable(null);
 
         self.undoEnabled = ko.computed(function () {
-            return self.procedureToUndo() !== null;
+            return ko.unwrap(self.procedureToUndo) !== null;
         });
 
         self.discard = function(card) {
