@@ -1,6 +1,10 @@
-TS-web-cards-helper is a lightway web app, that helps to play boardgame Twilight Struggle.
+Twilight Struggle web helper
 ===================
 The Twilight struggle game itself is ranked first in world wide ranking http://boardgamegeek.com/browse/boardgame/page/1?sort=rank
+This lightweight app is going to help you in playing the game.
+
+Play
+===================
 
 Current version is hosted at  
 http://angelo.hostingasp.pl/map.html and  
@@ -27,8 +31,6 @@ I usually play online using vassal engine.
 
 ## Contributors
 http://twilightstrategy.com - for providing great website about the game. I am parsing knowlegde already entered there.
-
-I need some help. Not only developers, there is also some data that have to be manually entered based on the knowlegde of board game.
 
 ## Screenshots
 
