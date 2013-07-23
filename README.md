@@ -53,7 +53,9 @@ I need some help. Not only developers, there is also some data that have to be m
   Hover over a country and you will see cards that are somehow connected to this country.
 
 * 2013-07-23:
+
 ![Undo button](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/Undo_button.PNG)
+  
   Undo a last card action you did (Discard or Remove).
 
 ## Contact
