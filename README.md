@@ -32,6 +32,10 @@ I usually play online using vassal engine.
 ## Contributors
 http://twilightstrategy.com - for providing great website about the game. I am parsing knowlegde already entered there.
 
+## I accept pull requests
+
+* you are very welcome
+
 ## Screenshots
 
 * 2013-05-12:  
