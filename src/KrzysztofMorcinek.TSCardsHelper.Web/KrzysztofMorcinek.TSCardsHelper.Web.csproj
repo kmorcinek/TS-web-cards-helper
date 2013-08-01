@@ -88,9 +88,9 @@
     <Content Include="images\TS_Vassal_board.PNG" />
     <Content Include="info.html" />
     <Content Include="provideData.aspx" />
-    <None Include="Properties\PublishProfiles\angelo.hostingasp.pl - Web Deploy.pubxml" />
     <Content Include="index.html" />
     <Content Include="map.html" />
+    <None Include="Properties\PublishProfiles\twilightstruggle.krzysztofmorcinek.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
