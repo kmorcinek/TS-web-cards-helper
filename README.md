@@ -7,8 +7,8 @@ Play
 ===================
 
 Current version is hosted at  
-http://angelo.hostingasp.pl/map.html and  
-http://angelo.hostingasp.pl/index.html (its playable but under development)
+http://twilightstruggle.krzysztofmorcinek.com/map.html and  
+http://twilightstruggle.krzysztofmorcinek.com/index.html (its playable but under development)
 
 ## Issues
 - Sad, but it displays correctly only on Chrome.
@@ -66,4 +66,4 @@ http://twilightstrategy.com - for providing great website about the game. I am p
 
 ## Contact
 
-krzysztof.morcinek@gmail.com
+krzysztof.morcinek (at) gmail.com
