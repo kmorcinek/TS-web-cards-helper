@@ -7,8 +7,7 @@ Play
 ===================
 
 Current version is hosted at  
-http://twilightstruggle.krzysztofmorcinek.com/map.html and  
-http://twilightstruggle.krzysztofmorcinek.com/index.html (its playable but under development)
+http://twilightstruggle.krzysztofmorcinek.com/ (its playable but under development)
 
 ## Issues
 - Sad, but it displays correctly only on Chrome.

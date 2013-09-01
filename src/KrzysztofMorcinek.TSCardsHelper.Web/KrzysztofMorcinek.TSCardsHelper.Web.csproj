@@ -68,6 +68,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\Scripts\app.js" />
     <Content Include="Content\Scripts\CardsCountries.js">
       <DependentUpon>CardsCountries.ts</DependentUpon>
     </Content>
@@ -86,10 +87,8 @@
     </Content>
     <Content Include="images\cards_80px.png" />
     <Content Include="images\TS_Vassal_board.PNG" />
-    <Content Include="info.html" />
     <Content Include="provideData.aspx" />
     <Content Include="index.html" />
-    <Content Include="map.html" />
     <None Include="Properties\PublishProfiles\twilightstruggle.krzysztofmorcinek.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

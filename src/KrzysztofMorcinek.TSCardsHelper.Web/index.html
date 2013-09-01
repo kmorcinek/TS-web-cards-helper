@@ -7,7 +7,7 @@
     <link type="text/css" href="Content/Styles/Style.css" rel="stylesheet" />
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
-    
+
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
@@ -22,18 +22,19 @@
 
     </script>
 </head>
-    <body>
-        <menu>
-            <a href="index.html">Cards</a>
-            <a href="map.html">Map</a>
-            <a href="info.html">Info</a>
-        </menu>
+<body>
+    <menu>
+        <a href="#cards">Cards</a>
+        <a href="#map">Map</a>
+        <a href="#info">Info</a>
+    </menu>
+    <div id="cards-container">
         <section>
-            <button class="btn btn-primary" data-bind="click:start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
-            <button class="btn btn-primary" data-bind="click:addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
-            <button class="btn btn-primary" data-bind="click:start7thTurn, enable: has7thTurn">Start 7th turn</button>
-            <button class="btn btn-primary" data-bind="click:addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
-            <button class="btn btn-primary" data-bind="click:undo, enable: undoEnabled">Undo</button>
+            <button class="btn btn-primary" data-bind="click: start3rdTurn, enable: enable3rdTurn">Start 3rd turn</button>
+            <button class="btn btn-primary" data-bind="click: addMidWarCards, enable: hasMidWarCards">Add Mid War cards (4th turn)</button>
+            <button class="btn btn-primary" data-bind="click: start7thTurn, enable: has7thTurn">Start 7th turn</button>
+            <button class="btn btn-primary" data-bind="click: addLateWarCards, enable: hasLateWarCards">Add Late War cards (8th turn)</button>
+            <button class="btn btn-primary" data-bind="click: undo, enable: undoEnabled">Undo</button>
             <div id="main-container">
                 <div>
                     <h3>Sure in hands this turn</h3>
@@ -42,7 +43,7 @@
                         <li>
                             <button class="btn" data-bind="click: $parent.discard">Discard</button>
                             <span data-bind="text: name"></span>
-                            <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i> Remove</button>
+                            <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i>Remove</button>
                         </li>
 
                     </ul>
@@ -54,7 +55,7 @@
                         <li>
                             <button class="btn" data-bind="click: $parent.discard">Discard</button>
                             <span data-bind="text: name"></span>
-                            <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i> Remove</button>
+                            <button class="btn" data-bind="click: $parent.remove, visible: canRemove"><i class="icon-remove"></i>Remove</button>
                         </li>
 
                     </ul>
@@ -73,13 +74,51 @@
                 </div>
             </div>
         </section>
+    </div>
+    <div id="map-container" class="my-hidden">
+        <h3 data-bind="text: selectedCountryName"></h3>
+        <div id="container">
+            <img class="world-map" src="/images/TS_Vassal_board.PNG" alt="HTML Map"
+                 border-width="0" usemap="#countries"
+                 data-bind="click: clickMap" />
 
-        <script src="Scripts/jquery-2.0.2.min.js"></script>
-        <script src="Scripts/bootstrap.min.js"></script>
-        <script src="Scripts/knockout-2.3.0.js"></script>
-        <script type="text/javascript" src="Scripts/underscore.min.js"></script>
+            <map name="countries" data-bind="foreach: countries">
+                <area shape="rect"
+                      data-bind="event: { mouseover: $parent.showForCountry }, attr: { coords: coords } " />
+            </map>
 
-        <script src="Content/Scripts/cardsData.js"></script>
-        <script src="Content/Scripts/index.js"></script>
-    </body>
+            <ul class="connected-cards inline" data-bind="foreach: connectedCards, css: cardsPosition, visible: connectedCards().length">
+                <li><a data-bind="attr: { href: href }" target="_blank">
+                        <h2 class="card-image-replacement" data-bind="css: urgency, attr: { title: name }">
+                            <span>sprite</span>
+                        </h2>
+                    </a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div id="info-container">
+        <h1>Twilight struggle web cards helper (better name appreciated)</h1>
+        <a href="https://github.com/kmorcinek/TS-web-cards-helper">Project page on GitHub</a> - here is central place where all information are consistent and up to date. Source code. Manual.
+        <p class="author">Krzysztof Morcinek</p>
+        <p>GitHub, Twitter: @kmorcinek</p>
+        <p class="email">krzysztof.morcinek@gmail.com</p>
+        <p>All comments and sugestions are welcome</p>
+        <p>Tip: Use the application in full screen mode (F11 on Chrome)</p>
+    </div>
+
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/knockout-2.3.0.js"></script>
+    <script src="Scripts/sammy-0.7.4.js"></script>
+    <script src="Scripts/underscore.min.js"></script>
+
+    <script src="Content/Scripts/CardsCountries.js"></script>
+    <script src="Content/Scripts/cardsData.js"></script>
+    <script src="Content/Scripts/index.js"></script>
+    <script src="Content/Scripts/map.js"></script>
+
+    <script src="Content/Scripts/app.js"></script>
+
+</body>
 </html>

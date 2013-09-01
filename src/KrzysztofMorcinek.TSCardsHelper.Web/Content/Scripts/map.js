@@ -229,4 +229,4 @@ var countries = [
 
 var cc = new CardsCountries(cards, countries, regions);
 
-ko.applyBindings(cc);
+ko.applyBindings(cc, document.getElementById("map-container"));

@@ -144,7 +144,7 @@
         });
     };
 
-    ko.applyBindings(new viewModel(allCards));
+    ko.applyBindings(new viewModel(allCards), document.getElementById("cards-container"));
 };
 
 $(function () {
