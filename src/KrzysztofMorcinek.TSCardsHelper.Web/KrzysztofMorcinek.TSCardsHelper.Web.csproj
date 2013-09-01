@@ -98,6 +98,8 @@
     <Content Include="Scripts\jquery-2.0.2.min.js" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
+    <Content Include="Scripts\sammy-0.7.4.js" />
+    <Content Include="Scripts\sammy-0.7.4.min.js" />
     <Content Include="Scripts\typings\knockout\knockout.amd.d.ts" />
     <Content Include="Scripts\typings\knockout\knockout.d.ts" />
     <Content Include="Scripts\typings\underscore\underscore-typed.d.ts" />
