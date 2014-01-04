@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -84,7 +87,6 @@
     </Content>
     <Content Include="images\cards_80px.png" />
     <Content Include="images\TS_Vassal_board.PNG" />
-    <Content Include="provideData.aspx" />
     <Content Include="index.html" />
     <None Include="Properties\PublishProfiles\twilightstruggle.krzysztofmorcinek.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.2.intellisense.js" />
@@ -104,13 +106,7 @@
     <Compile Include="Card.cs" />
     <Compile Include="CardParser.cs" />
     <Compile Include="Helpers\JsonNetSerializer.cs" />
-    <Compile Include="provideData.aspx.cs">
-      <DependentUpon>provideData.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="provideData.aspx.designer.cs">
-      <DependentUpon>provideData.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="PreprocesCards\PreprocesCardsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

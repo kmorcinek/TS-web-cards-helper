@@ -22,8 +22,25 @@ namespace KrzysztofMorcinek.TSCardsHelper.Web
                             Href = row.ChildNodes[1].ChildNodes[0].Attributes["href"].InnerText, 
                             Ops = int.Parse(row.ChildNodes[2].InnerText), 
                             Description = row.ChildNodes[3].InnerText, 
-                            CanRemove = secondTd.InnerText.EndsWith("*")
+                            CanRemove = secondTd.InnerText.EndsWith("*"),
+                            PicturePath = GetPicturePath(secondTd.InnerText),
                         }).ToList();
+        }
+
+        private static string GetPicturePath(string cardName)
+        {
+            var imagePath = cardName.ToLower()
+                                    .Replace(' ', '-')
+                                    .Replace("*", "")
+                                    .Replace("/", "-")
+                                    .Replace("…", "") // “Ask Not What Your Country…”*
+                                    .Replace("007", "7") // Soviets Shoot Down KAL-007*
+                                    .Replace("“", "")
+                                    .Replace("”", "");
+
+            return string.Format(
+                    "http://twilightstrategy.files.wordpress.com/2012/01/{0}.jpg",
+                    imagePath);
         }
     }
 }

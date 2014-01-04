@@ -88,11 +88,11 @@
             </map>
 
             <ul class="connected-cards inline" data-bind="foreach: connectedCards, css: cardsPosition, visible: connectedCards().length">
-                <li><a data-bind="attr: { href: href }" target="_blank">
-                        <h2 class="card-image-replacement" data-bind="css: urgency, attr: { title: name }">
-                            <span>sprite</span>
-                        </h2>
-                    </a></li>
+                <li>
+                    <a data-bind="attr: { href: href }" target="_blank">
+                        <img data-bind="attr: {src: picturePath + '?w=80', alt: name, title:name}, css: urgency" />
+                    </a>
+                </li>
             </ul>
 
         </div>
