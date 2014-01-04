@@ -1,4 +1,4 @@
-underscoreJS = _;
+﻿underscoreJS = _;
 
 KnockoutNewFunctions = ko;
 

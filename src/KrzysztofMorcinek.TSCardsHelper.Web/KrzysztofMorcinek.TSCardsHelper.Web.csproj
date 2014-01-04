@@ -61,7 +61,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Content\Scripts\CardsCountries.ts" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -69,11 +68,9 @@
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\Scripts\app.js" />
-    <Content Include="Content\Scripts\CardsCountries.js">
-      <DependentUpon>CardsCountries.ts</DependentUpon>
-    </Content>
     <Content Include="Content\Scripts\cardsData.js" />
     <Content Include="Content\Scripts\index.js" />
+    <Content Include="Content\Scripts\CardsCountries.js" />
     <Content Include="Content\Scripts\map.js" />
     <Content Include="Content\Styles\Style.css" />
     <Content Include="DataFiles\EarlyWar.xml">
@@ -99,10 +96,6 @@
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
-    <Content Include="Scripts\typings\knockout\knockout.amd.d.ts" />
-    <Content Include="Scripts\typings\knockout\knockout.d.ts" />
-    <Content Include="Scripts\typings\underscore\underscore-typed.d.ts" />
-    <Content Include="Scripts\typings\underscore\underscore.d.ts" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Web.config" />
