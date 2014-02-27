@@ -62,7 +62,3 @@ http://twilightstrategy.com - for providing great website about the game. I am p
 ![Undo button](https://raw.github.com/kmorcinek/TS-web-cards-helper/master/screenshots/Undo_button.PNG)
   
   Undo a last card action you did (Discard or Remove).
-
-## Contact
-
-krzysztof.morcinek (at) gmail.com
