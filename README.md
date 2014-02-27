@@ -17,6 +17,7 @@ http://twilightstruggle.krzysztofmorcinek.com/ (its playable but under developme
 
 - there are 110 cards in game, if you see which cards have already been played, you are in better position
 - many cards target specific countries. So it will be nice to reverse it and to have a fast overview of all possibble cards targeting my country
+- after coming back to the game after month you forgot a lot. It helps to find out again, what are the cards
 
 ## Where it can be used?
 I usually play online using vassal engine.
