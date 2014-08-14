@@ -9,9 +9,6 @@ Play
 Current version is hosted at http://kmorcinek.github.io/TS-web-cards-helper/src/KrzysztofMorcinek.TSCardsHelper.Web/ (or at 
 http://twilightstruggle.krzysztofmorcinek.com/)
 
-## Issues
-- map.html - htmls are by default cached. Even if I put meta tags about NOT caching, I don't own proxies between server and browser. And I feel my solutions is not perfect due to [Cache Invalidation](http://martinfowler.com/bliki/TwoHardThings.html). I suggest hard reloading (cache empty) when in doubt.
-
 ## Main reason for developing this app
 
 - there are 110 cards in game, if you see which cards have already been played, you are in better position
