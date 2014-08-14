@@ -6,8 +6,8 @@ This lightweight app is going to help you in playing the game.
 Play
 ===================
 
-Current version is hosted at  
-http://twilightstruggle.krzysztofmorcinek.com/ (its playable but under development)
+Current version is hosted at http://kmorcinek.github.io/TS-web-cards-helper/src/KrzysztofMorcinek.TSCardsHelper.Web/ (or at 
+http://twilightstruggle.krzysztofmorcinek.com/)
 
 ## Issues
 - Sad, but it displays correctly only on Chrome.
