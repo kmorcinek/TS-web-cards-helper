@@ -1,4 +1,4 @@
-# Twilight Struggle web helper
+# Twilight Struggle web helper (year 2013)
 
 The Twilight struggle game itself is ranked first in world wide ranking http://boardgamegeek.com/browse/boardgame/page/1?sort=rank
 This lightweight app is going to help you in playing the game.
